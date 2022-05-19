@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+
+        <!-- Inicio da página -->
+        <div id="helloWorld">
+            <h1>Hello, World!</h1>
+        </div>
+        <!-- Fim kkk-->
+
+        <div id="div_login">
+            <div class="login">
+            <h4 class="item-login">Bem vindo de volta!</h4>
+            <input class='item-login' type="text" placeholder="E-mail" id="inp_email">
+            <input class='item-login' type="password" id="inp_senha" placeholder="Senha">
+            <button  class='item-login' onclick="login()">Entrar</button>
+
+            <p class='item-login' >Ainda não faz parte? <a href="index.html">Clique Aqui</a></p>
+        </div>
+        </div>
+</body>
+</html>
+<script>
+
+  setTimeout(() => {
+
+      helloWorld.style.display = 'none';
+      div_login.style.display = 'block';
+
+  }, 5000)
+    
+</script>
