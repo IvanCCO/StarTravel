@@ -162,6 +162,13 @@ body{
         color: white;
     }
 
+    .paisesSelecionados{
+
+        border: white 3px solid;
+        color: white;
+
+    }
+
 
 
     
@@ -257,11 +264,9 @@ body{
 
 #btn{
     
-    display: flex;
-    justify-content: center;
-    height: fit-content;
-    margin-top: 10vh;
-    margin-bottom: 30px;
+    display: grid;
+    place-items: center;
+    align-items: center;
 }
 
 #btn button{
@@ -279,6 +284,7 @@ body{
    background-color: white;
    color: black;
    transition: all ease-in-out 0.3s;
+
 }
 
 
