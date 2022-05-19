@@ -14,16 +14,16 @@
     <div class="main-paises">
         
         <div class="fileira1">
-            <div class="paises" id="holanda">Holanda</div>
-            <div class="paises" id="franca">França</div>
-            <div class="paises" id="cuba">Cuba</div>
-            <div class="paises" id="brazil">Brazil</div>
+            <div class="paises" id="holanda" onclick="ale('1')">Holanda</div>
+            <div class="paises" id="franca" onclick="ale('2')">França</div>
+            <div class="paises" id="cuba" onclick="ale('3')">Cuba</div>
+            <div class="paises" id="brazil" onclick="ale('4')">Brazil</div>
         </div>
         <div class="fileira2">
-            <div class="paises" id="italia">Itália</div>
-            <div class="paises" id="london">Londres</div>
-            <div class="paises" id="novaYork">Nova York</div>
-            <div class="paises" id="spain">Espanha</div>
+            <div class="paises" id="italia" onclick="ale('5')">Itália</div>
+            <div class="paises" id="london" onclick="ale('6')">Londres</div>
+            <div class="paises" id="novaYork" onclick="ale('7')">Nova York</div>
+            <div class="paises" id="spain" onclick="ale('8')">Espanha</div>
         </div>
     </div>
 
@@ -32,3 +32,29 @@
     </div>
 </body>
 </html>
+
+<script>
+    var cHolanda = true;
+
+    function ale(pais){
+        
+        if(pais == '1'){
+
+            
+            if(cHolanda == true){
+                
+                holanda.style.border = '2px solid white';
+                holanda.style.color = 'white';
+                cHolanda = false;
+                
+            }else {
+
+                holanda.style.border = '0px solid white';
+                holanda.style.color = 'grey';
+                cHolanda = true;
+
+            }
+        }
+        
+    }
+</script>

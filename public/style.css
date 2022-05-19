@@ -73,7 +73,7 @@ body{
     height: 3vh;
     background: none;
     border: 0;
-    border-bottom: 3px solid #828282;
+    border-bottom: 3px solid var(--blueColor);
     text-align: center;
     outline:0;
     color: #828282; 
@@ -147,7 +147,6 @@ body{
 .paises {
      /*   border: 2px solid red; */
         height: 200px;
-        background: linear-gradient(rgba(0, 0, 0, 0.3)), linear-gradient(rgba(0, 0, 0, 0.9));
         color: rgba(201, 201, 201, 0.747);
         font-weight: bold;
         border: 0;
@@ -155,6 +154,7 @@ body{
         place-items: center;
         font-size: 24px;
         background-blend-mode: multiply;
+        cursor: pointer;
     }
     
     .paises:hover{
@@ -162,10 +162,6 @@ body{
         color: white;
     }
 
-    .paises:target{
-        border: white 2px solid;
-        color: white;
-    }
 
 
     
@@ -265,6 +261,7 @@ body{
     justify-content: center;
     height: fit-content;
     margin-top: 10vh;
+    margin-bottom: 30px;
 }
 
 #btn button{
@@ -283,6 +280,8 @@ body{
    color: black;
    transition: all ease-in-out 0.3s;
 }
+
+
 
 
 

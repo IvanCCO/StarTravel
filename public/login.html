@@ -32,9 +32,17 @@
 
   setTimeout(() => {
 
+      helloWorld.style.opacity = '0';
+      helloWorld.style.transition = 'opacity ease-in-out 3s';
+
+
+  }, 1)
+
+  setTimeout(() => {
+      
       helloWorld.style.display = 'none';
       div_login.style.display = 'block';
 
-  }, 5000)
+  }, 3000)
     
 </script>

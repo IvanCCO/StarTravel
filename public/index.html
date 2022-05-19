@@ -8,26 +8,62 @@
 </head>
 
 <style>
+    
+    :root {
+    --backColor: #000000;
+    --blueColor: #406281;
+    --yellowColor: #B8831C;
+    --purpleColor: #72027C;
+    --silverColor: #828282;
+    --orangeColor: #BF620B;
+    --greenColor: #1B521D;
+}
 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    body{
+    font-family: monospace;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    height: 100vh auto;
+    background-color: var(--backColor);
+}
     #botao:hover{
         background-color: #406281;
         font-weight: bolder;
         transition: all ease 200ms;
     }
+
+    #hello {
+        width: 12%;
+        font-size: 1.3125rem;
+        outline: 0;
+        background: none;
+        color: #1B521D;
+        border: 0;
+    }
     
 </style>
 
-<body style="background-color: #35374b; height: 100%; font-size: 3em; display: grid; place-items: center;">
-    <header style=" margin-top: 4em; text-align:center">
+<body>
+    <header style="font-size: 1.3125rem; border: 2px dashed green; height: 100vh; display: grid; place-items: center; text-align: center;">
        <p>
            <span style="color: #406281;">#include</span><span style="color: #1B521D;" > &lt;stdio.h&gt;</span>  
         <br><br>
         <span style="color: #72027C;">int </span> <span style="color: #406281;">main </span> <span style="color: #828282;">() {</span><br><br>
-        <span style="color: #B8831C;">printf</span> <span style="color: #828282;">(</span> <span style="color: #1B521D;">"Hello, Word!"</span><span style="color: #828282;">);</span> 
+        <span style="color: #B8831C;">printf</span> <span style="color: #828282;">(</span> <span style="color: #1B521D;">"<input onclick="msg()" id="hello">Word!"</span>
+        <span style="color: #828282;">);</span> 
          <br><br>
             <span style="color: #72027C;">return</span> <span style="color: #BF620B;">0</span> <span style="color: #828282;">;</span> 
         </p>
-        <br>
+    
+        <p id="erro"></p>
         <a href = 'login.html' style="color: white; font-size: 30px; text-decoration: none; cursor: pointer;">Run</a>
     </header>
 </body>
