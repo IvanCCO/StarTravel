@@ -6,7 +6,7 @@
 }
 
 :root {
-    --backColor: #35374b;
+    --backColor: #000000;
     --blueColor: #406281;
     --yellowColor: #B8831C;
     --purpleColor: #72027C;
@@ -35,7 +35,6 @@ body{
 
     display: grid;
     flex-direction: column;
-    border: 2px dashed green;
     height: 100vh;
     place-items: center;
 }
@@ -48,7 +47,7 @@ body{
 
 
 
-#div_l {
+#div_login {
     display: none;
 }
 
@@ -56,7 +55,6 @@ body{
     display: flex;
     flex-direction: column;
     color: white;
-    border: 2px dashed green;
     height: max-content;
     align-items: center;
     width: 79vh;
@@ -114,3 +112,177 @@ body{
     color: #406281;
     border-bottom: 1px solid #406281;
 }
+
+
+/* Fazendo a parte da selecao dos paises */
+
+#titulo{
+    
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: 50px;
+}
+
+.main-paises {
+
+    display: flex;
+    width: auto;
+    height: auto;
+    color: white;
+    justify-content: space-around;
+}
+
+
+.fileira1, .fileira2 {
+
+    height: 150vh;
+    width: 60vh;
+  /*  border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+.paises {
+     /*   border: 2px solid red; */
+        height: 200px;
+        background: linear-gradient(rgba(0, 0, 0, 0.3)), linear-gradient(rgba(0, 0, 0, 0.9));
+        color: rgba(201, 201, 201, 0.747);
+        font-weight: bold;
+        border: 0;
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+        background-blend-mode: multiply;
+    }
+    
+    .paises:hover{
+        border: white 2px solid;
+        color: white;
+    }
+
+    .paises:target{
+        border: white 2px solid;
+        color: white;
+    }
+
+
+    
+    
+    #holanda{
+        background: url(../Imagens/holanda.jpg), rgba(0, 0, 0, 0.749);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        backdrop-filter: blur(8px); 
+
+}
+
+
+
+#franca {
+    
+    background: url(../Imagens/franca.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+   
+}
+
+#cuba {
+
+    background: url(../Imagens/cuba.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+    
+}
+
+#brazil {
+    
+    background: url(../Imagens/braza.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#italia {
+    
+    background: url(../Imagens/italy.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#london {
+    
+    background: url(../Imagens/londres.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#novaYork{
+    
+    background: url(../Imagens/novayork.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#spain{
+
+    background: url(../Imagens/spain.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#btn{
+    
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 10vh;
+}
+
+#btn button{
+    height: 3.4em;
+    width: 10vw;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#btn button:hover{
+   background-color: white;
+   color: black;
+   transition: all ease-in-out 0.3s;
+}
+
+
+
