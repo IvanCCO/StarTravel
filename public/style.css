@@ -65,7 +65,7 @@ body{
 }
 
 .login .item-login{
-    margin: 10%;
+    margin: 3%;
 }
 
 .login h4{
@@ -73,8 +73,8 @@ body{
 }
 
 .login input{
-    width: 80%;
-    height: 3vh;
+    width: 40em;
+    height: 2em;
     background: none;
     border: 0;
     border-bottom: 3px solid var(--blueColor);
@@ -87,7 +87,7 @@ body{
 
 .login button{
     height: max-content;
-    width: auto;
+    width: 5em;
     background: none;
     border: 3px solid #406281;
     padding: 10px;
@@ -101,6 +101,8 @@ body{
  
 }
 
+
+
 .login button:hover{
     background-color: #406281;
     transition: background-color ease-in-out 0.3s;
@@ -113,7 +115,6 @@ body{
 .login a{
     text-decoration: none;
     color: #406281;
-    border-bottom: 1px solid #406281;
 }
 
 
@@ -124,7 +125,7 @@ body{
     text-align: center;
     color: white;
     font-size: 30px;
-    margin: 50px;
+    margin-top: 2em;
 }
 
 .main-paises {
@@ -139,17 +140,17 @@ body{
 
 .fileira1, .fileira2 {
 
-    height: 150vh;
-    width: 60vh;
+    height: 40em;
+    width: 20em;
   /*  border: 2px solid green; */
     display: flex;
     flex-direction: column;
-    justify-content: space-around
+    justify-content: space-evenly;
 }
 
 .paises {
      /*   border: 2px solid red; */
-        height: 200px;
+        height: 15vh;
         color: rgba(201, 201, 201, 0.747);
         font-weight: bold;
         border: 0;
@@ -274,8 +275,10 @@ body{
 }
 
 #btn button{
-    height: 3.4em;
-    width: auto;
+    height: 3em;
+    width: 5em;
+    
+    box-sizing: content-box;
     border: 2px solid white;
     background: none;
     color: white;
