@@ -57,18 +57,31 @@
            <span style="color: #406281;">#include</span><span style="color: #1B521D;" > &lt;stdio.h&gt;</span>  
         <br><br>
         <span style="color: #72027C;">int </span> <span style="color: #406281;">main </span> <span style="color: #828282;">() {</span><br><br>
-        <span style="color: #B8831C;">printf</span> <span style="color: #828282;">(</span> <span style="color: #1B521D;">"<input onclick="msg()" id="hello">Word!"</span>
+        <span style="color: #B8831C;">printf</span> <span style="color: #828282;">(</span> <span style="color: #1B521D;">"<input onkeyup ="msg()" id="hello">Word!"</span>
         <span style="color: #828282;">);</span> 
          <br><br>
             <span style="color: #72027C;">return</span> <span style="color: #BF620B;">0</span> <span style="color: #828282;">;</span> 
         </p>
     
-        <p id="erro"></p>
-        <a href = 'login.html' style="color: white; font-size: 30px; text-decoration: none; cursor: pointer;">Run</a>
+        <a href = 'login.html' id="runCode" style="color: white; font-size: 30px; text-decoration: none; cursor: pointer; display: none;">Run</a>
     </header>
 </body>
 </html>
 
 <script>
-   
+   var resposta = 'HELLO,';
+
+   function msg(){
+
+    var inputVar = hello.value.toUpperCase();
+
+    if(inputVar == resposta){
+
+        runCode.style.display = 'block';
+
+    }else{
+        runCode.style.display = 'none';
+    }
+
+}
 </script>
