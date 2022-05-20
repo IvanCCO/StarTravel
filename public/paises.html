@@ -29,7 +29,7 @@
 
     <div id="btn">
         <b style="color: red;" id="msg_erro"></b>
-        <a href="#"><button onclick="sel()">Go</button></a>
+        <a ><button onclick="sel()">Go</button></a>
         <br>
     </div>
 </body>
@@ -51,7 +51,8 @@
 
                 if(vetorPaises[i] == elemento.textContent){
 
-                    vetorPaises.splice(i);   
+                    vetorPaises.splice(i, 1);   
+                    console.log('Removendo:' + elemento.textContent)
                 }
             }
         }else{
@@ -59,6 +60,7 @@
             elemento.className += " paisesSelecionados";
 
             vetorPaises.push(elemento.textContent);
+            console.log("Adicionando: " + elemento.textContent);
         }
     }
 
@@ -66,10 +68,13 @@
 
         if(vetorPaises.length == 0){
 
-            msg_erro.innerHTML = '<br>Escolha 1 país';
+            msg_erro.innerHTML = '<br>Choose 1 country at least';
 
-        }else {
+        }else if(vetorPaises.length > 3){
 
+            msg_erro.innerHTML = 'Maximum of 3 countries';
         }
+
     }
+    
 </script>

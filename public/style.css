@@ -23,6 +23,18 @@
     box-sizing: border-box;
 }
 
+/* Personalizando o scrool */
+::-webkit-scrollbar {
+    width: 0.3vw;
+  }
+  ::-webkit-scrollbar-track {
+    scrollbar-color: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #72027C; 
+    border-radius: 10px;
+  }
+
 body{
     font-family: monospace;
     font-size: 1.3125rem;
@@ -73,7 +85,7 @@ body{
 }
 
 .login input{
-    width: 40em;
+    width: 30em;
     height: 2em;
     background: none;
     border: 0;
@@ -150,7 +162,7 @@ body{
 
 .paises {
      /*   border: 2px solid red; */
-        height: 15vh;
+        height: 20vh;
         color: rgba(201, 201, 201, 0.747);
         font-weight: bold;
         border: 0;

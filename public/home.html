@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="main">
+
+        <!-- Inicio da página -->
+        <div id="wellcome">
+            <h1>Wellcome User!</h1>
+        </div>
+
+        <!-- Fim kkk-->
+        
+        <!-- Inicio da home -->
+        <div id="home" style="display: none;">
+            <img src="../Imagens/franca.jpg" alt="">
+        </div>
+        
+</body>
+</html>
+
+<script>
+
+    // Animação do Hello Word;
+
+  setTimeout(() => {
+
+      wellcome.style.opacity = '0';
+      wellcome.style.transition = 'opacity ease-in-out 3s';
+
+
+  }, 0)
+
+  setTimeout(() => {
+      
+      wellcome.style.display = 'none';
+      home.style.display = 'block';
+
+  }, 3000)
+    
+
+    // Functions Home
+
+    
+</script>

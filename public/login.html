@@ -19,16 +19,18 @@
         <div id="div_login">
             <div class="login">
             <h4 class="item-login">Wellcome back!</h4>
-            <input class='item-login' type="text" placeholder="E-mail" id="inp_email">
-            <input class='item-login' type="password" id="inp_senha" placeholder="Senha">
-            <button  class='item-login' onclick="login()">Login</button>
-
+            <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()">
+            <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
+            <a href="home.html"><button  class='item-login' onclick="login()">Login</button></a>
+                <span id="erro"></span>
             <p class='item-login' >Begin your adventure? <a href="cadastro.html">Click here</a></p>
         </div>
         </div>
 </body>
 </html>
 <script>
+
+    // Animação do Hello Word;
 
   setTimeout(() => {
 
@@ -45,4 +47,25 @@
 
   }, 3000)
     
+
+    // Validaçao abas de Login. 
+
+    function key(){
+        if(event.key === 'Enter'){
+            return cad()
+            
+        }
+    }
+
+    function login(){
+
+        var userVar = inp_user.value;
+        var senhaVar = inp_senha.value;
+
+        if(userVar == '' || senhaVar == ''){
+
+            erro.innerHTML = 'Todos os campos devem ser preenchidos';
+
+        }
+    }
 </script>

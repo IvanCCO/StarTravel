@@ -13,14 +13,14 @@
             <div class="login">
             <h4 class="item-login">Start your journey!</h4>
             
-            <input class='item-login' type="text" placeholder="Nome" id="inp_nome">
-            <input class='item-login' type="text" placeholder="Username" id="inp_user">
-            <input class='item-login' type="text" placeholder="E-mail" id="inp_email">                
-            <input class='item-login' type="password" id="inp_senha" placeholder="Senha">
-            <input class='item-login' type="password" id="inp_senha" placeholder="Senha">
+            <input class='item-login' type="text" placeholder="Nome" id="inp_nome" onkeypress="key()">
+            <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()">
+            <input class='item-login' type="text" placeholder="E-mail" id="inp_email" onkeypress="key()">                
+            <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
+            <input class='item-login' type="password" id="inp_senhaConf" placeholder="Senha" onkeypress="key()">
 
-
-           <a href="paises.html"> <button  class='item-login' onclick="login()">Sign in</button></a> 
+            <span id="erro"></span>
+           <a id="link_cad"> <button  class='item-login' onclick="cad()">Sign up</button></a> 
 
             <p class='item-login' >Já faz parte? <a href="login.html">Click here</a></p>
         </div>
@@ -29,5 +29,60 @@
 </html>
 <script>
 
- 
+    
+    function key(){
+        if(event.key === 'Enter'){
+            return cad()
+            
+        }
+    }
+    
+    
+    function cad (){
+        
+        // Validando campos vazios 
+        var nomeVar = inp_nome.value;
+        var userVar = inp_user.value;
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
+        var senhaConfVar = inp_senhaConf.value;
+
+        if(nomeVar == '' || userVar == '' || emailVar == '' || senhaVar == '' || senhaConfVar == ''){
+            
+            erro.innerHTML = 'Todos os campos devem ser preenchidos';
+
+               
+        }else if (senhaConfVar != senhaVar){
+            
+            erro.innerHTML = "Passwords doesn't match"
+            
+        }else if (senhaVar.length < 8){
+
+            erro.innerHTML = "Password too weak"
+
+        }else if (emailVar.indexOf('@') == -1  || emailVar.indexOf('.') == -1){
+
+            erro.innerHTML = "Invalid E-mail"
+
+        }else if (nomeVar.indexOf('1') != -1 || nomeVar.indexOf('2') != -1 || nomeVar.indexOf('3') != -1  || nomeVar.indexOf('4')
+        != -1  || nomeVar.indexOf('5') != -1  || nomeVar.indexOf('6') != -1  || nomeVar.indexOf('7') != -1  || nomeVar.indexOf('8')
+        != -1  || nomeVar.indexOf('9') != -1  || nomeVar.indexOf('0') != -1 ){
+
+            erro.innerHTML = 'Nome não pode conter númericos'
+
+        }else if (userVar.indexOf(' ') != -1 ){
+
+            erro.innerHTML = "Username canno't have space"
+
+        
+        }else{
+            
+            link_cad.href = 'paises.html';
+        }
+        
+        setTimeout(() => {
+
+                erro.innerHTML = '';
+            }, 8000)
+    }
 </script>

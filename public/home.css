@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Fonte';
+    src: url('../Font/CONSOLA.TTF') format(trueType);
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --backColor: #000000;
+    --blueColor: #406281;
+    --yellowColor: #B8831C;
+    --purpleColor: #72027C;
+    --silverColor: #828282;
+    --orangeColor: #BF620B;
+    --greenColor: #1B521D;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Personalizando o scrool */
+::-webkit-scrollbar {
+    width: 0.3vw;
+  }
+  ::-webkit-scrollbar-track {
+    scrollbar-color: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #72027C; 
+    border-radius: 10px;
+  }
+
+
+  body{
+    font-family: monospace;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    height: 100vh auto;
+    background-color: var(--backColor);
+}
+
+#wellcome{
+    opacity: 1;
+    color: white;
+}
+
+.main{
+
+    display: grid;
+    flex-direction: column;
+    height: 100vh;
+    width: auto;
+    place-items: center;
+}
+
