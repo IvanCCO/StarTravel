@@ -13,6 +13,9 @@
     --silverColor: #82828267;
     --orangeColor: #BF620B;
     --greenColor: #1B521D;
+    --fontColor: rgb(233, 233, 233);
+    --inverterPng-hover:invert(7%) sepia(63%) saturate(6633%) hue-rotate(296deg) brightness(112%) contrast(104%);
+    --inverterPng:invert(43%) sepia(69%) saturate(479%) hue-rotate(1deg) brightness(106%) contrast(97%);
 }
 
 *,
@@ -31,7 +34,7 @@
     scrollbar-color: none;
   }
   ::-webkit-scrollbar-thumb {
-    background: #72027C; 
+    background: var(--purpleColor); 
     border-radius: 10px;
   }
 
@@ -40,14 +43,14 @@
     font-family: monospace;
     font-size: 1.3125rem;
     line-height: 1.6;
-    height: 100vh;
+    height: auto;
     background-color: var(--backColor);
 }
 
 #wellcome{
    
     opacity: 1;
-    color: white;
+    color: var(--fontColor);
     display: grid;
     height: 100vh;
     width: auto;
@@ -67,15 +70,14 @@
 }
 
 .navBar{
-  color: white;
-  height: 100%;
+  color: var(--fontColor);
   font-size: 2rem;
   width: 13vw;
   align-items: center;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding-top: 5vh;
+  padding-top: 10vh;
   border-left: 2px solid var(--silverColor) ;
   border-right: var(--silverColor) 2px solid;
 }
@@ -83,11 +85,19 @@
 .navBar li {
 
   list-style: none;
-  margin-top: 4vh;
+  margin-top: 5vh;
   text-align: center;
   border-bottom: var(--orangeColor) 4px solid;
   width: 100%;
   
+}
+
+.navBar #logo-img{
+  height: 115px;
+  width: 115px;
+  border: 2px solid green;
+  margin-left: 2.9vw;
+  margin-bottom: 10vh;
 }
 
 .navBar li button {
@@ -95,7 +105,7 @@
   width: 100%;
   background-color: var(--orangeColor);
   text-align: center;
-  color: white;
+  color: var(--fontColor);
   font-size: 60%;
   border: 0;
   border-radius: 50px;
@@ -110,7 +120,12 @@
   cursor: pointer;
   transform: scaleX(95%);
   transition: all ease-in-out 0.1s;
+  
 
+}
+
+.navBar li button:hover {
+  background-color: var(--purpleColor);
 }
 
 
@@ -118,16 +133,21 @@
 .painel {
   
   width: 55vw;
+  height: auto;
   display: flex;
   flex-direction: column;
-
+  border-right: var(--silverColor) 2px solid;
 }
+
+/* Parte da aba de busca  */
 
 .painel .search{
   height: 12vh;
-  display: grid;
+  display: flex;
   margin-top: 7vh;
-  place-items: center;
+  justify-content: center;
+  padding-top: 3vh;
+  border-bottom: 1px solid var(--silverColor);
 }
 
 .painel .search input{
@@ -137,13 +157,39 @@
   text-align: center;
   background: none;
   border: 0;
-  border-bottom: var(--silverColor) 3px solid;
+  border-bottom: var(--orangeColor) 3px solid;
   font-size: 100%;
-  color: white;
+  color: var(--fontColor);
   outline: 0;
   resize: none;
 }
 
+.painel .search input:hover, img:hover {
+  border-bottom: var(--purpleColor) 3px solid;
+  
+}
+
+
+
+.painel .search img{
+  height: 25px;
+  width: 25px;
+  margin-right: 1vw;
+  filter: var(--inverterPng);
+}
+
+.painel .search img:hover{
+  
+  transform: none;
+  border: 0;
+}
+
+/* Fim da aba de busca*/
+
+
+
+
+/* Input do usuário */
 .painel .user{
 
   display: flex;
@@ -151,6 +197,8 @@
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  
+
 }
 
 .painel .user input{
@@ -161,17 +209,29 @@
   background-color: transparent;
   border: 0;
   border-bottom: var(--orangeColor) 3px solid;
-  color: white;
+  color: var(--fontColor);
   outline: 0;
 
 }
 
+.painel .user input:hover{
+  border-bottom: 3px solid var(--purpleColor);
+}
+
+
 .painel .user img{
   height: 40px;
   width: 40px;
-  filter: invert(43%) sepia(69%) saturate(479%) hue-rotate(1deg) brightness(106%) contrast(97%);
-  margin-top: 4vh;
+  filter: var(--inverterPng);
+  margin-top: 2vh;
   cursor: pointer;
+}
+
+.painel .user img:hover{
+
+  border: 0;
+  transform: none;
+  filter: var(--inverterPng-hover);
 }
 
 
@@ -181,19 +241,361 @@
   width: 13%;
   background-color: var(--orangeColor);
   text-align: center;
-  color: white;
+  color: var(--fontColor);
   font-size: 80%;
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
   border: 0;
-  margin-top: 2vh;
 
 }
 
+.painel .user button:hover {
+
+  transform: scaleX(95%);
+  transition: all ease-in-out 0.1s;
+  background-color: var(--purpleColor);
+}
+
+/* Começo da parte dos usuários */
+
+.painel .usuarios {
+  border-top: 1px solid var(--silverColor);
+  height: max-content;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding-top: 5vh;
+  color: white;
+}
+
+/* Configurações gerais dos posts / nome-post-feedback / */
+
+.post {
+  margin-top: 3vh;
+  border: 2px solid var(--silverColor);
+  width: 40vw;
+  height: 60vh;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Parte do nome e nacionalidade */
+.usuarios .info-bar {
+  border-bottom: 2px solid var(--orangeColor);
+  height: 17%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 2vh;
+}
+
+/* Colocando os usuario com fot e nacionaliade */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info-bar .user-foto{
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #Pedro{
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #Wilson {
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #Vicenzo {
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #Hillary {
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #Indian {
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-7.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #Gabrielly {
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-6.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-bar #fat {
+  margin-top: 3px;
+  height: 70%;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 3vw;
+  border: 2px solid var(--yellowColor);
+
+  /* Imagem  do user */ 
+  background: url(../Imagens/Users/user-8.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info-bar .name-user{
+  font-size: 25px;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.info-bar .add-user {
+  filter: var(--inverterPng);
+  height: 20px;
+  width: 20px;
+  margin-left: 5%;
+  margin-top: 4.2%;
+}
+
+.info-bar .add-user:hover {
+  border-bottom: none;
+  cursor: pointer;
+  transform: scaleX(95%);
+  filter: var(--inverterPng-hover);
+}
+
+.info-bar img{
+  height: 25px;
+  width: 25px;
+  margin-top: 4%;
+  margin-left: 2%;
+}
+
+.info-bar .post-time {
+  font-size: 80%;
+  color: rgb(179, 179, 179);
+  margin-left: 25%;
+  margin-top: 4%;
+}
+
+/* Fim da parte do nome e nacionalidade */
+
+/* Começo do post com imagem */
+
+.usuarios .content{
+  height: 60%;
+  width: 60%;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  border: 1px solid var(--silverColor);
+  border-radius: 3px;
+}
+
+.usuarios .post-msg{
+  align-items: center;
+  margin-left: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Iamgens de Post */
+
+.usuarios .post-img{
+  height: 80%;
+  margin-top: 2%;
+  background: url(../Imagens/posts-imagens/codding-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.usuarios  #WilsonFt 
+{
+  height: 80%;
+  margin-top: 2%;
+  background: url(../Imagens/posts-imagens/Willa-posrt.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.usuarios .feedback{
+ 
+  display: flex;
+  justify-content: space-around;
+  margin-top: 6%;
+  height: 7%;
+}
+
+
+.usuarios .feedback button{
+  background: none;
+  border: 0;
+}
+
+
+.usuarios  .feedback img{
+  height: 23px;
+  filter: var(--inverterPng);
+}
+
+.feedback img:hover {
+  border: 0;
+  transform: none;
+  filter: var(--inverterPng-hover);
+  transition: all ease-in-out 0.2;
+  cursor: pointer;
+}
+
+
 .timer{
 
-  border: 2px dashed #07a06d;
+  border-right: var(--silverColor) 2px solid;
   width:15vw;
-  color: white;
+  color: var(--fontColor);
 }
