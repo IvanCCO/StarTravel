@@ -10,7 +10,7 @@
     --blueColor: #406281;
     --yellowColor: #B8831C;
     --purpleColor: #72027C;
-    --silverColor: #828282;
+    --silverColor: #82828267;
     --orangeColor: #BF620B;
     --greenColor: #1B521D;
 }
@@ -40,21 +40,159 @@
     font-family: monospace;
     font-size: 1.3125rem;
     line-height: 1.6;
-    height: 100vh auto;
+    height: 100vh;
     background-color: var(--backColor);
 }
 
 #wellcome{
     opacity: 1;
     color: white;
-}
-
-.main{
-
     display: grid;
-    flex-direction: column;
     height: 100vh;
     width: auto;
     place-items: center;
 }
 
+
+#home{
+
+  display: flex;
+  height: 100%;
+  width: 80vw;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.navBar{
+  color: white;
+  height: 100%;
+  font-size: 2rem;
+  width: 13vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding-top: 5vh;
+  border-left: 2px solid var(--silverColor) ;
+  border-right: var(--silverColor) 2px solid;
+}
+
+.navBar li {
+
+  list-style: none;
+  margin-top: 4vh;
+  text-align: center;
+  border-bottom: var(--orangeColor) 4px solid;
+  width: 100%;
+  
+}
+
+.navBar li button {
+  height: 5vh;
+  width: 100%;
+  background-color: var(--orangeColor);
+  text-align: center;
+  color: white;
+  font-size: 60%;
+  border: 0;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  padding-right: 2.5vw;
+  padding-left: 2.5vw;
+}
+
+.navBar li:hover{
+  border-bottom: var(--purpleColor) 4px solid;
+  cursor: pointer;
+  transform: scaleX(95%);
+  transition: all ease-in-out 0.1s;
+
+}
+
+
+/* Painel do Usuário */
+.painel {
+  
+  width: 55vw;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.painel .search{
+  height: 12vh;
+  display: grid;
+  margin-top: 7vh;
+  place-items: center;
+}
+
+.painel .search input{
+
+  height: 35%;
+  width: 25%;
+  text-align: center;
+  background: none;
+  border: 0;
+  border-bottom: var(--silverColor) 3px solid;
+  font-size: 100%;
+  color: white;
+  outline: 0;
+  resize: none;
+}
+
+.painel .user{
+
+  display: flex;
+  height: 17vh;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.painel .user input{
+  height: 30%;
+  text-align: center;
+  width: 50%;
+  font-size: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: var(--orangeColor) 3px solid;
+  color: white;
+  outline: 0;
+
+}
+
+.painel .user img{
+  height: 40px;
+  width: 40px;
+  filter: invert(43%) sepia(69%) saturate(479%) hue-rotate(1deg) brightness(106%) contrast(97%);
+  margin-top: 4vh;
+  cursor: pointer;
+}
+
+
+
+.painel .user button{
+  height: 4vh;
+  width: 13%;
+  background-color: var(--orangeColor);
+  text-align: center;
+  color: white;
+  font-size: 80%;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  margin-top: 2vh;
+
+}
+
+.timer{
+
+  border: 2px dashed #07a06d;
+  width:15vw;
+  color: white;
+}

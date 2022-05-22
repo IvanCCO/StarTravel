@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../public/css/home.css">
 </head>
 <body>
-    <div class="main">
 
         <!-- Inicio da página -->
         <div id="wellcome">
@@ -19,7 +18,40 @@
         
         <!-- Inicio da home -->
         <div id="home" style="display: none;">
-            <img src="../Imagens/franca.jpg" alt="">
+
+            <!--Inicio da Nav Bar-->
+            <div class="navBar">
+                <ul>
+                    <li style="border: 2px solid orange; height: 150px; width: 150px"><img src="logo" alt=""></li>
+                    <li>Home</li>
+                    <li>Places</li>
+                    <li>Chat</li>
+                    <li>Settings</li>
+                    <li style="border: 0;"><button>Compartilhar</button></li>
+                </ul>
+            </div>
+
+            <!--Painel do usuario-->
+            <div class="painel">
+                <div class="search">
+                    <input type="text" id="inp_search" placeholder="Search">
+                </div>
+                <div class="user">
+
+                    <div id="itens">
+                        <img src="Imagens/image.png" alt="img">
+                    </div>
+                    <input type="text" id="inp_text" placeholder="Tell us about yourself"> 
+                    <button>Enviar</button>
+                </div>
+
+                <div class="usuarios"></div>
+            </div>
+
+            <div class="timer">
+                <h1>Timer</h1>
+                <h2>12:00:12</h2>
+            </div>
         </div>
         
 </body>
@@ -40,7 +72,7 @@
   setTimeout(() => {
       
       wellcome.style.display = 'none';
-      home.style.display = 'block';
+      home.style.display = 'flex';
 
   }, 3000)
     
