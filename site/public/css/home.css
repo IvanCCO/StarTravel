@@ -45,6 +45,7 @@
 }
 
 #wellcome{
+   
     opacity: 1;
     color: white;
 }
@@ -52,9 +53,22 @@
 .main{
 
     display: grid;
-    flex-direction: column;
     height: 100vh;
     width: auto;
     place-items: center;
+}
+
+
+nav, nav li{
+
+  border: 2px dashed green;
+}
+
+#home{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
 }
 
