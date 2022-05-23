@@ -535,8 +535,26 @@
   background-size: cover;
 }
 
+/* Arrumando status mdos feedbacks */
+.like {
+  place-items: center;
+  display: grid;
+}
 
 
+.comment {
+  place-items: center;
+  display: grid;
+}
+
+.share {
+  place-items: center;
+  display: grid;
+}
+
+.feedback p {
+  font-size: 80%;
+}
 
 
 
