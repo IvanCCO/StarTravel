@@ -71,15 +71,19 @@
 
 .navBar{
   color: var(--fontColor);
-  font-size: 2rem;
+  font-size: 1.3rem;
   width: 13vw;
   align-items: center;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   padding-top: 10vh;
-  border-left: 2px solid var(--silverColor) ;
-  border-right: var(--silverColor) 2px solid;
+  border-left: 1px solid var(--silverColor);
+  border-bottom: 1px solid var(--silverColor);
+  position: fixed;
+  padding-bottom: 2vh;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .navBar li {
@@ -136,6 +140,8 @@
   display: flex;
   flex-direction: column;
   border-right: var(--silverColor) 2px solid;
+  margin-left: 25vh;
+  border-left: 1px solid var(--silverColor);
 }
 
 /* Parte da aba de busca  */
@@ -147,6 +153,7 @@
   justify-content: center;
   padding-top: 3vh;
   border-bottom: 1px solid var(--silverColor);
+  
 }
 
 .painel .search input{
@@ -597,4 +604,6 @@
   border-right: var(--silverColor) 2px solid;
   width:15vw;
   color: var(--fontColor);
+  position: fixed;
+  left: 80%;
 }
