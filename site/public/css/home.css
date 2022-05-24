@@ -541,6 +541,16 @@
   background-size: cover;
 }
 
+.usuarios #PedroFt {
+  height: 80%;
+  margin-top: 2%;
+  background: url(../Imagens/posts-imagens/estadio.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
 /* Arrumando status mdos feedbacks */
 .like {
   place-items: center;
@@ -592,7 +602,7 @@
  
   display: flex;
   justify-content: space-around;
-  margin-top: 6%;
+  margin-top: 2%;
   height: 7%;
 }
 
@@ -604,7 +614,7 @@
 
 
 .usuarios  .feedback img{
-  height: 23px;
+  height: 18px;
   filter: var(--inverterPng);
 }
 

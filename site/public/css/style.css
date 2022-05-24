@@ -191,7 +191,7 @@ body{
     
     
     #holanda{
-        background: url(../Imagens/holanda.jpg), rgba(0, 0, 0, 0.749);
+        background: url(../Imagens/Paises/holanda.jpg), rgba(0, 0, 0, 0.749);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -203,7 +203,7 @@ body{
 
 #franca {
     
-    background: url(../Imagens/franca.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/franca.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -214,7 +214,7 @@ body{
 
 #cuba {
 
-    background: url(../Imagens/cuba.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/cuba.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -226,7 +226,7 @@ body{
 
 #brazil {
     
-    background: url(../Imagens/braza.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/braza.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -237,7 +237,7 @@ body{
 
 #italia {
     
-    background: url(../Imagens/italy.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/italy.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -248,7 +248,7 @@ body{
 
 #london {
     
-    background: url(../Imagens/londres.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/londres.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -259,7 +259,7 @@ body{
 
 #novaYork{
     
-    background: url(../Imagens/novayork.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/novayork.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -270,7 +270,7 @@ body{
 
 #spain{
 
-    background: url(../Imagens/spain.jpg), rgba(0, 0, 0, 0.749);
+    background: url(../Imagens/Paises/spain.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -278,6 +278,65 @@ body{
     
     
 }
+
+#suica {
+    background: url(../Imagens/Paises/suica.webp), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#nigeria{
+    background: url(../Imagens/Paises/nigeria.webp), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#africa-sul {
+    background: url(../Imagens/Paises/Africa-Sul.webp), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#novaZ {
+    background: url(../Imagens/Paises/novaZ.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#turquia{
+    background: url(../Imagens/Paises/turquia.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#israel{
+
+    background: url(../Imagens/Paises/Israel.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#jamaica {
+    background: url(../Imagens/Paises/Jamaica.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+
 
 #btn{
     
