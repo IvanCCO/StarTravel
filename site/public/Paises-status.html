@@ -18,67 +18,29 @@
             <div class="paises" id="franca" onclick="ale(this)">France</div>
             <div class="paises" id="cuba" onclick="ale(this)">Cuba</div>
             <div class="paises" id="brazil" onclick="ale(this)">Brazil</div>
+            <div class="paises" id="suica" onclick="ale(this)">Suiça</div>
+            <div class="paises" id="nigeria" onclick="ale(this)">Nigéria</div>
+            <div class="paises" id="africa-sul" onclick="ale(this)">África do sul</div>
+
         </div>
         <div class="fileira2">
             <div class="paises" id="italia" onclick="ale(this)">Italy</div>
             <div class="paises" id="london" onclick="ale(this)">London</div>
             <div class="paises" id="novaYork" onclick="ale(this)">New York</div>
             <div class="paises" id="spain" onclick="ale(this)">Spain</div>
+            <div class="paises" id="novaZ" onclick="ale(this)">Nova Zelândia</div>
+            <div class="paises" id="turquia" onclick="ale(this)">Turquia</div>
+            <div class="paises" id="israel" onclick="ale(this)">Israel</div>
+            <div class="paises" id="jamaica" onclick="ale(this)">Jamaica</div>
+
+
         </div>
     </div>
 
     <div id="btn">
         <b style="color: red;" id="msg_erro"></b>
-        <a id="link"><button onclick="sel()">Go</button></a>
+        <a id="link"><button onclick="sel()">Visão Geral</button></a>
         <br>
     </div>
 </body>
 </html>
-
-<script>
-
-    var vetorPaises = [];
-
-    
-
-    function ale(elemento){
-
-        if(elemento.className.indexOf('paisesSelecionados') > 0){
-
-            elemento.className = 'paises';
-
-            for(i = 0; i < vetorPaises.length; i++){
-
-                if(vetorPaises[i] == elemento.textContent){
-
-                    vetorPaises.splice(i, 1);   
-                    console.log('Removendo:' + elemento.textContent)
-                }
-            }
-        }else{
-
-            elemento.className += " paisesSelecionados";
-
-            vetorPaises.push(elemento.textContent);
-            console.log("Adicionando: " + elemento.textContent);
-        }
-    }
-
-    function sel(){
-
-        if(vetorPaises.length == 0){
-
-            msg_erro.innerHTML = '<br>Choose 1 country at least';
-
-        }else if(vetorPaises.length > 3){
-
-            msg_erro.innerHTML = 'Maximum of 3 countries';
-
-        }else {
-
-            link.href = 'home.html'
-        }
-
-    }
-    
-</script>
