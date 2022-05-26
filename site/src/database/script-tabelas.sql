@@ -13,7 +13,7 @@ CREATE TABLE Usuario (
 	nome VARCHAR (45) NOT NULL, 
 	email VARCHAR (45) NOT NULL,
 	senha VARCHAR (25) NOT NULL,
-	username VARCHAR(20) NOT NULL,
+	username VARCHAR(20) NOT NULL
 
 )AUTO_INCREMENT = 022200;
 
@@ -31,7 +31,7 @@ CREATE TABLE GrupoPaises (
 	fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUser),
 	fkPais INT,
-	FOREIGN KEY (fkPaises) REFERENCES Pais (idPais),
+	FOREIGN KEY (fkPais) REFERENCES Pais (idPais),
 	qntdUsuario INT NOT NULL,
 	PRIMARY KEY (fkUsuario, fkPais),
 	salario DECIMAL (8,2) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE Post (
 	qntdLikes INT,
 	qntdComments INT,
 	qntdShare INT,
-	FOREIGN KEY (fk_usuario) REFERENCES Usuario (idUser)
+	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUser)
 
 );
 

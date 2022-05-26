@@ -80,20 +80,9 @@
 
         
         }else{
-            
-            link_cad.href = 'paises.html';
-        }
-        
-        setTimeout(() => {
-
-                erro.innerHTML = '';
-            }, 8000)
-    
-
-
-     // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -108,25 +97,32 @@
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
-
+            
             if (resposta.ok) {
-
-                erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                
+                erro.innerHTML = "You are in";
 
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
                 
                 limparFormulario();
-                finalizarAguardar();
+
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
+                erro.innerHTML = `Houve um erro no cadastro`;
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
-
+        setTimeout(() => {
+    
+                erro.innerHTML = '';
+            }, 8000)
+        
         return false;
+
+        
     }
-</script>
+}
+    </script>

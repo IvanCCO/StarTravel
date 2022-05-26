@@ -22,7 +22,7 @@
             <h4 class="item-login">Wellcome back!</h4>
             <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()">
             <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
-            <a href="home.html"><button  class='item-login' onclick="login()">Login</button></a>
+            <a id="entrar"><button  class='item-login' onclick="login()">Login</button></a>
                 <span id="erro"></span>
             <p class='item-login' >Begin your adventure? <a href="cadastro.html">Click here</a></p>
         </div>
@@ -52,7 +52,7 @@
     // Validaçao abas de Login. 
     function key(){
         if(event.key === 'Enter'){
-            return cad()
+            return login()
             
         }
     }
@@ -66,7 +66,7 @@
 
             erro.innerHTML = 'Todos os campos devem ser preenchidos';
 
-        }
+        }else{
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -83,22 +83,29 @@
             if (resposta.ok) {
                 console.log(resposta);
 
+                setTimeout(() => {
+                    window.location = "home.html";
+                }, "2000")
+                
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-
+                    
                     sessionStorage.USERNAME_USUARIO = json.username;
                     sessionStorage.ID_USUARIO = json.id;
-
+                    
+                    
+                    
                 });
-
+                
+                entrar.href = 'home.html'
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    erro.innerHTML = `Houve um erro ao tentar realizar o login!`;
                 });
             }
 
@@ -107,5 +114,6 @@
         })
 
         return false;
-    }
+            }
+     }
 </script>
