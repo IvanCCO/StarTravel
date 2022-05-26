@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href='../public/style.css'>
 </head>
 <body>
     <div class="main">
@@ -49,7 +49,6 @@
     
 
     // Validaçao abas de Login. 
-    var userVar = '';
     function key(){
         if(event.key === 'Enter'){
             return cad()
@@ -59,7 +58,7 @@
 
     function login(){
 
-        userVar += inp_user.value;
+        var userVar = inp_user.value;
         var senhaVar = inp_senha.value;
 
         if(userVar == '' || senhaVar == ''){
@@ -67,5 +66,45 @@
             erro.innerHTML = 'Todos os campos devem ser preenchidos';
 
         }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userServer: userVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.USERNAME_USUARIO = json.username;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
 </script>

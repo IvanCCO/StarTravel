@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'Fonte';
+    src: url('../Font/CONSOLA.TTF') format(trueType);
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --backColor: #000000;
+    --blueColor: #406281;
+    --yellowColor: #B8831C;
+    --purpleColor: #72027C;
+    --silverColor: #828282;
+    --orangeColor: #BF620B;
+    --greenColor: #1B521D;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Personalizando o scrool */
+::-webkit-scrollbar {
+    width: 0.3vw;
+  }
+  ::-webkit-scrollbar-track {
+    scrollbar-color: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #72027C; 
+    border-radius: 10px;
+  }
+
+body{
+    font-family: monospace;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    height: 100vh auto;
+    background-color: var(--backColor);
+}
+
+.main{
+
+    display: grid;
+    flex-direction: column;
+    height: 100vh;
+    width: auto;
+    place-items: center;
+}
+
+
+#helloWorld{
+    opacity: 1;
+    color: white;
+}
+
+
+
+#div_login {
+    display: none;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    color: white;
+    height: max-content;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    
+}
+
+.login .item-login{
+    margin: 3%;
+}
+
+.login h4{
+    font-size: 40px;
+}
+
+.login input{
+    width: 30em;
+    height: 2em;
+    background: none;
+    border: 0;
+    border-bottom: 3px solid var(--blueColor);
+    text-align: center;
+    outline:0;
+    color: #828282; 
+    font-size: 1em;
+}
+
+
+.login button{
+    height: max-content;
+    width: 5em;
+    background: none;
+    border: 3px solid #406281;
+    padding: 10px;
+    text-align: center;
+    box-sizing: content-box;
+    border-radius: 8px;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+ 
+}
+
+
+
+.login button:hover{
+    background-color: #406281;
+    transition: background-color ease-in-out 0.3s;
+}
+
+.login p{
+    font-size: 15px;
+}
+
+.login a{
+    text-decoration: none;
+    color: #406281;
+}
+
+
+/* Fazendo a parte da selecao dos paises */
+
+#titulo{
+    
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 2em;
+}
+
+.main-paises {
+
+    display: flex;
+    width: auto;
+    height: auto;
+    color: white;
+    justify-content: space-around;
+}
+
+
+.fileira1, .fileira2 {
+
+    height: 40em;
+    width: 20em;
+  /*  border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.paises {
+     /*   border: 2px solid red; */
+        height: 20vh;
+        color: rgba(201, 201, 201, 0.747);
+        font-weight: bold;
+        border: 0;
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+        background-blend-mode: multiply;
+        cursor: pointer;
+        margin: 5px;
+    }
+    
+    .paises:hover{
+        border: white 2px solid;
+        color: white;
+    }
+
+    .paisesSelecionados{
+
+        border: white 3px solid;
+        color: white;
+
+    }
+
+
+
+    
+    
+    #holanda{
+        background: url(../public/Imagens/Paises/holanda.jpg), rgba(0, 0, 0, 0.749);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        backdrop-filter: blur(8px); 
+
+}
+
+
+
+#franca {
+    
+    background: url(../public/Imagens/Paises/franca.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+   
+}
+
+#cuba {
+
+    background: url(../public/Imagens/Paises/cuba.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+    
+}
+
+#brazil {
+    
+    background: url(../public/Imagens/Paises/braza.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#italia {
+    
+    background: url(../public/Imagens/Paises/italy.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#london {
+    
+    background: url(../public/Imagens/Paises/londres.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#novaYork{
+    
+    background: url(../public/Imagens/Paises/novayork.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#spain{
+
+    background: url(../public/Imagens/Paises/spain.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+    
+    
+}
+
+#suica {
+    background: url(../public/Imagens/Paises/suica.webp), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#nigeria{
+    background: url(../public/Imagens/Paises/nigeria.webp), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#africa-sul {
+    background: url(../public/Imagens/Paises/Africa-Sul.webp), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#novaZ {
+    background: url(../public/Imagens/Paises/passagens-aereas-nova-zelandia-capa2019-02-820x430.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#turquia{
+    background: url(../public/Imagens/Paises/turquia.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#israel{
+
+    background: url(../public/Imagens/Paises/Israel.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+#jamaica {
+    background: url(../public/Imagens/Paises/Jamaica.jpg), rgba(0, 0, 0, 0.749);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(8px); 
+}
+
+
+
+#btn{
+    
+    display: grid;
+    place-items: center;
+    align-items: center;
+}
+
+#btn button{
+    height: 3em;
+    width: 5em;
+    
+    box-sizing: content-box;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#btn button:hover{
+   background-color: white;
+   color: black;
+   transition: all ease-in-out 0.3s;
+
+}
+
+
+
+
+
