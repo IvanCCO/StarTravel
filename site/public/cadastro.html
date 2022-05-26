@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main">
@@ -14,13 +14,13 @@
             <h4 class="item-login">Start your journey!</h4>
             
             <input class='item-login' type="text" placeholder="Nome" id="inp_nome" onkeypress="key()">
-            <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()">
             <input class='item-login' type="text" placeholder="E-mail" id="inp_email" onkeypress="key()">                
+            <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()">
             <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
             <input class='item-login' type="password" id="inp_senhaConf" placeholder="Senha" onkeypress="key()">
 
             <span id="erro"></span>
-           <a id="link_cad"> <button  class='item-login' onclick="cad()">Sign up</button></a> 
+           <a id="link_cad"> <button  class='item-login' onclick="cadastrar()">Sign up</button></a> 
 
             <p class='item-login' >Já faz parte? <a href="login.html">Click here</a></p>
         </div>
@@ -47,12 +47,12 @@
         
         // Validando campos vazios 
         var nomeVar = inp_nome.value;
-        var userVar = inp_user.value;
+        var usernameVar = inp_user.value;
         var emailVar = inp_email.value;
         var senhaVar = inp_senha.value;
         var senhaConfVar = inp_senhaConf.value;
 
-        if(nomeVar == '' || userVar == '' || emailVar == '' || senhaVar == '' || senhaConfVar == ''){
+        if(nomeVar == '' || usernameVar == '' || emailVar == '' || senhaVar == '' || senhaConfVar == ''){
             
             erro.innerHTML = 'Todos os campos devem ser preenchidos';
                         
@@ -74,7 +74,7 @@
 
             erro.innerHTML = 'Nome não pode conter númericos'
 
-        }else if (userVar.indexOf(' ') != -1 ){
+        }else if (usernameVar.indexOf(' ') != -1 ){
 
             erro.innerHTML = "Username canno't have space"
 
@@ -102,16 +102,16 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                usernameServer: usernameVar
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
                     window.location = "login.html";
@@ -129,9 +129,4 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>

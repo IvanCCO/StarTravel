@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href='../public/style.css'>
+    <link rel="stylesheet" href='style.css'>
+    <link rel="shortcut icon" href="../public/Imagens/Logos/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="main">
@@ -58,10 +59,10 @@
 
     function login(){
 
-        var userVar = inp_user.value;
+        var usernameVar = inp_user.value;
         var senhaVar = inp_senha.value;
 
-        if(userVar == '' || senhaVar == ''){
+        if(usernameVar == '' || senhaVar == ''){
 
             erro.innerHTML = 'Todos os campos devem ser preenchidos';
 
@@ -73,7 +74,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                userServer: userVar,
+                usernameServer: usernameVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
