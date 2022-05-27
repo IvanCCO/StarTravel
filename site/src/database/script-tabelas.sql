@@ -65,7 +65,7 @@ CREATE TABLE Post (
 
 
 /* para sql server - remoto - produção */
-CREATE TABLE usuario (
+/*CREATE TABLE usuario (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
 	email VARCHAR(50),
@@ -87,7 +87,7 @@ create table aquario (
 
 /* altere esta tabela de acordo com o que está em INSERT de sua API do arduino */
 
-CREATE TABLE medida (
+ CREATE TABLE medida (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	dht11_umidade DECIMAL,
 	dht11_temperatura DECIMAL,
@@ -97,3 +97,7 @@ CREATE TABLE medida (
 	momento DATETIME,
 	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
 );
+
+*/
+
+

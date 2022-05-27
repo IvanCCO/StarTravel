@@ -85,13 +85,21 @@
   border-bottom-left-radius: 20px;
 }
 
+.navBar #username{
+  display: flex;
+  place-items: center;
+  font-size: 80%;
+  flex-direction: row;
+  margin-top: 5vh;
+}
+
 .navBar #username img{
-  height: 50px;
-  width: 50px;
-  margin-right: 2vw;
+  height: 5vh;
+  width: 5vh;
   border-radius:50px;
   filter: var(--inverterPng);
   cursor: pointer;
+  margin-right: 2vh;
 }
 
 .navBar #username img:hover{
@@ -338,7 +346,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-1.png);
+  background: url(./Imagens/Users/user-1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -353,7 +361,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-2.jpg);
+  background: url(./Imagens/Users/user-2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -368,7 +376,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-3.jpg);
+  background: url(./Imagens/Users/user-3.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -383,7 +391,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-4.jpg);
+  background: url(./Imagens/Users/user-4.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -398,7 +406,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-5.jpg);
+  background: url(./Imagens/Users/user-5.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -413,7 +421,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-7.jpg);
+  background: url(./Imagens/Users/user-7.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -428,7 +436,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-6.jpg);
+  background: url(./Imagens/Users/user-6.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -443,7 +451,7 @@
   border: 2px solid var(--yellowColor);
 
   /* Imagem  do user */ 
-  background: url(../public/Imagens/Users/user-8.jpg);
+  background: url(./Imagens/Users/user-8.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -540,7 +548,7 @@
 .usuarios .post-img{
   height: 80%;
   margin-top: 2%;
-  background: url(../public/Imagens/posts-imagens/codding-image.jpg);
+  background: url(./Imagens/posts-imagens/codding-image.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -551,7 +559,7 @@
 {
   height: 80%;
   margin-top: 2%;
-  background: url(../public/Imagens/posts-imagens/Willa-posrt.jpeg);
+  background: url(./Imagens/posts-imagens/Willa-posrt.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -560,7 +568,7 @@
 .usuarios #PedroFt {
   height: 80%;
   margin-top: 2%;
-  background: url(../public/Imagens/posts-imagens/estadio.webp);
+  background: url(./Imagens/posts-imagens/estadio.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -569,7 +577,7 @@
 .usuarios #GabriellyFt {
   height: 80%;
   margin-top: 2%;
-  background: url(../public/Imagens/posts-imagens/hostel.jpg);
+  background: url(./Imagens/posts-imagens/hostel.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -654,7 +662,7 @@
 
 .timer{
 
-  width:15vw;
+  width:20vw;
   color: var(--fontColor);
   position: fixed;
   left: 80%;
@@ -684,7 +692,7 @@
 }
 
 .timer .paises li{
-  color: white;
+  color: var(--fontColor);
   font-size: 80%;
   border: var(--silverColor) 1px solid;
   width: 12vw;
@@ -695,4 +703,134 @@
   justify-content: space-between;
   border-radius: 5px;
   margin-top: 1%;
+}
+
+
+.settings-panel {
+  border: dashed 4px green;
+  height: 100vh;
+  width: 60%;
+  position: fixed;
+  left: 23%;
+}
+
+
+.tituloSettings{
+  
+  color: var(--fontColor);
+  display: flex;
+  justify-content: center;
+  margin-top: 7vh;
+  height: auto;
+  font-size: 30px;
+  font-weight: bold;
+  flex-direction: row;
+}
+
+.inputs{
+  border: 2px dashed red;
+  color: var(--fontColor);
+  width: 50%;
+  font-size: 17px;
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+  font-weight: 600;
+  padding-top: 3vh;
+}
+
+.inputs::before{
+  content: 'Account';
+  color: var(--fontColor);
+  font-size: 30px;
+  margin-bottom: 5vh;
+  font-weight: bold;
+  border-bottom: 2px solid var(--orangeColor);
+}
+
+.inp_change{
+  margin-bottom: 10%;
+  margin-top: 1%;
+  height: 4vh;
+  background: none;
+  border: var(--yellowColor) 1px solid;
+  border-radius: 3px;
+  color: var(--fontColor);
+  font-size: 15px;
+  width: 55%;
+  outline: none;
+}
+
+.inp_change:hover{
+  border: var(--purpleColor) 1px solid;
+  
+}
+
+.btn{
+  
+  display: grid;
+  place-items: center;
+  height: auto;
+}
+
+.btn button{
+  height: 4vh;
+  width: 10%;
+  background-color: var(--orangeColor);
+  text-align: center;
+  color: var(--fontColor);
+  font-size: 70%;
+  border: 0;
+  border-radius: 4%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn button:hover{
+  background-color: var(--purpleColor);
+  transition: all ease-in-out 0.2s;
+}
+
+.organizar {
+  display: flex;
+  flex-direction: row;
+  border: dashed purple 4px;
+}
+
+.countries {
+  border: 2px dashed red;
+  color: var(--fontColor);
+  width: 50%;
+  font-size: 17px;
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+  font-weight: 600;
+  padding-top: 3vh;
+}
+
+.countries::before{
+  content: 'Countries';
+  color: var(--fontColor);
+  font-size: 30px;
+  margin-bottom: 5vh;
+  font-weight: bold;
+  border-bottom: 2px solid var(--orangeColor);
+}
+
+.countries button{
+  height: 4vh;
+  width: 10%;
+  background-color: var(--orangeColor);
+  text-align: center;
+  color: var(--fontColor);
+  font-size: 70%;
+  border: 0;
+  border-radius: 4%;
+  font-weight: bold;
+  cursor: pointer;
 }

@@ -31,6 +31,15 @@ function cadastrar(nome, email, senha, username) {
     return database.executar(instrucao);
 }
 
+
+// Essa função está sendo executada na Settings para trocar o usuario, senha e etc.
+function updateconfig(username){
+
+    var instrucao = `
+    UPDATE Usuario set username = '${changeUserVar}' WHERE idUser = ${idVar};  
+    `
+}
+
 module.exports = {
     entrar,
     cadastrar,
