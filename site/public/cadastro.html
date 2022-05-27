@@ -23,6 +23,7 @@
            <a id="link_cad"> <button  class='item-login' onclick="cadastrar()">Sign up</button></a> 
 
             <p class='item-login' >Já faz parte? <a href="login.html">Click here</a></p>
+            <div id="barra_loading" style="width: 0; background-color:#72027C; height:3px; display:block;"></div>
         </div>
 
 
@@ -34,7 +35,8 @@
 </html>
 <script>
 
-    
+    var barra = 100;
+
     function key(){
         if(event.key === 'Enter'){
             return cadastrar()
@@ -99,12 +101,16 @@
             console.log("resposta: ", resposta);
             
             if (resposta.ok) {
+
                 
-                erro.innerHTML = "You are in";
+                barra_loading.style.display = 'block';
+                barra_loading.style.width = barra + '%';
+                barra_loading.style.transition = 'width ease-in-out 2.5s'
+
 
                 setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+                    window.location = "paises.html";
+                }, "3000")
                 
                 limparFormulario();
 
@@ -118,7 +124,7 @@
         setTimeout(() => {
     
                 erro.innerHTML = '';
-            }, 8000)
+            }, 6000)
         
         return false;
 

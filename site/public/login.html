@@ -23,15 +23,19 @@
             <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()">
             <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
             <a id="entrar"><button  class='item-login' onclick="login()">Login</button></a>
-                <span id="erro"></span>
+            <span id="erro"></span>
             <p class='item-login' >Begin your adventure? <a href="cadastro.html">Click here</a></p>
+            <br>
+            <div id="barra_loading" style="width: 0; background-color:#72027C; height:3px; display:block;"></div>
         </div>
         </div>
 </body>
 </html>
 <script>
 
-    // Animação do Hello Word;
+    // Animação do Hello Word;\
+
+    var barra = 100;
 
   setTimeout(() => {
 
@@ -83,9 +87,15 @@
             if (resposta.ok) {
                 console.log(resposta);
 
+                barra_loading.style.display = 'block';
+                barra_loading.style.width = barra + '%';
+                barra_loading.style.transition = 'width ease-in-out 2.5s'
+
+
+
                 setTimeout(() => {
                     window.location = "home.html";
-                }, "2000")
+                }, "3000")
                 
                 resposta.json().then(json => {
                     console.log(json);
@@ -97,15 +107,18 @@
                     
                     
                 });
-                
-                entrar.href = 'home.html'
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    erro.innerHTML = `Houve um erro ao tentar realizar o login!`;
+                    erro.innerHTML = `Invalid email/password`;
+
+                    setTimeout(() => {
+
+                        erro.innerHTML = '';
+                    }, 4000)
                 });
             }
 

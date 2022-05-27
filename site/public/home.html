@@ -30,6 +30,11 @@
                     <li>Settings</li>
                     <li style="border: 0;"><button>Compartilhar</button></li>
                 </ul>
+
+                <div id="username" style="margin-top: 7vh; display:flex; flex-direction: row; align-items:center; justify-content:space-around">
+                    <img src="Imagens/Users/user-default.png">
+                    <span id="a_usuario">
+                </div>
             </div>
 
             <!--Painel do usuario-->
@@ -363,8 +368,19 @@
             </div>
 
             <div class="timer">
-                <h1>Timer</h1>
-                <h2>12:00:12</h2>
+                <div class="titulo">
+                    <h1>CODE YEARS METTING &lt;/&gt;</h1> <br> 
+                    <h2 id="cronometro">186:19:45:12</h2>
+                    <div class="paises">
+                        <ul>
+                            <li><p>Holanda</p> <p>4.5</p></li>
+                            <li><p>França</p> <p>4.1</p></li>
+                            <li><p>EUA</p> <p>3.8</p></li>
+                            <li><p>Italia</p> <p>3.4</p></li>
+                            <li><p>Brazil</p> <p>3.1</p></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -394,5 +410,6 @@
     // Functions Home
 
     b_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
+    a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
 
 </script>

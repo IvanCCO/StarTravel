@@ -82,8 +82,23 @@
   border-bottom: 1px solid var(--silverColor);
   position: fixed;
   padding-bottom: 2vh;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+}
+
+.navBar #username img{
+  height: 50px;
+  width: 50px;
+  margin-right: 2vw;
+  border-radius:50px;
+  filter: var(--inverterPng);
+  cursor: pointer;
+}
+
+.navBar #username img:hover{
+
+  transform: none;
+  border: 0;
+  filter: var(--inverterPng-hover);
 }
 
 .navBar li {
@@ -135,12 +150,12 @@
 /* Painel do Usuário */
 .painel {
   
-  width: 55vw;
+  width: 56vw;
   height: auto;
   display: flex;
   flex-direction: column;
   border-right: var(--silverColor) 2px solid;
-  margin-left: 25vh;
+  margin-left: 26vh;
   border-left: 1px solid var(--silverColor);
 }
 
@@ -639,9 +654,45 @@
 
 .timer{
 
-  border-right: var(--silverColor) 2px solid;
   width:15vw;
   color: var(--fontColor);
   position: fixed;
   left: 80%;
+  top: 10%;
+}
+
+.timer .titulo{
+
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+  justify-content: space-between;
+}
+
+.timer #cronometro{
+
+  border-bottom: var(--orangeColor) 2px solid ;
+  color: var(--yellowColor);
+  margin-bottom: 10vh;
+
+}
+
+.timer .paises{
+  margin-bottom: 8%;
+}
+
+.timer .paises li{
+  color: white;
+  font-size: 80%;
+  border: var(--silverColor) 1px solid;
+  width: 12vw;
+  list-style: none;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 1%;
 }
