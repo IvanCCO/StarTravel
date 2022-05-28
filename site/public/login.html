@@ -79,7 +79,8 @@
             },
             body: JSON.stringify({
                 usernameServer: usernameVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                emailServer: emailVar
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
@@ -103,6 +104,7 @@
                     
                     sessionStorage.USERNAME_USUARIO = json.username;
                     sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json.email;
                     
                     
                     
