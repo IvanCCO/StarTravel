@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+
+
+    <div class="navBar" style="margin-left: 10vw;">
+        <ul>
+            <div id="logo-img"></div>
+            <li>Home</li>
+            <li>Places</li>
+            <li>Chat</li>
+            <li>Settings</li>
+            <li style="border: 0;"><button>Compartilhar</button></li>
+        </ul>
+
+        <div id="username">
+            <img src="./Imagens/Users/user-default.png">
+            <span id="a_usuario">
+        </div>
+    </div>
+
+        <div class="settings-panel">
+
+         <div class="tituloSettings">
+            <p>Settings</p>
+         </div>
+         <div class="organizar">
+
+            <div class="inputs">
+
+                <p>Change Username</p>
+                <input type="text" class="inp_change" id="userPlaceholder" placeholder="">
+
+                <p>Change Password</p> 
+                <input type="text" class="inp_change" id="userPassword" placeholder="****">
+
+                <p>Change Email</p> 
+                <input type="text" class="inp_change" id="userEmail" placeholder="">
+
+                
+
+                </div>
+
+                <div class="countries">
+
+                    <p>Select your country</p>
+                    <select class="inp_change">
+                        <option value="Holand">Holand</option>
+                        <option value="France">France</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Italy">Italy</option>
+                        <option value="London">London</option>
+                        <option value="New York">New York</option>
+                    </select>
+
+                    <p>Change Location</p> 
+                    <input type="text" class="inp_change">
+
+                    <p>Disconnect</p>
+                    <button onclick="leave()">Leave</button>
+                </div>
+
+        </div>
+
+            
+                    <div class="btn">
+                        <button onclick="updateConfig()">Save</button>
+                    </div>
+            
+        </div>
+
+</body>
+</html>
+
+<script>
+
+    // Configurando PlaceHolder
+
+    // Pegando as informações que estão no cache para mostrar pro usuario no placeholder
+
+    userPlaceholder.placeholder = sessionStorage.USERNAME_USUARIO;
+    userEmail.placeholder = sessionStorage.EMAIL_USUARIO;
+
+    function leave(){
+
+        // Colocar o display como bey user
+
+        setTimeout(() =>{
+
+            sessionStorage.clear();
+
+            window.location = 'index.html';
+            alert('Bye')
+        }, 300)
+    }
+
+
+</script>

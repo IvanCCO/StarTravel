@@ -21,16 +21,17 @@ var sqlServerConfig = {
 
 // Pc de Casa 
 
-/*var mySqlConfig = {
+var mySqlConfig = {
     host: "localhost",
     database: "StarTravel",
     user: "root",
     password: "Mimoso009#@",
 };
-*/
+
 
 
 //Esse é do notebook
+/*
 var mySqlConfig = {
     host: "localhost",
     database: "StarTravel",
@@ -38,6 +39,7 @@ var mySqlConfig = {
     password: "Mimoso009@",
 };
 
+*/
 
 
 
