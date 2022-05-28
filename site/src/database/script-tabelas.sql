@@ -9,34 +9,32 @@ CREATE DATABASE StarTravel;
 USE StarTravel;
 
 CREATE TABLE Usuario (
-	idUser INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (45) NOT NULL, 
 	email VARCHAR (45) NOT NULL,
 	senha VARCHAR (25) NOT NULL,
-	username VARCHAR(20) NOT NULL
+	username VARCHAR(20) NOT NULL UNIQUE
 
 )AUTO_INCREMENT = 022200;
 
 CREATE TABLE Pais (
 	idPais INT PRIMARY KEY AUTO_INCREMENT,
-	nomePais VARCHAR(30) NOT NULL,
+	nomePais VARCHAR(30) NOT NULL UNIQUE,
 	capital VARCHAR(30) NOT NULL,
 	nota DECIMAL (2,1) NOT NULL,
 	IDH DECIMAL (4,3) NOT NULL, 
-	precoMoeda DECIMAL (3,2) NOT NULL
+	Moeda VARCHAR(20) NOT NULL,
+    salario DECIMAL (8,2) NOT NULL,
+	custoDeVida DECIMAL (7,2) NOT NULL
 
 ) AUTO_INCREMENT = 551100;
 
 CREATE TABLE GrupoPaises (
 	fkUsuario INT,
-	FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUser),
+	FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUsuario),
 	fkPais INT,
 	FOREIGN KEY (fkPais) REFERENCES Pais (idPais),
-	qntdUsuario INT NOT NULL,
-	PRIMARY KEY (fkUsuario, fkPais),
-	salario DECIMAL (8,2) NOT NULL,
-	custoDeVida DECIMAL (7,2) NOT NULL
-
+	PRIMARY KEY (fkUsuario, fkPais)
 );
 
 CREATE TABLE Hostel (
@@ -57,11 +55,46 @@ CREATE TABLE Post (
 	qntdLikes INT,
 	qntdComments INT,
 	qntdShare INT,
-	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUser)
+	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario)
 
 );
 
-	
+
+INSERT INTO Usuario VALUES (null, 'Ivan Freire de Medeiros', 'ivanmedeiros0903@outlook.com',
+'Mimoso009@', 'Lullyfito');
+
+-- Inserindo os dados dos paises
+
+INSERT INTO Pais VALUES (null, 'Holanda', 'Amsterdan', '4.4', '0.967', 'Euro', '2394.00', '1234.00');
+
+INSERT INTO Pais VALUES (null, 'Franca', 'Paris', '4.1', '0.821', 'Euro', '2338.00', '940.00'),
+						(null, 'Italia', 'Roma', '3.3', '0.869', 'Euro', '1943.00', '649.00'),
+                        (null, 'UK', 'London', '4.5', '0.920', 'Libra', '3350.00', '2300.00'),
+                        (null, 'Cuba', "Havana", "3.2", '0.689', "Peso Cubano", '230.00', '80.00'),
+                        (null, 'EUA', 'Washington', '4.1', '0.820', 'Dolar', '2434.00', '2100.00'),
+                        (null, 'Brazil', 'Brasilia', '3.8', '0.743', 'Real', '2830.00', '1100.00'),
+                        (null, 'Nigeria', 'Lagos', '4.1', '0.589', 'Niger', '1239.00', '1120.00'),
+                        (null, 'Spain', 'Madrid', '4.2', '0.831', 'Euro', '1203.00', '820.00');
+                        
+INSERT INTO Pais VALUES (null, 'South Africa', 'South', '3.7', '0.872', 'Dolar', '1679.00', '781.00');
+
+-- Deixando os selects prontos
+SELECT * from Usuario;
+
+-- Inserindo Meus Usuários Ficticios 
+
+INSERT INTO Usuario VALUES (null, 'Lui Bonjevi de la Jean', 'luiBnjv@gmail.com', '123456789', 'Luijean'),
+						   (null, 'Pedro Fernandes Freitter', 'pedroFFreitter@outlook.com', '123456789', 'PedroFern4andes'),
+                           (null, 'Italo Rodrigues', 'italoRodrigues@hotmail.com', '123456789', 'WilsonRodger'),
+                           (null, 'Vicenzo de La Rossi', 'vicenzo1999@yahoo.com', '123456789', 'VicenzoRossi'),
+                           (null, 'Hillary SmallWood', 'hillarySmw00d@gmail.com', '123456789', 'HillaryWood'),
+                           (null, 'Mohammed Set John', 'mohammedJhon@outlook.com', '123456789', 'MohammedJohn'),
+                           (null, 'Gabrielly Fernandes', 'gabriellyFernandes@gmail.com', '123456789', 'Gabrielly'),
+                           (null, 'Rudson Louds', 'rudsonLLOUD@outlook.com', '123456789', 'RudsonLouds');
+                           
+
+
+
 
 
 /* para sql server - remoto - produção */
