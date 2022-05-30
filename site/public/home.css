@@ -47,6 +47,11 @@
     background-color: var(--backColor);
 }
 
+a{
+  text-decoration: none;
+  color: var(--fontColor);
+}
+
 #wellcome{
    
     opacity: 1;
