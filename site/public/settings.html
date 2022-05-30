@@ -13,7 +13,7 @@
     <div class="navBar" style="margin-left: 10vw;">
         <ul>
             <div id="logo-img"></div>
-            <li>Home</li>
+            <a href="home.html"><li>Home</li></a>
             <li>Places</li>
             <li>Chat</li>
             <li>Settings</li>
@@ -75,7 +75,7 @@
 
             
                     <div class="btn">
-                        <button onclick="updateConfig()">Save</button>
+                        <button onclick="updateconfig()">Save</button>
                     </div>
             
         </div>
@@ -91,6 +91,8 @@
 
     userPlaceholder.placeholder = sessionStorage.USERNAME_USUARIO;
     userEmail.placeholder = sessionStorage.EMAIL_USUARIO;
+    a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
+    idVar = sessionStorage.ID_USUARIO;
 
     function leave(){
 
@@ -105,5 +107,5 @@
         }, 300)
     }
 
-
+    
 </script>

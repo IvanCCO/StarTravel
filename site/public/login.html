@@ -19,7 +19,7 @@
 
         <div id="div_login">
             <div class="login">
-            <h4 class="item-login">Wellcome back!</h4>
+            <h4 class="item-login">Welcome back!</h4>
             <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()" autofocus>
             <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
             <a id="entrar"><button  class='item-login' onclick="login()">Login</button></a>
@@ -79,8 +79,7 @@
             },
             body: JSON.stringify({
                 usernameServer: usernameVar,
-                senhaServer: senhaVar,
-                emailServer: emailVar
+                senhaServer: senhaVar
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
