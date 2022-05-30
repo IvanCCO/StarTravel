@@ -13,7 +13,7 @@
     <div class="navBar" style="margin-left: 10vw;">
         <ul>
             <div id="logo-img"></div>
-            <li>Home</li>
+            <a href="home.html"><li>Home</li></a>
             <li>Places</li>
             <li>Chat</li>
             <li>Settings</li>
@@ -22,7 +22,7 @@
 
         <div id="username">
             <img src="./Imagens/Users/user-default.png">
-            <span id="a_usuario">
+            <span id="a_usuario"></span>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
                 <div class="countries">
 
                     <p>Select your country</p>
-                    <select class="inp_change">
+                    <select class="inp_change" id="sel_changeLocation">
                         <option value="Holand">Holand</option>
                         <option value="France">France</option>
                         <option value="Nigeria">Nigeria</option>
@@ -65,18 +65,21 @@
                     </select>
 
                     <p>Change Location</p> 
-                    <input type="text" class="inp_change">
+                    <input type="text" class="inp_change" id="text_change">
 
                     <p>Disconnect</p>
                     <button onclick="leave()">Leave</button>
+                   
                 </div>
-
-        </div>
-
+                
+            </div>
             
-                    <div class="btn">
-                        <button onclick="updateConfig()">Save</button>
-                    </div>
+            
+            <div class="btn">
+                <button onclick="updateConfig()">Save</button>
+                <br>
+                <div style="color: white;" id="div_msg"></div>
+            </div>
             
         </div>
 
@@ -91,6 +94,7 @@
 
     userPlaceholder.placeholder = sessionStorage.USERNAME_USUARIO;
     userEmail.placeholder = sessionStorage.EMAIL_USUARIO;
+    a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
 
     function leave(){
 
@@ -103,6 +107,24 @@
             window.location = 'index.html';
             alert('Bye')
         }, 300)
+    }
+
+    function updateConfig(){
+
+        var changeUserVar = userPlaceholder.value;
+        var changePasswordVar = userPassword.value;
+        var changeEmailVar = userEmail.value;
+        var changeLocationVar = sel_changeLocation.value;
+        var textChangeVar = text_change.value;
+
+
+        if(changeEmailVar == '' && changeLocationVar == 'Holand' && changePasswordVar == '' && changeUserVar == '' && textChangeVar == ''){
+
+            div_msg.innerHTML = `No changes were made`;
+        }else{
+
+            div_msg.innerHTML = `ujfbhweiuofbhefujiew`
+        }
     }
 
 

@@ -85,6 +85,11 @@
   border-bottom-left-radius: 20px;
 }
 
+.navBar a {
+  text-decoration: none;
+  color: var(--fontColor);
+}
+
 .navBar #username{
   display: flex;
   place-items: center;
@@ -807,7 +812,6 @@
 
 .btn button:hover{
   background-color: var(--purpleColor);
-  transition: all ease-in-out 0.2s;
 }
 
 .organizar {
@@ -855,3 +859,10 @@
   background-color: rgb(199, 7, 7);
   transition: all ease 0.3s;
 }
+
+.inp_change option{
+  background-color: black;
+  color: var(--fontColor);
+  font-weight: bold;
+}
+
