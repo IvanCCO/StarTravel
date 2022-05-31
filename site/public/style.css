@@ -191,7 +191,7 @@ body{
     
     
     #holanda{
-        background: url(../public/Imagens/Paises/holanda.jpg), rgba(0, 0, 0, 0.749);
+        background: url(./Imagens/Paises/holanda.jpg), rgba(0, 0, 0, 0.749);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -203,7 +203,7 @@ body{
 
 #franca {
     
-    background: url(../public/Imagens/Paises/franca.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/franca.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -214,7 +214,7 @@ body{
 
 #cuba {
 
-    background: url(../public/Imagens/Paises/cuba.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/cuba.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -226,7 +226,7 @@ body{
 
 #brazil {
     
-    background: url(../public/Imagens/Paises/braza.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/braza.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -237,7 +237,7 @@ body{
 
 #italia {
     
-    background: url(../public/Imagens/Paises/italy.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/italy.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -248,7 +248,7 @@ body{
 
 #london {
     
-    background: url(../public/Imagens/Paises/londres.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/londres.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -259,7 +259,7 @@ body{
 
 #novaYork{
     
-    background: url(../public/Imagens/Paises/novayork.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/novayork.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -270,7 +270,7 @@ body{
 
 #spain{
 
-    background: url(../public/Imagens/Paises/spain.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/spain.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -280,7 +280,7 @@ body{
 }
 
 #suica {
-    background: url(../public/Imagens/Paises/suica.webp), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/suica.webp), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -288,7 +288,7 @@ body{
 }
 
 #nigeria{
-    background: url(../public/Imagens/Paises/nigeria.webp), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/nigeria.webp), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -296,7 +296,7 @@ body{
 }
 
 #africa-sul {
-    background: url(../public/Imagens/Paises/Africa-Sul.webp), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/Africa-Sul.webp), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -304,7 +304,7 @@ body{
 }
 
 #novaZ {
-    background: url(../public/Imagens/Paises/passagens-aereas-nova-zelandia-capa2019-02-820x430.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/passagens-aereas-nova-zelandia-capa2019-02-820x430.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -312,7 +312,7 @@ body{
 }
 
 #turquia{
-    background: url(../public/Imagens/Paises/turquia.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/turquia.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -321,7 +321,7 @@ body{
 
 #israel{
 
-    background: url(../public/Imagens/Paises/Israel.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/Israel.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -329,7 +329,7 @@ body{
 }
 
 #jamaica {
-    background: url(../public/Imagens/Paises/Jamaica.jpg), rgba(0, 0, 0, 0.749);
+    background: url(./Imagens/Paises/Jamaica.jpg), rgba(0, 0, 0, 0.749);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

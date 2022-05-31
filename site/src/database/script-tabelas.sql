@@ -13,7 +13,7 @@ CREATE TABLE Usuario (
 	nome VARCHAR (45) NOT NULL, 
 	email VARCHAR (45) NOT NULL,
 	senha VARCHAR (25) NOT NULL,
-	username VARCHAR(20) NOT NULL UNIQUE
+	username VARCHAR(14) NOT NULL UNIQUE
 
 )AUTO_INCREMENT = 022200;
 
@@ -84,7 +84,7 @@ SELECT * from Usuario;
 -- Inserindo Meus Usuários Ficticios 
 
 INSERT INTO Usuario VALUES (null, 'Lui Bonjevi de la Jean', 'luiBnjv@gmail.com', '123456789', 'Luijean'),
-						   (null, 'Pedro Fernandes Freitter', 'pedroFFreitter@outlook.com', '123456789', 'PedroFern4andes'),
+						   (null, 'Pedro Fernandes Freitter', 'pedroFFreitter@outlook.com', '123456789', 'PedroFern4ands'),
                            (null, 'Italo Rodrigues', 'italoRodrigues@hotmail.com', '123456789', 'WilsonRodger'),
                            (null, 'Vicenzo de La Rossi', 'vicenzo1999@yahoo.com', '123456789', 'VicenzoRossi'),
                            (null, 'Hillary SmallWood', 'hillarySmw00d@gmail.com', '123456789', 'HillaryWood'),

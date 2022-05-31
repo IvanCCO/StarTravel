@@ -871,3 +871,37 @@ a{
   font-weight: bold;
 }
 
+#botoes {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#botoes  button{
+  height: 2.5vh;
+  width: 5vw;
+  background-color: var(--orangeColor);
+  text-align: center;
+  color: var(--fontColor);
+  font-size: 60%;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#botoes button:hover{
+  background-color: var(--purpleColor);
+  transition: all ease-in-out 0.1s;
+}
+
+.grafico {
+  border: 2px dashed green;
+  width: 80%;
+  margin-left: 10%;
+}
+
+

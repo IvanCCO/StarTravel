@@ -76,7 +76,7 @@
             
             
             <div class="btn">
-                <button onclick="updateConfig()">Save</button>
+                <button onclick="updateconfig()">Save</button>
                 <br>
                 <div style="color: white;" id="div_msg"></div>
             </div>
@@ -94,8 +94,8 @@
 
     userPlaceholder.placeholder = sessionStorage.USERNAME_USUARIO;
     userEmail.placeholder = sessionStorage.EMAIL_USUARIO;
-    a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
     idVar = sessionStorage.ID_USUARIO;
+    a_usuario.innerHTML = userPlaceholder.placeholder;
 
     function leave(){
 
@@ -110,7 +110,7 @@
         }, 300)
     }
 
-    function updateConfig(){
+    function updateconfig(){
 
         var changeUserVar = userPlaceholder.value;
         var changePasswordVar = userPassword.value;
@@ -122,9 +122,53 @@
         if(changeEmailVar == '' && changeLocationVar == 'Holand' && changePasswordVar == '' && changeUserVar == '' && textChangeVar == ''){
 
             div_msg.innerHTML = `No changes were made`;
+
+
+        }else if(changeUserVar != ''){
+
+            fetch("/usuarios/alterar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    usernameServer: changeUserVar,
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO updateconfig()!")
+    
+                if (resposta.ok) {
+                    console.log(resposta);
+      
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        
+                        sessionStorage.USERNAME_USUARIO = json.username;
+                        
+                    });
+                } else {
+    
+                    console.log("Houve um erro ao alterar os valores");
+    
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                
+                        setTimeout(() => {
+    
+                            div_msg.innerHTML = 'Não foi possível alterar as credenciais';
+                        }, 4000)
+                    });
+                }
+    
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+    
+            return false;
         }else{
 
-            div_msg.innerHTML = `ujfbhweiuofbhefujiew`
+            div_msg.innerHTML = `Sorry ${sessionStorage.USERNAME_USUARIO} you can't change those informations right now`
         }
     }
 

@@ -30,18 +30,20 @@ function cadastrar(nome, email, senha, username) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-
-
 // Essa função está sendo executada na Settings para trocar o usuario, senha e etc.
 function updateconfig(username){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function updateconfig():", username);
 
     var instrucao = `
     UPDATE Usuario set username = '${changeUserVar}' WHERE idUser = ${idVar};  
-    `
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
 }
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    updateconfig,
 };
