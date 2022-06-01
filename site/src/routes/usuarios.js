@@ -24,4 +24,9 @@ router.post("/alterar", function (req, res) {
     usuarioController.updateconfig(req, res);
 });
 
+router.post("/colocarPais", function (req, res) {
+    usuarioController.sel(req, res);
+});
+
+
 module.exports = router;

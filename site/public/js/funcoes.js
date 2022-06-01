@@ -77,7 +77,7 @@ var timer = setInterval(function() {
 
         console.log(days + hours + mins + secs)
     
-    } else {
+    }else {
 
         document.getElementById('home').style.opacity = 0;
         document.getElementById('home').style.transition = 'all ease-in-out 3s'
@@ -91,3 +91,6 @@ var timer = setInterval(function() {
     }
     
 }, 1000);
+
+
+

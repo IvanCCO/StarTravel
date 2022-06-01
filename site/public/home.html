@@ -11,7 +11,7 @@
     <script src="js/funcoes.js" defer></script>
 </head>
 
-<body>
+<body onload="pais()">
 
     <!-- Inicio da página -->
     <div id="wellcome">
@@ -288,24 +288,24 @@
                 <div class="paises">
                     <ul>
                         <li>
-                            <p>Holanda</p>
-                            <p>4.5</p>
+                            <p id="selectNome1">Holanda</p>
+                            <p id="selectNota1">4.5</p>
                         </li>
                         <li>
-                            <p>França</p>
-                            <p>4.1</p>
+                            <p id="selectNome2">França</p>
+                            <p id="selectNota2">4.1</p>
                         </li>
                         <li>
-                            <p>EUA</p>
-                            <p>3.8</p>
+                            <p id="selectNome3">EUA</p>
+                            <p id="selectNota3">3.8</p>
                         </li>
                         <li>
-                            <p>Italia</p>
-                            <p>3.4</p>
+                            <p id="selectNome4">Italia</p>
+                            <p id="selectNota4">3.4</p>
                         </li>
                         <li>
-                            <p>Brazil</p>
-                            <p>3.1</p>
+                            <p id="selectNome5">Brazil</p>
+                            <p id="selectNota5">3.1</p>
                         </li>
                     </ul>
                 </div>
@@ -341,5 +341,43 @@
 
     b_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
     a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
+
+</script>
+
+<script>
+
+    function pais(){
+
+
+        fetch("/medidas/paises", {
+                method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                usernameServer: usernameVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+            
+            if (resposta.ok) {
+
+
+
+            } else {
+                throw ("Nâo deu certo kkk");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+        
+        return false;
+    }
 
 </script>
