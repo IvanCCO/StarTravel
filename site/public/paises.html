@@ -46,9 +46,16 @@
 
     function ale(elemento){
 
+    
+
         if(elemento.className.indexOf('paisesSelecionados') > 0){
 
             elemento.className = 'paises';
+
+
+            // Limpa o vetor pra ir pegando os valores que tem dentro e estão selecionados
+
+
 
             for(i = 0; i < vetorPaises.length; i++){
 
@@ -61,6 +68,7 @@
         }else{
 
             elemento.className += " paisesSelecionados";
+            // Adicionando ao vetor o nome dos Paises
 
             vetorPaises.push(elemento.textContent);
             console.log("Adicionando: " + elemento.textContent);

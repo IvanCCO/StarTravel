@@ -5,14 +5,16 @@
     font-style: normal;
 }
 
+
+/* Criando Variáveis de cor para poder ir mudando a paleta mais facilmente */
 :root {
-    --backColor: #000000;
-    --blueColor: #406281;
-    --yellowColor: #B8831C;
-    --purpleColor: #72027C;
-    --silverColor: #82828267;
-    --orangeColor: #BF620B;
-    --greenColor: #1B521D;
+    --backgroundColor: #000000;
+    --primaryColor: #406281;
+    --secundaryColor: #B8831C;
+    --terciaryColor: #72027C;
+    --borderColor: #82828267;
+    --fourColor: #BF620B;
+    --fifthColor: #1B521D;
     --fontColor: rgb(233, 233, 233);
     --inverterPng-hover:invert(7%) sepia(63%) saturate(6633%) hue-rotate(296deg) brightness(112%) contrast(104%);
     --inverterPng:invert(43%) sepia(69%) saturate(479%) hue-rotate(1deg) brightness(106%) contrast(97%);
@@ -34,7 +36,7 @@
     scrollbar-color: none;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--purpleColor); 
+    background: var(--terciaryColor); 
     border-radius: 10px;
   }
 
@@ -44,7 +46,7 @@
     font-size: 1.3125rem;
     line-height: 1.6;
     height: auto;
-    background-color: var(--backColor);
+    background-color: var(--backgroundColor);
 }
 
 a{
@@ -83,8 +85,8 @@ a{
   flex-direction: column;
   text-decoration: none;
   padding-top: 10vh;
-  border-left: 1px solid var(--silverColor);
-  border-bottom: 1px solid var(--silverColor);
+  border-left: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
   position: fixed;
   padding-bottom: 2vh;
   border-bottom-left-radius: 20px;
@@ -124,22 +126,40 @@ a{
   list-style: none;
   margin-top: 5vh;
   text-align: center;
-  border-bottom: var(--orangeColor) 4px solid;
+  border-bottom: var(--fourColor) 4px solid;
   width: 100%;
   
 }
 
 .navBar #logo-img{
-  height: 115px;
-  width: 115px;
-  border: 2px solid green;
-  margin-bottom: 10vh;
+  height: 12vh;
+  width: 12vh;  
+  margin-left: 23%;
+  margin-bottom: 1vh;
+  /* iMAGENS */
+  background: url(./Imagens/Logos/LOGO_LULLY_INTERPSRISES_SEM_LETRA.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+.navBar #logo_name {
+  height: 7vh;
+  width: 10vw;
+  margin-bottom: 8vh;
+
+  /* Imagens */
+  background: url(./Imagens/Logos/SO_LETRA.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 
 .navBar li button {
   height: 5vh;
   width: 100%;
-  background-color: var(--orangeColor);
+  background-color: var(--fourColor);
   text-align: center;
   color: var(--fontColor);
   font-size: 60%;
@@ -152,7 +172,7 @@ a{
 }
 
 .navBar li:hover{
-  border-bottom: var(--purpleColor) 4px solid;
+  border-bottom: var(--terciaryColor) 4px solid;
   cursor: pointer;
   transform: scaleX(95%);
   transition: all ease-in-out 0.1s;
@@ -161,7 +181,7 @@ a{
 }
 
 .navBar li button:hover {
-  background-color: var(--purpleColor);
+  background-color: var(--terciaryColor);
 }
 
 
@@ -172,9 +192,9 @@ a{
   height: auto;
   display: flex;
   flex-direction: column;
-  border-right: var(--silverColor) 2px solid;
+  border-right: var(--borderColor) 2px solid;
   margin-left: 26vh;
-  border-left: 1px solid var(--silverColor);
+  border-left: 1px solid var(--borderColor);
 }
 
 /* Parte da aba de busca  */
@@ -185,7 +205,7 @@ a{
   margin-top: 7vh;
   justify-content: center;
   padding-top: 3vh;
-  border-bottom: 1px solid var(--silverColor);
+  border-bottom: 1px solid var(--borderColor);
   
 }
 
@@ -196,7 +216,7 @@ a{
   text-align: center;
   background: none;
   border: 0;
-  border-bottom: var(--orangeColor) 3px solid;
+  border-bottom: var(--fourColor) 3px solid;
   font-size: 100%;
   color: var(--fontColor);
   outline: 0;
@@ -204,7 +224,7 @@ a{
 }
 
 .painel .search input:hover, img:hover {
-  border-bottom: var(--purpleColor) 3px solid;
+  border-bottom: var(--terciaryColor) 3px solid;
   
 }
 
@@ -247,14 +267,14 @@ a{
   font-size: 100%;
   background-color: transparent;
   border: 0;
-  border-bottom: var(--orangeColor) 3px solid;
+  border-bottom: var(--fourColor) 3px solid;
   color: var(--fontColor);
   outline: 0;
 
 }
 
 .painel .user #inp_text:hover{
-  border-bottom: 3px solid var(--purpleColor);
+  border-bottom: 3px solid var(--terciaryColor);
 }
 
 
@@ -278,7 +298,7 @@ a{
 .painel .user button{
   height: 4vh;
   width: 13%;
-  background-color: var(--orangeColor);
+  background-color: var(--fourColor);
   text-align: center;
   color: var(--fontColor);
   font-size: 80%;
@@ -293,13 +313,13 @@ a{
 
   transform: scaleX(95%);
   transition: all ease-in-out 0.1s;
-  background-color: var(--purpleColor);
+  background-color: var(--terciaryColor);
 }
 
 /* Começo da parte dos usuários */
 
 .painel .usuarios {
-  border-top: 1px solid var(--silverColor);
+  border-top: 1px solid var(--borderColor);
   height: max-content;
   overflow-y: auto;
   display: flex;
@@ -313,7 +333,7 @@ a{
 
 .post {
   margin-top: 3vh;
-  border: 2px solid var(--silverColor);
+  border: 2px solid var(--borderColor);
   width: 40vw;
   height: 60vh;
   border-radius: 10px;
@@ -322,7 +342,7 @@ a{
 
 /* Parte do nome e nacionalidade */
 .usuarios .info-bar {
-  border-bottom: 2px solid var(--orangeColor);
+  border-bottom: 2px solid var(--fourColor);
   height: 17%;
   display: flex;
   flex-direction: row;
@@ -353,7 +373,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 2vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-1.png);
@@ -368,7 +388,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-2.jpg);
@@ -383,7 +403,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-3.jpg);
@@ -398,7 +418,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-4.jpg);
@@ -413,7 +433,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-5.jpg);
@@ -428,7 +448,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-7.jpg);
@@ -443,7 +463,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-6.jpg);
@@ -458,7 +478,7 @@ a{
   width: 10%;
   border-radius: 5px;
   margin-left: 3vw;
-  border: 2px solid var(--yellowColor);
+  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
   background: url(./Imagens/Users/user-8.jpg);
@@ -529,7 +549,7 @@ a{
   display: flex;
   flex-direction: column;
   margin-top: 5%;
-  border: 1px solid var(--silverColor);
+  border: 1px solid var(--borderColor);
   border-radius: 3px;
 }
 
@@ -595,6 +615,8 @@ a{
 }
 
 /* Arrumando status mdos feedbacks */
+
+/*
 .like {
   place-items: center;
   display: grid;
@@ -611,11 +633,11 @@ a{
   display: grid;
 }
 
-.feedback p {
-  font-size: 80%;
+.feedback  {
+  display: none;
 }
 
-
+*/
 
 
 
@@ -699,11 +721,13 @@ a{
 }
 .timer #cronometro{
 
-  border: var(--orangeColor) 1px solid ;
-  color: var(--yellowColor);
+  border: var(--fourColor) 1px solid ;
+  color: var(--secundaryColor);
   margin-bottom: 10vh;
   padding: 5%;
-
+  display: flex;
+  flex-direction: row;
+  list-style: none;
 }
 
 .timer .paises{
@@ -713,7 +737,7 @@ a{
 .timer .paises li{
   color: var(--fontColor);
   font-size: 80%;
-  border: var(--silverColor) 1px solid;
+  border: var(--borderColor) 1px solid;
   width: 12vw;
   list-style: none;
   padding-left: 10%;
@@ -726,7 +750,7 @@ a{
 
 
 .settings-panel {
-  border: 1px solid var(--silverColor);
+  border: 1px solid var(--borderColor);
   height: 100vh;
   width: 60%;
   position: fixed;
@@ -747,7 +771,7 @@ a{
 }
 
 .tituloSettings p{
-  border-bottom: 1px solid var(--orangeColor);
+  border-bottom: 1px solid var(--fourColor);
 }
 
 .inputs{
@@ -762,7 +786,7 @@ a{
   height: 70%;
   font-weight: 600;
   padding-top: 3vh;
-  border-right: 1px solid var(--orangeColor);
+  border-right: 1px solid var(--fourColor);
 }
 
 .inputs::before{
@@ -771,7 +795,7 @@ a{
   font-size: 30px;
   margin-bottom: 5vh;
   font-weight: bold;
-  border-bottom: 2px solid var(--orangeColor);
+  border-bottom: 2px solid var(--fourColor);
 }
 
 .inp_change{
@@ -779,7 +803,7 @@ a{
   margin-top: 1%;
   height: 4vh;
   background: none;
-  border: var(--yellowColor) 1px solid;
+  border: var(--secundaryColor) 1px solid;
   border-radius: 3px;
   color: var(--fontColor);
   font-size: 15px;
@@ -789,7 +813,7 @@ a{
 }
 
 .inp_change:hover{
-  border: var(--purpleColor) 1px solid;
+  border: var(--terciaryColor) 1px solid;
   
 }
 
@@ -803,7 +827,7 @@ a{
 .btn button{
   height: 5vh;
   width: 15%;
-  background-color: var(--orangeColor);
+  background-color: var(--fourColor);
   text-align: center;
   color: var(--fontColor);
   font-size: 70%;
@@ -816,7 +840,7 @@ a{
 }
 
 .btn button:hover{
-  background-color: var(--purpleColor);
+  background-color: var(--terciaryColor);
 }
 
 .organizar {
@@ -843,7 +867,7 @@ a{
   font-size: 30px;
   margin-bottom: 5vh;
   font-weight: bold;
-  border-bottom: 2px solid var(--orangeColor);
+  border-bottom: 2px solid var(--fourColor);
 }
 
 .countries button{
@@ -884,7 +908,7 @@ a{
 #botoes  button{
   height: 2.5vh;
   width: 5vw;
-  background-color: var(--orangeColor);
+  background-color: var(--fourColor);
   text-align: center;
   color: var(--fontColor);
   font-size: 60%;
@@ -894,8 +918,15 @@ a{
 }
 
 #botoes button:hover{
-  background-color: var(--purpleColor);
+  background-color: var(--terciaryColor);
   transition: all ease-in-out 0.1s;
+}
+
+#text_change{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer; height: 2vh; color: #72027C"
 }
 
 .grafico {

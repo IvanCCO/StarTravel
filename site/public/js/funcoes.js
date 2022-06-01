@@ -1,4 +1,6 @@
 // sessão
+
+// Irá fazer a parte de Login funcionar.
 function validarSessao() {
     // aguardar();
 
@@ -6,6 +8,8 @@ function validarSessao() {
     var username = sessionStorage.USERNAME_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+
+    // Vendo se tem algum valor no email e username
 
     if (email != null && username != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
@@ -19,6 +23,8 @@ function validarSessao() {
 
 function limparSessao() {
     // aguardar();
+
+    // Limpar o cache do Cadastro do Usuário 
     sessionStorage.clear();
     // finalizarAguardar();
     window.location = "../login.html";
@@ -27,36 +33,61 @@ function limparSessao() {
 
 
 
-var endDate = new Date("Mar 15, 2019 12:00:00").getTime();
 
+// Aqui estou fazendo o timer funcionar, Utilizei uma função copiada na internet para fazer o que eu quero
+
+// Pegando o data final e transformando em um tipo data
+var endDate = new Date("Jun 8, 2022 22:41:00").getTime();
+
+// Colocando pra essa função rodar a cada 1s ou seja 1000 ms, isso faára com que o timer se atualize a cada segundo
 var timer = setInterval(function() {
 
-    let now = newDate().getTime();
+    // Pegando a data atual que está na maquina do Usuário
+    let now = new Date().getTime();
+
+    // Criando uma variável para pegar a diferença entre a data final e a atual para saber quanto tempo falta
     let t = endDate - now;
-    
+
+
+    // Se o tempo ainda não for o atual ...
     if (t >= 0) {
-    
+        
+        // Fazendo a conta pro tempo em milisegundos se transformar em Dias / multiplica para ficar em minuto depois horas depois dias
         let days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+        // Pegando a sobra da divisão de dias por horas
         let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        // Pegando o resto da divisao entre horas e minutos
         let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Pegando o resto da divisão entre Minutos e segundos
         let secs = Math.floor((t % (1000 * 60)) / 1000);
     
-        document.getElementById("timer-days").innerHTML = days +
-        "<span class='label'>DAY(S)</span>";
+        document.getElementById("timer-days").innerHTML = `${days}: `;
     
-        document.getElementById("timer-hours").innerHTML = ("0"+hours).slice(-2) +
-        "<span class='label'>HR(S)</span>";
+
+        // Slice ele pega o intervalo de valores dentro de um array ou string, como ele é negativo está começando pelo final. Ou seja o slice de -2 está pegando apenas os ultimos 2 valores
+        // de cade String
+        document.getElementById("timer-hours").innerHTML = `${("0"+hours).slice(-2)}: `;
     
-        document.getElementById("timer-mins").innerHTML = ("0"+mins).slice(-2) +
-        "<span class='label'>MIN(S)</span>";
+        document.getElementById("timer-mins").innerHTML = `${("0"+mins).slice(-2)}: `;
     
-        document.getElementById("timer-secs").innerHTML = ("0"+secs).slice(-2) +
-        "<span class='label'>SEC(S)</span>";
+        document.getElementById("timer-secs").innerHTML = `${("0"+secs).slice(-2)}`;
+
+        console.log(days + hours + mins + secs)
     
     } else {
 
-        document.getElementById("timer").innerHTML = "The countdown is over!";
-    
+        document.getElementById('home').style.opacity = 0;
+        document.getElementById('home').style.transition = 'all ease-in-out 3s'
+
+        setTimeout(() =>{
+
+            window.location = 'qrcode.html'
+
+        }, 3000)
+
     }
     
 }, 1000);

@@ -14,9 +14,9 @@
         <ul>
             <div id="logo-img"></div>
             <a href="home.html"><li>Home</li></a>
-            <li>Places</li>
+            <a href="paises.html"><li>Places</li></a>
             <li>Chat</li>
-            <li>Settings</li>
+            <a href="settings.html"><li>Settings</li></a>
             <li style="border: 0;"><button>Compartilhar</button></li>
         </ul>
 
@@ -64,8 +64,8 @@
                         <option value="New York">New York</option>
                     </select>
 
-                    <p>Change Location</p> 
-                    <input type="text" class="inp_change" id="text_change">
+                    <p>Avaliete The country</p> 
+                    <input type="range" min="1" max="5" class="inp_change"   id="text_change">
 
                     <p>Disconnect</p>
                     <button onclick="leave()">Leave</button>
@@ -107,6 +107,7 @@
 
             window.location = 'index.html';
             alert('Bye')
+
         }, 300)
     }
 
