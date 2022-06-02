@@ -131,6 +131,6 @@ create table aquario (
 	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
 );
 
-*/
+
 
 

@@ -29,4 +29,9 @@ router.post("/colocarPais", function (req, res) {
 });
 
 
+router.get("/pais", function(req, res){
+    usuarioController.pais(req, res);
+})
+
+
 module.exports = router;

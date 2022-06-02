@@ -45,16 +45,27 @@ function updateconfig(username, idUsuario){
 
 
 
-function sel(paisOne, paisTwo, paisThree){
+function sel(paisOne, paisTwo, paisThree, idUsuario){
 
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():", paisOne, paisTwo, paisThree);
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():", paisOne, paisTwo, paisThree, idUsuario);
     
-    var idVar = `SELECT max(idUsuario) FROM Usuario;`
-
     var instrucao = `
-    UPDATE Usuario set paisOne = '${paisOne}' WHERE idUsuario = ${idVar};  
-    UPDATE Usuario set paisTwo = '${paisTwo}' WHERE idUsuario = ${idVar};  
-    UPDATE Usuario set paisThree = '${paisThree}' WHERE idUsuario = ${idVar};  
+   
+    UPDATE Usuario set paisOne = '${paisOne}', paisTwo = '${paisTwo}', paisThree = '${paisThree}'  WHERE idUsuario = ${idUsuario};  
+
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+function pais(){
+
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():","" );
+    
+    var instrucao = `
+   
+    SELECT nomePais, nota FROM Pais ORDER BY nota DESC;
 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -67,4 +78,5 @@ module.exports = {
     listar,
     updateconfig,
     sel,
+    pais,
 };

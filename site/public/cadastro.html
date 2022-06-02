@@ -99,7 +99,7 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                usernameServer: usernameVar
+                usernameServer: usernameVar,
             })
         }).then(function (resposta) {
 
@@ -108,14 +108,44 @@
             if (resposta.ok) {
 
     
+                fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                usernameServer: usernameVar,
+                senhaServer: senhaVar,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    
+                    sessionStorage.USERNAME_USUARIO = json.username;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.EMAIL_USUARIO = json.email;      
+                });
+
+            }).catch(function (erro) {
+            console.log(erro);
+        })
+
+       setTimeout(() =>{
+
                 barra_loading.style.display = 'block';
                 barra_loading.style.width = barra + '%';
                 barra_loading.style.transition = 'width ease-in-out 2.5s'
                 
 
-                setTimeout(() => {
+       }, 1)
+
+
+        setTimeout(() => {
                     window.location = "paises.html";
-                }, "1")
+                }, "3000")
 
 
             } else {

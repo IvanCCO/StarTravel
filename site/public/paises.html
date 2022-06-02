@@ -81,9 +81,9 @@
 
         console.log(typeof idVar)
 
-        if(vetorPaises.length == 0){
+        if(vetorPaises.length < 3){
 
-            msg_erro.innerHTML = '<br>Choose 1 country at least';
+            msg_erro.innerHTML = '<br>Choose 3 countries to go';
 
         }else if(vetorPaises.length > 3){
 
@@ -103,13 +103,19 @@
                 paisOneServer: vetorPaises[0],
                 paisTwoServer: vetorPaises[1],
                 paisThreeServer: vetorPaises[2],
+                idUsuario: sessionStorage.ID_USUARIO,
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
+
+            console.log('Entrou no then da function')
             
             if (resposta.ok) {
 
+                console.log('Entrou no if do then')
+
+                msg_erro.innerHTML = `You are Good to go!`
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "3000")
