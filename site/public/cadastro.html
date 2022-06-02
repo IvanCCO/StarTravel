@@ -65,7 +65,7 @@
             
             erro.innerHTML = "Passwords doesn't match"
             
-        }else if (senhaVar.length < 8){
+        }else if (senhaVar.length < 1){
 
             erro.innerHTML = "Password too weak"
 
@@ -85,6 +85,8 @@
 
         
         }else{
+
+            
             // Enviando o valor da nova input
             fetch("/usuarios/cadastrar", {
                 method: "POST",
@@ -105,22 +107,24 @@
             
             if (resposta.ok) {
 
-                
+    
                 barra_loading.style.display = 'block';
                 barra_loading.style.width = barra + '%';
                 barra_loading.style.transition = 'width ease-in-out 2.5s'
-
+                
 
                 setTimeout(() => {
                     window.location = "paises.html";
-                }, "3000")
-                
-                limparFormulario();
+                }, "1")
+
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
                 erro.innerHTML = `Houve um erro no cadastro`;
             }
+
+      
+
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });

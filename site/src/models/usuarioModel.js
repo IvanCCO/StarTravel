@@ -25,7 +25,7 @@ function cadastrar(nome, email, senha, username) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO Usuario (nome, email, senha, username) VALUES ('${nome}', '${email}', '${senha}', '${username}', null, null, null);
+        INSERT INTO Usuario (nome, email, senha, username, paisOne, paisTwo, paisThree) VALUES ('${nome}', '${email}', '${senha}', '${username}', null, null, null);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -35,20 +35,24 @@ function updateconfig(username){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function updateconfig():", username);
 
     var instrucao = `
-    UPDATE Usuario set username = '${changeUserVar}' WHERE idUser = ${idVar};  
+    UPDATE Usuario set username = '${changeUserVar}' WHERE idUsuario = ${idVar};  
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function sel (paisOne, paisTwo, paisThree){
 
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function updateconfig():", username);
+
+function sel(paisOne, paisTwo, paisThree){
+
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():", paisOne, paisTwo, paisThree);
+    
+    var idVar = `SELECT max(idUsuario) FROM Usuario;`
 
     var instrucao = `
-    UPDATE Usuario set paisOne = '${vetorPaises[0]}' WHERE idUser = ${idVar};  
-    UPDATE Usuario set paisTwo = '${vetorPaises[1]}' WHERE idUser = ${idVar};  
-    UPDATE Usuario set paisThree = '${vetorPaises[2]}' WHERE idUser = ${idVar};  
+    UPDATE Usuario set paisOne = '${paisOne}' WHERE idUsuario = ${idVar};  
+    UPDATE Usuario set paisTwo = '${paisTwo}' WHERE idUsuario = ${idVar};  
+    UPDATE Usuario set paisThree = '${paisThree}' WHERE idUsuario = ${idVar};  
 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -60,4 +64,5 @@ module.exports = {
     cadastrar,
     listar,
     updateconfig,
+    sel,
 };

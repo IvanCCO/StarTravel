@@ -42,11 +42,13 @@
 
     var vetorPaises = [];
 
+
+    console.log(sessionStorage.ID_USUARIO)
+  
     
 
     function ale(elemento){
 
-    
 
         if(elemento.className.indexOf('paisesSelecionados') > 0){
 
@@ -77,6 +79,8 @@
 
     function sel(){
 
+        console.log(typeof idVar)
+
         if(vetorPaises.length == 0){
 
             msg_erro.innerHTML = '<br>Choose 1 country at least';
@@ -96,10 +100,9 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                usernameServer: usernameVar
+                paisOneServer: vetorPaises[0],
+                paisTwoServer: vetorPaises[1],
+                paisThreeServer: vetorPaises[2],
             })
         }).then(function (resposta) {
 
@@ -107,33 +110,18 @@
             
             if (resposta.ok) {
 
-                
-                barra_loading.style.display = 'block';
-                barra_loading.style.width = barra + '%';
-                barra_loading.style.transition = 'width ease-in-out 2.5s'
-
-
                 setTimeout(() => {
-                    window.location = "paises.html";
+                    window.location = "login.html";
                 }, "3000")
-                
-                limparFormulario();
 
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-                erro.innerHTML = `Houve um erro no cadastro`;
+                throw ("Houve um erro ao tentar colocar no vetor!");
+                erro.innerHTML = `Houve um erro para colocar no vetor`;
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-        setTimeout(() => {
-    
-                erro.innerHTML = '';
-            }, 6000)
-        
         return false;
-
-        
     }
         }
 

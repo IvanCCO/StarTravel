@@ -141,13 +141,7 @@
                 if (resposta.ok) {
                     console.log(resposta);
       
-                    resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
-                        
-                        sessionStorage.USERNAME_USUARIO = json.username;
-                        
-                    });
+                    
                 } else {
     
                     console.log("Houve um erro ao alterar os valores");
