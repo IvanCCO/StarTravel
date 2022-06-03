@@ -66,7 +66,8 @@
                     </select>
 
                     <p>Rate The country</p> 
-                    <input type="range" min="1" max="5" class="inp_change"   id="text_change">
+                    <input type="range" min="1" max="5" class="inp_change" onchange="exibirNumero()" id="text_change" style="margin-bottom: 3%;">
+                    <span id="numValue" style="margin-bottom: 5%;"></span>
 
                     <p>Disconnect</p>
                     <button onclick="leave()">Leave</button>
@@ -176,6 +177,15 @@
                 //* Aqui vai avaliar os paises e aumentar ou diminuir a nota
             }
         }
+    }
+
+    function exibirNumero(){
+
+        var range = text_change.value;
+
+        console.log(range);
+
+        numValue.innerHTML = `${range}`;
     }
 
 

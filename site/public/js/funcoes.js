@@ -37,7 +37,7 @@ function limparSessao() {
 // Aqui estou fazendo o timer funcionar, Utilizei uma função copiada na internet para fazer o que eu quero
 
 // Pegando o data final e transformando em um tipo data
-var endDate = new Date("Jun 8, 2022 22:41:00").getTime();
+var endDate = new Date("Jun 13, 2022 15:30:00").getTime();
 
 // Colocando pra essa função rodar a cada 1s ou seja 1000 ms, isso faára com que o timer se atualize a cada segundo
 var timer = setInterval(function() {

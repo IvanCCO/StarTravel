@@ -890,7 +890,7 @@ a{
 }
 
 .inp_change option{
-  background-color: black;
+  background-color: var(--backgroundColor);
   color: var(--fontColor);
   font-weight: bold;
 }
@@ -906,8 +906,8 @@ a{
 }
 
 #botoes  button{
-  height: 2.5vh;
-  width: 5vw;
+  height: 3vh;
+  width: 8vw;
   background-color: var(--fourColor);
   text-align: center;
   color: var(--fontColor);
@@ -915,6 +915,7 @@ a{
   border: 0;
   border-radius: 2px;
   cursor: pointer;
+  font-weight: bolder;
 }
 
 #botoes button:hover{
@@ -926,11 +927,12 @@ a{
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
-  cursor: pointer; height: 2vh; color: #72027C"
+  cursor: pointer; height: 2vh;
+  color: #72027C;
 }
 
 .grafico {
-  border: 2px dashed green;
+  border: 2px solid var(--borderColor);
   width: 80%;
   margin-left: 10%;
 }
