@@ -40,46 +40,44 @@
 
 <script>
 
+    // Criei um vetor para guardar os países que foram selecionados pelo Usuário.
     var vetorPaises = [];
 
 
-    console.log(sessionStorage.ID_USUARIO)
-  
-    
-
     function ale(elemento){
+
+        // Criei uma classe chamada 'paisesSelecionados'
+        // Se o usuário selecionar um pais ele terá atribuido essa classe.
+        // Se o pais selecionado já tiver esse classe ele entrará no if 
 
 
         if(elemento.className.indexOf('paisesSelecionados') > 0){
 
             elemento.className = 'paises';
-
-
             // Limpa o vetor pra ir pegando os valores que tem dentro e estão selecionados
 
-
-
             for(i = 0; i < vetorPaises.length; i++){
-
+                
+                // Vendo se o conteudo da funcao que foi clicada bate com valor do vetor
                 if(vetorPaises[i] == elemento.textContent){
 
+                    // Remove apenas o valor que bateu. 
                     vetorPaises.splice(i, 1);   
+
                     console.log('Removendo:' + elemento.textContent)
                 }
             }
         }else{
 
-            elemento.className += " paisesSelecionados";
+            // Atribuindo a classe ao pais
+            elemento.className += " paisesSelecionados"; // Usei o mais igual aqui para ele não substituir a classe que já tinha e sim adicionar mais uma
             // Adicionando ao vetor o nome dos Paises
-
             vetorPaises.push(elemento.textContent);
             console.log("Adicionando: " + elemento.textContent);
         }
     }
 
     function sel(){
-
-        console.log(typeof idVar)
 
         if(vetorPaises.length < 3){
 
@@ -100,6 +98,8 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
+
+                // Recuperando os valores do meu vetor.
                 paisOneServer: vetorPaises[0],
                 paisTwoServer: vetorPaises[1],
                 paisThreeServer: vetorPaises[2],
@@ -115,6 +115,7 @@
 
                 console.log('Entrou no if do then')
 
+                msg_erro.style.color = 'white';
                 msg_erro.innerHTML = `You are Good to go!`
                 setTimeout(() => {
                     window.location = "login.html";
@@ -122,7 +123,9 @@
 
             } else {
                 throw ("Houve um erro ao tentar colocar no vetor!");
-                erro.innerHTML = `Houve um erro para colocar no vetor`;
+
+                // Função caso de Algum erro que não foi previsto
+                erro.innerHTML = `Error. Try again later`;
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartTravel</title>
+    <title>StartTravel/home</title>
     <link rel="shortcut icon" href="../public/Imagens/Logos/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="home.css">
     <script src="js/funcoes.js" defer></script>
@@ -14,15 +14,11 @@
 <body onload="pais()">
 
     <!-- Inicio da página -->
-    <div id="wellcome">
-        <h1>Welcome <span id="b_usuario"></span></h1>
-    </div>
-
+    
     <!-- Fim kkk-->
 
     <!-- Inicio da home -->
-    <div id="home" style="display: none;">
-
+    <div id="home">
         <!--Inicio da Nav Bar-->
         <div class="navBar">
             <ul>
@@ -34,7 +30,7 @@
                 <a href="settings.html">
                     <li>Settings</li>
                 </a>
-                <li style="border: 0;"><button>Compartilhar</button></li>
+                <li style="border: 0;"><button>Share</button></li>
             </ul>
 
             <div id="username">
@@ -46,7 +42,7 @@
         <!--Painel do usuario-->
         <div class="painel">
             <div class="search">
-                <img src="./Imagens/Icons/search.png">
+                <img src="./Imagens/Icons/search.png" alt="Search">
                 <input type="text" id="inp_search" placeholder="Search">
             </div>
             <div class="user">
@@ -55,7 +51,7 @@
                     <img src="./Imagens/Icons/image.png" alt="img">
                 </div>
                 <input type="text" id="inp_text" placeholder="Tell us about yourself">
-                <button>Enviar</button>
+                <button>Send</button>
             </div>
 
             <div class="usuarios">
@@ -79,8 +75,6 @@
                         <p class="post-msg">Working!</p>
                         <div class="post-img"></div>
                     </div>
-
-
 
                 </div>
 
@@ -241,9 +235,6 @@
                         <div class="post-img" id="GabriellyFt"></div>
                     </div>
 
-
-
-
                 </div>
 
                 <div class="post">
@@ -308,6 +299,29 @@
                             <p id="selectNota5"></p>
                         </li>
                     </ul>
+
+                <div id="metricas">
+
+                   <div id="legenda">
+                        <div class="medidas">BAD</div>
+                        <div class="medidas">OK</div>
+                        <div class="medidas">GOOD</div>
+                    </div>
+
+                    <div id="valor">
+                        <div class="valores">3.3</div>
+                        <div class="valores">4.2</div>
+                        <div class="valores">4.6</div>
+                    </div>
+
+                    </div>
+
+                </div>
+
+                <p id="qntdVotos">Quantidade de Votos</p>
+                <div class="paisVotado">
+                    <div id="nomePais"></div>
+                    <div id="votoPais"></div>
                 </div>
             </div>
         </div>
@@ -321,74 +335,89 @@
 
     // Animação do Hello Word;
 
-    setTimeout(() => {
-
-        wellcome.style.opacity = '0';
-        wellcome.style.transition = 'opacity ease-in-out 3s';
-
-
-    }, 0)
-
-    setTimeout(() => {
-
-        wellcome.style.display = 'none';
-        home.style.display = 'flex';
-
-    }, 3000)
-
+  
 
     // Functions Home
-
-    b_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
     a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
 
 </script>
 
 <script>
 
+    /* Os paises e o numero de votos vão estar na mesma posição.
+    Então eu pego um numero aleatorio entre 0  e e ultima posição
+    do meu vetor e falo pra sortear algum número que ele vai mostrar
+    o pais da posicao do numero e o valor da posicao do numero 
+    como o push foi feito em ordem as posições vao bater certinho 
+    */
+    var nomePaises = [];
+    var numeroVotos = [];
+
+    
+    
+    setInterval(() =>{
+        
+        // Criar 2 vetores para guardar o nome do pais e o numero de votos 
+
+        
+        var aleatorio = (Math.random() * (numeroVotos.length - 1)).toFixed(0);
+
+        console.log(aleatorio);
+
+        nomePais.innerHTML = `${nomePaises[aleatorio]}`;
+        votoPais.innerHTML = `${numeroVotos[aleatorio]}`;
+
+    },5000)
+
  
 function pais(){
 
     fetch('/usuarios/pais').then(function (resposta){
 
+        //Peguei o resultado do select que foi feito no caminho Usuario/PAIS
+
         if(resposta.ok){
 
             resposta.json().then(function(resposta){
 
-                console.log('Paises', JSON.stringify(resposta));
+                console.log('Paises', JSON.stringify(resposta)); // Dei um console pra ver oq estava saindo
 
-                for(i = 0; i < 5; i++){
+                // Varri os resultados do primeiro[0] ao quinto[4]
+                for(i = 0; i < resposta.length; i++){
 
                     var pais = resposta[i];
+                    // Defini uma variavel que guarda os valores separados do meu JSON
+                    // Pega todos os valores dos paises
+                    nomePaises.push(pais.nomePais);
+                    numeroVotos.push(pais.qntVotos);
 
+                    // Mandei pra minha lista o valor um por um, usando cada volta do meu for para separar
                     if(i == 0){
 
                         selectNome1.innerHTML = `${pais.nomePais}`;
-                        selectNota1.innerHTML = `${pais.nota}`;
+                        selectNota1.innerHTML = `${pais.Media}`;
 
                     }else if(i == 1){
 
                         selectNome2.innerHTML = `${pais.nomePais}`;
-                        selectNota2.innerHTML = `${pais.nota}`;
+                        selectNota2.innerHTML = `${pais.Media}`;
 
                     }else if(i == 2){
 
                         selectNome3.innerHTML = `${pais.nomePais}`;
-                        selectNota3.innerHTML = `${pais.nota}`;
+                        selectNota3.innerHTML = `${pais.Media}`;
 
                     }else if(i == 3){
 
                         selectNome4.innerHTML = `${pais.nomePais}`;
-                        selectNota4.innerHTML = `${pais.nota}`;
-
+                        selectNota4.innerHTML = `${pais.Media}`;
                     }else if(i == 4){
 
                         selectNome5.innerHTML = `${pais.nomePais}`;
-                        selectNota5.innerHTML = `${pais.nota}`;
-
+                        selectNota5.innerHTML = `${pais.Media}`;
                     }
 
-                    console.log(pais);
+                
                 }
             })
         }

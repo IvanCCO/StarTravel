@@ -65,12 +65,15 @@ function pais(){
     
     var instrucao = `
    
-    SELECT nomePais, nota FROM Pais ORDER BY nota DESC;
+    SELECT nomePais, qntVotos, ROUND(totalAvaliacao/qntVotos, 1) as Media FROM Pais ORDER BY Media DESC;
 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+
+
 
 module.exports = {
     entrar,

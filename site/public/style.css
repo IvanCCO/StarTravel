@@ -59,6 +59,17 @@ body{
     color: white;
 }
 
+#wellcome{
+   
+    opacity: 1;
+    color: var(--fontColor);
+    display: none;
+    height: 100vh;
+    width: auto;
+    place-items: center;
+}
+
+
 
 
 #div_login {

@@ -15,6 +15,11 @@
         <div id="helloWorld">
             <h1>Hello, World!</h1>
         </div>
+
+        <div id="wellcome" style="display: none;">
+            <h1>Welcome <span id="b_usuario"></span></h1>
+        </div>
+    
         <!-- Fim kkk-->
 
         <div id="div_login">
@@ -33,34 +38,34 @@
 </html>
 <script>
 
-    // Animação do Hello Word;\
+
+
+    // Criei uma variável setada como 100 para usar na animação do Loading que será 100% quando o usuario logar
 
     var barra = 100;
 
+    // Animação do Hello Word;\
   setTimeout(() => {
-
+      helloWorld.style.display = 'grid'  
       helloWorld.style.opacity = '0';
       helloWorld.style.transition = 'opacity ease-in-out 3s';
-
-
   }, 1)
 
   setTimeout(() => {
-      
       helloWorld.style.display = 'none';
       div_login.style.display = 'block';
-
   }, 3000)
     
-
-    // Validaçao abas de Login. 
+   
+  //Fazendo o enter funcionar quando da um Enter no input
     function key(){
         if(event.key === 'Enter'){
             return login()
-            
         }
     }
 
+
+     // Validaçao abas de Login. 
     function login(){
 
         var usernameVar = inp_user.value;
@@ -68,10 +73,12 @@
 
         if(usernameVar == '' || senhaVar == ''){
 
-            erro.innerHTML = 'Todos os campos devem ser preenchidos';
+            erro.innerHTML = 'All fields are mandatory';
 
         }else{
 
+
+            // Pegando aqui o select do Username e da senha..
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -83,20 +90,11 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
+            // Se o comando rodar então vai entrar nesse if
+
 
             if (resposta.ok) {
                 console.log(resposta);
-
-                barra_loading.style.display = 'block';
-                barra_loading.style.width = barra + '%';
-                barra_loading.style.transition = 'width ease-in-out 2.5s'
-
-
-
-                setTimeout(() => {
-                    window.location = "home.html";
-                }, "3000")
-                
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
@@ -104,20 +102,42 @@
                     sessionStorage.USERNAME_USUARIO = json.username;
                     sessionStorage.ID_USUARIO = json.idUsuario;
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    
+
+                    // Coloquei isso pra na hora que der a animação conseguir pegar o nome do usuário que foi guardado no SessionStorage
+                    b_usuario.innerHTML = `${sessionStorage.USERNAME_USUARIO}`                    
                     
                     
                 });
+
+                // Animação da barra de loading
+                barra_loading.style.display = 'block';
+                barra_loading.style.width = barra + '%';
+                barra_loading.style.transition = 'width ease-in-out 2.5s'
+
+
+                // Animação do Wellcome com o nome do Usuário
+                setTimeout(() => {
+                    wellcome.style.display = 'grid'
+                }, 2600)
+
+                setTimeout(() => {
+                    wellcome.style.opacity = 0;
+                    wellcome.style.transition = 'opacity ease-in-out 3s';
+                }, 2630)
+            
+                setTimeout(() => {
+                    window.location = "home.html";
+                }, "5000")
+                
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
                 resposta.text().then(texto => {
                     console.error(texto);
                     erro.innerHTML = `Invalid email/password`;
 
+                    // Aqui estou apagando a mensagem pra não ficar o tempo todo na tela
                     setTimeout(() => {
-
                         erro.innerHTML = '';
                     }, 4000)
                 });

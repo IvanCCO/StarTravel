@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StarTravel/Settings</title>
     <link rel="stylesheet" href="./home.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
             <a href="dashboard.html"><li>Places</li></a>
             <li>Chat</li>
             <a href="settings.html"><li>Settings</li></a>
-            <li style="border: 0;"><button>Compartilhar</button></li>
+            <li style="border: 0;"><button>Share</button></li>
         </ul>
 
         <div id="username">
@@ -93,6 +93,9 @@
 
     // Pegando as informações que estão no cache para mostrar pro usuario no placeholder
 
+
+    // Colocando no meu placeholder os valores que do meu usuário 
+
     userPlaceholder.placeholder = sessionStorage.USERNAME_USUARIO;
     userEmail.placeholder = sessionStorage.EMAIL_USUARIO;
     idVar = sessionStorage.ID_USUARIO;
@@ -104,6 +107,7 @@
 
         setTimeout(() =>{
 
+            // Limpando o "Cache" que estava guardado no site
             sessionStorage.clear();
 
             window.location = 'index.html';
@@ -114,6 +118,8 @@
 
     function updateconfig(){
 
+
+        // Função para alterar a config
         var changeUserVar = userPlaceholder.value;
         var changePasswordVar = userPassword.value;
         var changeEmailVar = userEmail.value;
@@ -142,7 +148,7 @@
     
                 if (resposta.ok) {
                     console.log(resposta);
-                    div_msg.innerHTML = 'Usuário alterado com sucesso'
+                    div_msg.innerHTML = 'Changes will be available in your next login'
                     
                 } else {
     
@@ -153,7 +159,7 @@
                 
                         setTimeout(() => {
     
-                            div_msg.innerHTML = 'Não foi possível alterar as credenciais';
+                            div_msg.innerHTML = 'An error was occured. Try again later';
                         }, 4000)
                     });
                 }
@@ -167,20 +173,11 @@
 
             div_msg.innerHTML = `Sorry ${sessionStorage.USERNAME_USUARIO} you can't change those informations right now`
         }
-
-
-        if(changeLocationVar != 'Sel'){
-
-
-            function rateCountry(){
-
-                //* Aqui vai avaliar os paises e aumentar ou diminuir a nota
-            }
-        }
     }
 
     function exibirNumero(){
 
+        // Função para exibir o valor do meu range
         var range = text_change.value;
 
         console.log(range);

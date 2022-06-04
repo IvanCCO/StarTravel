@@ -28,7 +28,6 @@ router.post("/colocarPais", function (req, res) {
     usuarioController.sel(req, res);
 });
 
-
 router.get("/pais", function(req, res){
     usuarioController.pais(req, res);
 })

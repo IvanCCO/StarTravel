@@ -18,7 +18,7 @@
             <li>Places</li>
             <li>Chat</li>
             <a href="settings.html"><li>Settings</li></a>
-            <li style="border: 0;"><button>Compartilhar</button></li>
+            <li style="border: 0;"><button>Share</button></li>
         </ul>
 
         <div id="username">
@@ -33,13 +33,13 @@
             <p>Countries DashBoard</p>
          </div>
 
-            <p>Filtros</p>
+            <p>Filters</p>
 
             <div id="botoes">
                 <button onclick="showGraph('IDH')">IDH</button>
-                <button onclick="showGraph('custo')">Custo de Vida</button>
-                <button onclick="showGraph('salario')">Salário</button>
-                <button onclick="showGraph('moeda')">Moeda</button>
+                <button onclick="showGraph('custo')">Life cost</button>
+                <button onclick="showGraph('salario')">Salary</button>
+                <button onclick="showGraph('moeda')">Coin price</button>
                 
             </div>
 
@@ -63,7 +63,9 @@
                 <canvas id="myChartMercado"></canvas>
               </div>
 
-        </div>
+              <div id="legenda" style="color: white; margin-top: 5%; margin-left: 32%; font-size: 25px">All values are based on Dolar</div>
+            </div>
+
 
 </body>
 </html>
@@ -73,6 +75,8 @@
 
 
   // Configurando Parte dos Botões 
+
+  a_usuario.innerHTML = sessionStorage.ID_USUARIO;
 
   function showGraph(exibir){
 
@@ -128,9 +132,13 @@
     const data = {
       labels: labels,
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: '#B8831C',
-        borderColor: 'rgb(255, 99, 132)',
+        label: 'IDH',
+        backgroundColor:[
+        '#406281',  
+        '#72027C',
+        '#1B521D',
+
+    ],
         data: [0.944, 0.901, 0.783, 0.699, 0.699, 0.883, 0.849, 0.926, 0.863, 0.709],
       }]
     };
@@ -138,7 +146,16 @@
     const config = {
       type: 'bar',
       data: data,
-      options: {}
+      options: {
+        scales: {
+          y: {
+              type: 'linear',
+              min: 0,
+              max: 2
+          },  
+          
+      }
+      }
     };
 
     // Grafico Custo
@@ -159,17 +176,29 @@
     const data2 = {
       labels: labels,
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: '#B8831C',
-        borderColor: 'rgb(255, 99, 132)',
+        label: 'Life cost',
+        backgroundColor:[
+        '#406281',  
+        '#72027C',
+        '#1B521D',
+
+    ],
         data: [0.944, 0.901, 0.783, 0.699, 0.699, 0.883, 0.849, 0.926, 0.863, 0.709],
       }]
     };
-  
+
     const config2 = {
       type: 'bar',
       data: data2,
-      options: {}
+      options: {
+        scales: {
+          y: {
+              type: 'linear',
+              min: 0,
+              max: 1
+          }
+      }
+      }
     };
 
     // Grafico salario
@@ -191,9 +220,13 @@
     const data3 = {
       labels: labels3,
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: '#B8831C',
-        borderColor: 'rgb(255, 99, 132)',
+        label: 'Salary',
+        backgroundColor:[
+        '#406281',  
+        '#72027C',
+        '#1B521D',
+
+    ],
         data: [4309.85, 3534.54, 769.83, 1345.00, 453.75, 2458.88, 5328.93, 5223.32, 2475.38, 2637.00],
       }]
     };
@@ -201,7 +234,15 @@
     const config3 = {
       type: 'bar',
       data: data3,
-      options: {}
+      options: {
+        scales: {
+          y: {
+              type: 'linear',
+              min: 0,
+              max: 10000
+          }
+      }
+      }
     };
 
 
@@ -220,9 +261,13 @@
     const data4 = {
       labels: labels4,
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: '#B8831C',
-        borderColor: 'rgb(255, 99, 132)',
+        label: 'Coin',
+        backgroundColor:[
+        '#406281',  
+        '#72027C',
+        '#1B521D',
+
+    ],
         data: [1, 0.042, 0.210, 0.0024, 1.07, 0.064, 1.26],
       }]
     };
@@ -230,7 +275,16 @@
     const config4 = {
       type: 'bar',
       data: data4,
-      options: {}
+      options: {
+        scales: {
+          y: {
+              type: 'linear',
+              min: 0,
+              max: 2
+          }
+          
+      }
+      }
     };
 
 

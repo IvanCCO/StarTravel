@@ -79,6 +79,8 @@ var timer = setInterval(function() {
     
     }else {
 
+        // Surpresa do final do Timer
+
         document.getElementById('home').style.opacity = 0;
         document.getElementById('home').style.transition = 'all ease-in-out 3s'
 
