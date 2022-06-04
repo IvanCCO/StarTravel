@@ -32,5 +32,10 @@ router.get("/pais", function(req, res){
     usuarioController.pais(req, res);
 })
 
+router.post("/updatePassword", function(req, res){
+    usuarioController.updatePassword(req, res);
+})
+
+
 
 module.exports = router;

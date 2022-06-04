@@ -26,11 +26,12 @@
             <div class="login">
             <h4 class="item-login">Welcome back!</h4>
             <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()" autofocus>
-            <input class='item-login' type="password" id="inp_senha" placeholder="Senha" onkeypress="key()">
+            <input class='item-login' type="password" id="inp_senha" placeholder="Password" onkeypress="key()">
             <a id="entrar"><button  class='item-login' onclick="login()">Login</button></a>
             <span id="erro"></span>
             <p class='item-login' >Begin your adventure? <a href="cadastro.html">Click here</a></p>
             <br>
+            <a href="redefinirSenha.html"><p class="item-login" style="width: max-content;">Forgot you Password?</p></a>
             <div id="barra_loading" style="width: 0; background-color:#72027C; height:3px; display:block;"></div>
         </div>
         </div>
@@ -112,7 +113,8 @@
                 // Animação da barra de loading
                 barra_loading.style.display = 'block';
                 barra_loading.style.width = barra + '%';
-                barra_loading.style.transition = 'width ease-in-out 2.5s'
+                barra_loading.style.transition = 'width ease-in-out 2.5s';
+
 
 
                 // Animação do Wellcome com o nome do Usuário
