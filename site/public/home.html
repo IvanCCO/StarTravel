@@ -360,12 +360,12 @@
         // Criar 2 vetores para guardar o nome do pais e o numero de votos 
 
         
-        var aleatorio = (Math.random() * (numeroVotos.length - 1)).toFixed(0);
+        var aleatorio = (Math.random() * (numeroVotos.length)).toFixed(0);
 
         console.log(aleatorio);
 
-        nomePais.innerHTML = `${nomePaises[aleatorio]}`;
-        votoPais.innerHTML = `${numeroVotos[aleatorio]}`;
+        nomePais.innerHTML = `${nomePaises[aleatorio -1]}`;
+        votoPais.innerHTML = `${numeroVotos[aleatorio -1]}`;
 
     },5000)
 

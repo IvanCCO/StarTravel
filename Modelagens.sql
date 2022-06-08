@@ -91,14 +91,13 @@ SELECT * FROM Pais WHERE nomePais = 'Nigeria';
 
 -- Select para mostrar os paises com as maiores notas
 
-SELECT nomePais, nota FROM Pais ORDER BY nota DESC;
+
 
 SELECT nomePais, totalAvaliacao/qntVotos as Media FROM Pais ORDER BY Media DESC;
 
 SELECT nomePais, ROUND(totalAvaliacao/qntVotos, 1) as Media FROM Pais ORDER BY Media DESC;
 
 SELECT nomePais, qntVotos, totalAvaliacao FROM Pais;
-
 
 
 

@@ -689,7 +689,7 @@ a{
   color: var(--fontColor);
   position: fixed;
   left: 80%;
-  top: 10%;
+  top: 0;
 }
 
 .timer .titulo{
@@ -707,8 +707,7 @@ a{
 
 .timer h1{
 
-  font-size: 140%;
-  margin-left: 25%;
+  font-size: 100%;
 }
 .timer #cronometro{
 
