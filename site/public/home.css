@@ -605,6 +605,50 @@ a{
 
 }
 
+.usuarios #vicenzo-post{
+
+  height: 80%;
+  margin-top: 2%;
+  background: url(./Imagens/codingPerson.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.usuarios #hillary-post{
+  height: 80%;
+  margin-top: 2%;
+  background: url(./Imagens/posts-imagens/pretzel.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.usuarios #moha-post{
+  height: 80%;
+  margin-top: 2%;
+  background: url(./Imagens/posts-imagens/rickshaw.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.usuarios #rudson-post{
+  height: 80%;
+  margin-top: 2%;
+  background: url(./Imagens/posts-imagens/4673.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
 /* Arrumando status mdos feedbacks */
 
 /*

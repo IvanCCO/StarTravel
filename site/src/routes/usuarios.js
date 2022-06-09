@@ -36,6 +36,16 @@ router.post("/updatePassword", function(req, res){
     usuarioController.updatePassword(req, res);
 })
 
+router.post("/publicar/:idUsuario", function (req, res) {
+    avisoController.publicar(req, res);
+});
+
+router.delete("/deletar/:idPost", function (req, res) {
+    avisoController.deletar(req, res);
+});
+
+
+
 
 
 module.exports = router;

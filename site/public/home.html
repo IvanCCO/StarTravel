@@ -26,11 +26,10 @@
                 <div id="logo_name"></div>
                 <li>Home</li>
                <a href="dashboard.html"><li>Places</li></a>
-                <li>Chat</li>
                 <a href="settings.html">
                     <li>Settings</li>
                 </a>
-                <li style="border: 0;"><button>Share</button></li>
+                
             </ul>
 
             <div id="username">
@@ -41,17 +40,13 @@
 
         <!--Painel do usuario-->
         <div class="painel">
-            <div class="search">
-                <img src="./Imagens/Icons/search.png" alt="Search">
-                <input type="text" id="inp_search" placeholder="Search">
-            </div>
             <div class="user">
 
                 <div id="itens">
                     <img src="./Imagens/Icons/image.png" alt="img">
                 </div>
                 <input type="text" id="inp_text" placeholder="Tell us about yourself">
-                <button>Send</button>
+                <button onclick="publicar()" >Send</button>
             </div>
 
             <div class="usuarios">
@@ -156,10 +151,9 @@
 
                     <!-- Conteudo postado -->
                     <div class="content">
-                        <p class="post-msg">Coffe and Code</p>
-                        <div class="post-img"></div>
+                        <p class="post-msg">Always with her</p>
+                        <div class="post-img" id="vicenzo-post"></div>
                     </div>
-
 
 
 
@@ -181,8 +175,8 @@
 
                     <!-- Conteudo postado -->
                     <div class="content">
-                        <p class="post-msg">Working!</p>
-                        <div class="post-img"></div>
+                        <p class="post-msg">Hmmmmmm!!!!!</p>
+                        <div class="post-img" id="hillary-post"></div>
                     </div>
 
 
@@ -206,8 +200,8 @@
 
                     <!-- Conteudo postado -->
                     <div class="content">
-                        <p class="post-msg">Working!</p>
-                        <div class="post-img"></div>
+                        <p class="post-msg">One more accident</p>
+                        <div class="post-img" id="moha-post"></div>
                     </div>
 
 
@@ -253,8 +247,8 @@
 
                     <!-- Conteudo postado -->
                     <div class="content">
-                        <p class="post-msg">Working!</p>
-                        <div class="post-img"></div>
+                        <p class="post-msg">What a wonder day</p>
+                        <div class="post-img" id="rudson-post"></div>
                     </div>
 
 
@@ -422,9 +416,14 @@ function pais(){
             })
         }
 
-
     })
 }
+
+    function publicar(){
+
+
+        fetch('usuarios/publicar')
+    }
 
         
 

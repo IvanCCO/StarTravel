@@ -2,6 +2,9 @@ CREATE DATABASE StarTravel;
 
 USE StarTravel;
 
+
+
+
 CREATE TABLE Usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (45) NOT NULL, 
@@ -28,14 +31,7 @@ CREATE TABLE Pais (
 
 ) AUTO_INCREMENT = 551100;
 
-CREATE TABLE Hostel (
-	idHostel INT PRIMARY KEY,
-	fkPais INT,
-	FOREIGN KEY (fkPais) REFERENCES Pais (idPais),
-	nome VARCHAR (20) NOT NULL,
-	diariaDolar DECIMAL (6,2) NOT NULL
 
-);
 
 -- Está tabela talvez será removida.
 
@@ -43,40 +39,41 @@ CREATE TABLE Post (
 	fkUsuario INT,
 	idPost INT,
 	mensagem VARCHAR (80),
-	qntdLikes INT,
-	qntdComments INT,
-	qntdShare INT,
-	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario)
-
+	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario),
+    PRIMARY KEY(fkUsuario, idPost)
 );
+
+INSERT INTO Post VALUES(22200, null, 'Uhulllll');
 
 
 
 -- Inserindo os dados dos paises
 
-INSERT INTO Pais VALUES (null, 'Holanda', 'Amsterdan', 5372, 1234, '0.967', 'Euro', '2394.00', '1234.00');
-
-INSERT INTO Pais VALUES (null, 'Franca', 'Paris', 4300, 983, '0.821', 'Euro', '2338.00', '940.00');
-
 INSERT INTO Pais VALUES
-						(null, 'Italia', 'Roma', 3700, 840, '0.812', 'Euro', '1943.00', '649.00'),
-                        (null, 'UK', 'London', 6900, 1339, '0.929', 'Libra', '3350.00', '2300.00'),
+						(null, 'Netherlands', 'Amsterdan', 5372, 1234, '0.967', 'Euro', '2394.00', '1234.00'),
+						(null, 'France', 'Paris', 4300, 983, '0.821', 'Euro', '2338.00', '940.00'),
+						(null, 'Italy', 'Rome', 3700, 840, '0.812', 'Euro', '1943.00', '649.00'),
+                        (null, 'UK', 'London', 6900, 1839, '0.929', 'Libra', '3350.00', '2300.00'),
                         (null, 'Cuba', "Havana", 3500, 948, '0.689', "Peso Cubano", '230.00', '80.00'),
                         (null, 'EUA', 'Washington', 8949, 3648, '0.820', 'Dolar', '2434.00', '2100.00'),
-                        (null, 'Brazil', 'Brasilia', 3589, 793, '0.743', 'Real', '2830.00', '1100.00'),
+                        (null, 'Brazil', 'Brasilia', 3589, 993, '0.743', 'Real', '2830.00', '1100.00'),
                         (null, 'Nigeria', 'Lagos', 109, 34, '0.589', 'Niger', '1239.00', '1120.00'),
-                        (null, 'Spain', 'Madrid', 2394, 559, '0.831', 'Euro', '1203.00', '820.00');
+                        (null, 'Spain', 'Madrid', 2394, 559, '0.831', 'Euro', '1203.00', '820.00'),
+                        (null, 'South Africa', 'South', 3819, 1193, '0.872', 'Dolar', '1679.00', '781.00'),
+                        (null, 'Belgica', 'Brussels', 4382, 938, '0.972', 'Euro', '1879.00', '820.00'),
+						(null, 'Ukraine', 'Kyiv', 1938, 530, '0.772', 'Hryvnia', '1079.00', '620.00');
                         
-UPDATE Pais set nomePais = 'Italy' WHERE nomePais = 'Italia';
-
-UPDATE Pais SET qntVotos = qntVotos + 1 WHERE nomePais = 'Nigeria';
-UPDATE Pais SET totalAvaliacao = totalAvaliacao + 3 WHERE nomePais = 'Nigeria';
-
+                    
                         
-INSERT INTO Pais VALUES (null, 'South Africa', 'South', 3819, 1193, '0.872', 'Dolar', '1679.00', '781.00');
-
-INSERT INTO Pais VALUES (null, 'Belgica', 'bruxelas', 4382, 938, '0.972', 'Euro', '1879.00', '820.00');
-
+                        
+						(null, 'China', 'Beijing', 3382, 938, '0.972', 'Renminbi', '1879.00', '820.00'),
+                        (null, 'Afghanistan', 'Kabul', 2382, 938, '0.972', 'Afghani', '1879.00', '820.00'),
+                        (null, 'Austria', 'Vienna', 5382, 2038, '0.972', 'Euro', '1879.00', '820.00'),
+                        (null, 'Canada', 'Ottawa', 4482, 938, '0.972', 'C.Dolar', '1879.00', '820.00'),
+                        (null, 'Israel', 'Jerusalem', 2382, 698, '0.972', 'Shekel', '1879.00', '820.00'),
+                        (null, 'Jamaica', 'Kingston', 2382, 830, '0.972', 'J.Dolar', '1879.00', '820.00'),
+                        (null, 'Japan', 'Tokyo', 4382, 1523, '0.972', 'Yen', '1879.00', '820.00');
+                        
 
 -- Deixando os selects prontos
 SELECT * from Usuario;
@@ -86,12 +83,7 @@ SELECT * from Usuario;
 
 SELECT * FROM Usuario;
 
-SELECT * FROM Pais WHERE nomePais = 'Nigeria';
-
-
 -- Select para mostrar os paises com as maiores notas
-
-
 
 SELECT nomePais, totalAvaliacao/qntVotos as Media FROM Pais ORDER BY Media DESC;
 
@@ -99,7 +91,9 @@ SELECT nomePais, ROUND(totalAvaliacao/qntVotos, 1) as Media FROM Pais ORDER BY M
 
 SELECT nomePais, qntVotos, totalAvaliacao FROM Pais;
 
+SELECT * FROM Usuario;
 
+SELECT count(idPais) FROM Pais;
 
 
 
