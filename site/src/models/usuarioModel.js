@@ -85,14 +85,18 @@ function updatePassword(username, senha){
     return database.executar(instrucao);
 }
 
-router.post("/publicar/:idUsuario", function (req, res) {
-    avisoController.publicar(req, res);
-});
+function publicar(idUsuario, titulo, imagem){
 
-router.delete("/deletar/:idPost", function (req, res) {
-    avisoController.deletar(req, res);
-});
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():", idUsuario, titulo, imagem);
+    
+    var instrucao = `
+   
+   INSERT INTO Post VALUES (${idUsuario}, null, '${titulo}', '${imagem}');
 
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 
 module.exports = {
@@ -102,5 +106,6 @@ module.exports = {
     updateconfig,
     sel,
     pais,
-    updatePassword
+    updatePassword,
+    publicar
 };

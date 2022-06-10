@@ -76,6 +76,9 @@
 
 
   // Configurando Parte dos Botões 
+  
+
+ 
 
   a_usuario.innerHTML = sessionStorage.USERNAME_USUARIO;
 
@@ -114,7 +117,15 @@
       Moeda.style.display = 'block';
 
     }
+
+  
+
   }
+
+ 
+
+
+ 
 
     // Gráfico com o IDH
     const labels = [
@@ -140,7 +151,8 @@
         '#1B521D',
 
     ],
-        data: [0.944, 0.901, 0.783, 0.699, 0.699, 0.883, 0.849, 0.926, 0.863, 0.709],
+    
+        data: [Number((Math.random()*0.3).toFixed(3)) + 0.7, 0.901, 0.783, 0.699, 0.699, 0.883, 0.849, 0.926, 0.863, 0.709],
       }]
     };
   
