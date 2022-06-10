@@ -40,10 +40,6 @@ router.post("/publicar/:idUsuario", function (req, res) {
     avisoController.publicar(req, res);
 });
 
-router.delete("/deletar/:idPost", function (req, res) {
-    avisoController.deletar(req, res);
-});
-
 
 
 

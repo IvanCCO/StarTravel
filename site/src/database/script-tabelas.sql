@@ -29,25 +29,14 @@ CREATE TABLE Pais (
 
 ) AUTO_INCREMENT = 551100;
 
-CREATE TABLE Hostel (
-	idHostel INT PRIMARY KEY,
-	fkPais INT,
-	FOREIGN KEY (fkPais) REFERENCES Pais (idPais),
-	nome VARCHAR (20) NOT NULL,
-	diariaDolar DECIMAL (6,2) NOT NULL
-
-);
-
--- Está tabela talvez será removida.
 
 CREATE TABLE Post (
 	fkUsuario INT,
 	idPost INT,
 	mensagem VARCHAR (80),
-	qntdLikes INT,
-	qntdComments INT,
-	qntdShare INT,
+	imagem VARCHAR(90),
 	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario)
+	PRIMARY KEY (fkUsuario, idPost);
 
 );
 
