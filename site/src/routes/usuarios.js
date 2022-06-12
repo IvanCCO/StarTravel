@@ -7,9 +7,6 @@ router.get("/", function (req, res) {
     usuarioController.testar(req, res);
 });
 
-router.get("/listar", function (req, res) {
-    usuarioController.listar(req, res);
-});
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
@@ -37,9 +34,12 @@ router.post("/updatePassword", function(req, res){
 })
 
 router.post("/publicar/:idUsuario", function (req, res) {
-    avisoController.publicar(req, res);
+    usuarioController.publicar(req, res);
 });
 
+router.get("/atualizar", function (req, res) {
+    usuarioController.atualizar(req, res);
+});
 
 
 

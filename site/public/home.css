@@ -877,6 +877,18 @@ a{
   flex-direction: row;
 }
 
+#btn-vote{
+
+  border: 2px solid var(--fourColor);
+  width: 10%;
+  margin-bottom: 6%;
+}
+
+#btn-vote:hover{
+
+  background-color: var(--fourColor);
+  color: whitesmoke;
+}
 .countries {
   color: var(--fontColor);
   width: 50%;
@@ -933,6 +945,8 @@ a{
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
+
 
 #botoes  button{
   height: 3vh;

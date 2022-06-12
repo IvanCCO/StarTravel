@@ -52,7 +52,7 @@
                     <p>Select your country</p>
                     <select class="inp_change" id="sel_changeLocation">
                         <option value="Sel">-- Select --</option>
-                        <option value="Holand">Holand</option>
+                        <option value="Netherlands">Holand</option>
                         <option value="France">France</option>
                         <option value="Nigeria">Nigeria</option>
                         <option value="Cuba">Cuba</option>
@@ -67,6 +67,7 @@
                     <p>Rate The country</p> 
                     <input type="range" min="1" max="5" class="inp_change" onchange="exibirNumero()" id="text_change" style="margin-bottom: 3%;">
                     <span id="numValue" style="margin-bottom: 5%;"></span>
+                    <button id="btn-vote" onclick="votar()">Vote</button>
 
                     <p>Disconnect</p>
                     <button onclick="leave()">Leave</button>
@@ -184,5 +185,50 @@
         numValue.innerHTML = `${range}`;
     }
 
+
+    function votar(){
+
+        // Criando as variaveis 
+
+        var nomePais = sel_changeLocation.value;
+
+        fetch("/usuarios/alterar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    usernameServer: changeUserVar,
+                    idUsuarioServer: idVar,
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO Votar()!")
+    
+                if (resposta.ok) {
+                    console.log(resposta);
+                    div_msg.innerHTML = 'Changes will be available in your next login'
+                    
+                } else {
+    
+                    console.log("Houve um erro ao alterar os valores");
+    
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                
+                        setTimeout(() => {
+    
+                            div_msg.innerHTML = 'An error was occured. Try again later';
+                        }, 4000)
+                    });
+                }
+    
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+    
+            return false;
+        }
+        
+    
 
 </script>

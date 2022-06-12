@@ -7,9 +7,8 @@ function testar(req, res) {
   res.json("ESTAMOS FUNCIONANDO!");
 }
 
-function listar(req, res) {
-  usuarioModel
-    .listar()
+function atualizar(req, res) {
+  usuarioModel.atualizar()
     .then(function (resultado) {
       if (resultado.length > 0) {
         res.status(200).json(resultado);
@@ -96,33 +95,6 @@ function cadastrar(req, res) {
   }
 }
 
-function updateconfig(req, res) {
-  // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-  var username = req.body.usernameServer;
-  var idUsuario = req.body.idUsuarioServer;
-
-  // Faça as validações dos valores
-  if (username == undefined) {
-    res.status(400).send("Seu username está undefined!");
-  } else if (idUsuario == undefined) {
-    res.status(400).send("Seu ID está undefined!");
-  } else {
-    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-    usuarioModel
-      .updateconfig(username, idUsuario)
-      .then(function (resultado) {
-        res.json(resultado);
-      })
-      .catch(function (erro) {
-        console.log(erro);
-        console.log(
-          "\nHouve um erro ao realizar a alteração! Erro: ",
-          erro.sqlMessage
-        );
-        res.status(500).json(erro.sqlMessage);
-      });
-  }
-}
 
 function sel(req, res) {
   var paisOneVar = req.body.paisOneServer;
@@ -234,16 +206,45 @@ function updatePassword(req, res) {
         });
     }
   }
+
+  function publicar(req, res) {
+    var idUsuario = req.params.idUsuario;
+    var titulo = req.body.titulo;
+    var imagem = req.body.imagem;
+
+    if (titulo == undefined) {
+        res.status(400).send("O título está indefinido!");
+    } else if (imagem == undefined) {
+        res.status(400).send("A descrição está indefinido!");
+    } else if (idUsuario == undefined) {
+        res.status(403).send("O id do usuário está indefinido!");
+    } else {
+        usuarioModel.publicar(idUsuario, titulo, imagem)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            )
+            .catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
   
 
 
 module.exports = {
   entrar,
   cadastrar,
-  listar,
+  atualizar,
   testar,
   updateconfig,
   sel,
   pais,
   updatePassword,
+  publicar
 };

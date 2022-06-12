@@ -428,12 +428,93 @@ function pais(){
     })
 }
 
+atualizarFeed();
+
+function atualizarFeed(){
+        fetch("/usuarios/atualizar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                   
+                    console.log('Entrou no status 204');
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                   
+                    for (i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        console.log(publicacao)
+                        // criando e manipulando elementos do HTML pelo JavaScript
+                        var divPublicacao = document.createElement("div");
+                   
+                        var tituloVar = document.createElement("p");
+                        var spanNome = document.createElement("p");
+                        var divFoto = document.createElement("div");
+
+                  /*      
+                        if (sessionStorage.ID_USUARIO == 1) {
+                            var divButtons = document.createElement("div");
+                            var btnEditar = document.createElement("button");
+                            var btnDeletar = document.createElement("button");
+                            btnEditar.innerHTML = "Editar";
+                            btnDeletar.innerHTML = "Deletar";
+
+                            divButtons.className = "div-buttons"
+
+                            btnEditar.className = "publicacao-btn-editar"
+                            btnEditar.id = "btnEditar" + publicacao.idPost;
+                            btnEditar.setAttribute("onclick", `editar(${publicacao.idPost})`);
+
+                            btnDeletar.className = "publicacao-btn-editar"
+                            btnDeletar.id = "btnDeletar" + publicacao.idPost;
+                            btnDeletar.setAttribute("onclick", `deletar(${publicacao.idPost})`);
+                            divPublicacao.appendChild(divButtons);
+                            divButtons.appendChild(btnEditar);
+                            divButtons.appendChild(btnDeletar);
+                        }
+
+
+
+                       */
+    
+                        // Colacando as classses da mimnhas variaveis para encaixar no meu html
+                        divPublicacao.className = "post";
+                        /* tituloVar.id = publicacao.idPost; */
+                        spanNome.className = "name-user";
+                        tituloVar.className = "post-msg";
+                        divFoto.className = "post-img";
+
+
+
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(tituloVar);
+                        divPublicacao.appendChild(divFoto);
+
+                        tituloVar.innerHTML = `${publicacao.mensagem}`;
+                        spanNome.innerHTML = `${publicacao.username}`;
+                        divFoto.style.background = `url(${publicacao.imagem})`;
+                     
+                    }
+
+               
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+       
+        });
+    }
+
 function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
             titulo: inp_text.value,
-            imagem: url_image.value
+            imagem: url_image.value,
         }
 
         fetch(`/usuarios/publicar/${idUsuario}`, {
@@ -447,12 +528,9 @@ function publicar() {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-
-
                 // Criar um novo elemento com tudo igual ao de cima com as informações que foram pegas do banco
-
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                alert('Post realizado com sucesso!');
+                    location.reload();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -460,7 +538,7 @@ function publicar() {
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            
         });
 
         return false;

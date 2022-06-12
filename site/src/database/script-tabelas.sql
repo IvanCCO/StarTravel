@@ -6,7 +6,7 @@ USE StarTravel;
 CREATE TABLE Usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (45) NOT NULL, 
-	email VARCHAR (45) NOT NULL,
+	email VARCHAR (45) NOT NULL UNIQUE,
 	senha VARCHAR (25) NOT NULL,
 	username VARCHAR(14) NOT NULL UNIQUE,
     paisOne VARCHAR(20),
@@ -32,14 +32,13 @@ CREATE TABLE Pais (
 
 CREATE TABLE Post (
 	fkUsuario INT,
-	idPost INT,
+	idPost INT primary key AUTO_INCREMENT,
 	mensagem VARCHAR (80),
 	imagem VARCHAR(90),
 	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario)
-	PRIMARY KEY (fkUsuario, idPost);
+)AUTO_INCREMENT = 9900;
 
-);
-
+ SELECT mensagem,imagem,fkUsuario,idUsuario AS idUsuario,nome FROM post p INNER JOIN usuario u ON p.fkUsuario = u.idUsuario order by idPost desc;
 
 
 -- Inserindo os dados dos paises
@@ -56,11 +55,7 @@ INSERT INTO Pais VALUES
                         (null, 'Spain', 'Madrid', 2394, 559, '0.831', 'Euro', '1203.00', '820.00'),
                         (null, 'South Africa', 'South', 3819, 1193, '0.872', 'Dolar', '1679.00', '781.00'),
                         (null, 'Belgica', 'Brussels', 4382, 938, '0.972', 'Euro', '1879.00', '820.00'),
-						(null, 'Ukraine', 'Kyiv', 1938, 530, '0.772', 'Hryvnia', '1079.00', '620.00');
-                        
-                    
-                        
-                        
+						(null, 'Ukraine', 'Kyiv', 1938, 530, '0.772', 'Hryvnia', '1079.00', '620.00'),
 						(null, 'China', 'Beijing', 3382, 938, '0.972', 'Renminbi', '1879.00', '820.00'),
                         (null, 'Afghanistan', 'Kabul', 2382, 938, '0.972', 'Afghani', '1879.00', '820.00'),
                         (null, 'Austria', 'Vienna', 5382, 2038, '0.972', 'Euro', '1879.00', '820.00'),

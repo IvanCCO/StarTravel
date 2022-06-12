@@ -99,6 +99,23 @@ function publicar(idUsuario, titulo, imagem){
 }
 
 
+function atualizar() {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+        SELECT 
+            mensagem,
+            imagem,
+            fkUsuario,
+            idUsuario AS idUsuario,
+            username
+        FROM post p
+            INNER JOIN usuario u
+                ON p.fkUsuario = u.idUsuario order by idPost desc;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
@@ -107,5 +124,6 @@ module.exports = {
     sel,
     pais,
     updatePassword,
-    publicar
+    publicar,
+    atualizar
 };
