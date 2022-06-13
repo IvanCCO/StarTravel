@@ -65,7 +65,7 @@ function pais(){
     
     var instrucao = `
    
-    SELECT nomePais, qntVotos, ROUND(totalAvaliacao/qntVotos, 1) as Media FROM Pais ORDER BY Media DESC;
+    SELECT nomePais, qntVotos, totalAvaliacao, ROUND(totalAvaliacao/qntVotos, 1) as Media FROM Pais ORDER BY Media DESC;
 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -116,13 +116,13 @@ function atualizar() {
     return database.executar(instrucao);
 }
 
-function votar(nomePais, qntVoto, valorVoto){
+function votar(nomePais, qntVotos, valorVoto){
 
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():","" );
     
     var instrucao = `
    
-    UPDATE Pais SET qntVotos = ${qntVoto}, totalAvaliacao = ${valorVoto} WHERE nomePais = '${nomePais}';
+    UPDATE Pais SET qntVotos = ${qntVotos}, totalAvaliacao = ${valorVoto} WHERE nomePais = '${nomePais}';
 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);

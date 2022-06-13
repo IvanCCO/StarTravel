@@ -238,7 +238,7 @@ function updatePassword(req, res) {
 function votar(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
   var nomePais = req.body.nomePaisServer;
-  var qntVoto = req.body.qntVotoServer;
+  var qntVotos = req.body.qntVotosServer;
   var valorVoto = req.body.valorVotoServer;
 
   // Faça as validações dos valores
@@ -246,13 +246,13 @@ function votar(req, res) {
     res.status(400).send("Seu nomePais está undefined!");
   } else if (valorVoto == undefined) {
     res.status(400).send("Seu valorVoto está undefined!");
-  } else if (qntVoto == undefined) {
+  } else if (qntVotos == undefined) {
     res.status(400).send("Seu valorVoto está undefined!");
   }else {
     
     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
     usuarioModel
-      .votar(nomePais, qntVoto, valorVoto)
+      .votar(nomePais, qntVotos, valorVoto)
       .then(function (resultado) {
         res.json(resultado);
       })
