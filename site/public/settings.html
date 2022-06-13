@@ -189,6 +189,7 @@
     function votar(){
 
         var nomePais = sel_changeLocation.value;
+     
 
         fetch("/usuarios/votar", {
                 method: "POST",
@@ -204,7 +205,7 @@
     
                 if (resposta.ok) {
                     console.log(resposta);
-                    div_msg.innerHTML = 'Changes will be available in your next login'
+                    div_msg.innerHTML = 'Vote Computed'
                     
                 } else {
     

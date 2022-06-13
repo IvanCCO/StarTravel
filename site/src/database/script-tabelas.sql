@@ -38,7 +38,6 @@ CREATE TABLE Post (
 	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario)
 )AUTO_INCREMENT = 9900;
 
- SELECT mensagem,imagem,fkUsuario,idUsuario AS idUsuario,nome FROM post p INNER JOIN usuario u ON p.fkUsuario = u.idUsuario order by idPost desc;
 
 
 -- Inserindo os dados dos paises
@@ -65,18 +64,11 @@ INSERT INTO Pais VALUES
                         (null, 'Japan', 'Tokyo', 4382, 1523, '0.972', 'Yen', '1879.00', '820.00');
                         
 
--- Deixando os selects prontos
-SELECT * from Usuario;
-SELECT * FROM Pais WHERE nomePais = 'Italy';
 
-UPDATE Pais SET qntVotos = 841, totalAvaliacao = 5704 WHERE nomePais = 'Italy';
 
 
 -- Inserindo Meus Usuários Ficticios 
-
-
-SELECT * FROM Usuario;
-
+	
 -- Select para mostrar os paises com as maiores notas
 
 SELECT nomePais, totalAvaliacao/qntVotos as Media FROM Pais ORDER BY Media DESC;

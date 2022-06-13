@@ -22,12 +22,22 @@ var sqlServerConfig = {
 // Pc de Casa 
 
 
-var mySqlConfig = {
-    host: "localhost",
-    database: "StarTravel",
-    user: "root",
-    password: "Mimoso009#@",
-};
+// var mySqlConfig = {
+//     host: "localhost",
+//     database: "StarTravel",
+//     user: "root",
+//     password: "Mimoso009#@",
+// };
+
+
+//     PC faculdade
+//  var mySqlConfig = {
+//     host: "localhost",
+//     database: "StarTravel",
+//     user: "aluno",
+//     password: "sptech",
+// };
+ 
 
 
 

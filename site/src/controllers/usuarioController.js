@@ -268,7 +268,6 @@ function votar(req, res) {
 }
   
 
-
 module.exports = {
   entrar,
   cadastrar,
