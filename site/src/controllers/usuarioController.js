@@ -234,6 +234,38 @@ function updatePassword(req, res) {
             );
     }
 }
+
+function votar(req, res) {
+  // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+  var nomePais = req.body.nomePaisServer;
+  var qntVoto = req.body.qntVotoServer;
+  var valorVoto = req.body.valorVotoServer;
+
+  // Faça as validações dos valores
+  if (nomePais == undefined) {
+    res.status(400).send("Seu nomePais está undefined!");
+  } else if (valorVoto == undefined) {
+    res.status(400).send("Seu valorVoto está undefined!");
+  } else if (qntVoto == undefined) {
+    res.status(400).send("Seu valorVoto está undefined!");
+  }else {
+    
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    usuarioModel
+      .votar(nomePais, qntVoto, valorVoto)
+      .then(function (resultado) {
+        res.json(resultado);
+      })
+      .catch(function (erro) {
+        console.log(erro);
+        console.log(
+          "\nHouve um erro ao realizar a alteração! Erro: ",
+          erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+      });
+  }
+}
   
 
 
@@ -246,5 +278,6 @@ module.exports = {
   sel,
   pais,
   updatePassword,
-  publicar
+  publicar,
+  votar
 };

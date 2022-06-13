@@ -41,6 +41,9 @@ router.get("/atualizar", function (req, res) {
     usuarioController.atualizar(req, res);
 });
 
+router.post("/votar", function (req, res) {
+    usuarioController.votar(req, res);
+});
 
 
 

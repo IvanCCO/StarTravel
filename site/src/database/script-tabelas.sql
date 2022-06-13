@@ -67,6 +67,10 @@ INSERT INTO Pais VALUES
 
 -- Deixando os selects prontos
 SELECT * from Usuario;
+SELECT * FROM Pais WHERE nomePais = 'Italy';
+
+UPDATE Pais SET qntVotos = 841, totalAvaliacao = 5704 WHERE nomePais = 'Italy';
+
 
 -- Inserindo Meus Usuários Ficticios 
 

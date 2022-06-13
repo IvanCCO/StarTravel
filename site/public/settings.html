@@ -188,11 +188,9 @@
 
     function votar(){
 
-        // Criando as variaveis 
-
         var nomePais = sel_changeLocation.value;
 
-        fetch("/usuarios/alterar", {
+        fetch("/usuarios/votar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -228,7 +226,5 @@
     
             return false;
         }
-        
-    
 
 </script>
