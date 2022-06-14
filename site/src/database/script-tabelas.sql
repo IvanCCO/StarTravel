@@ -2,7 +2,6 @@ CREATE DATABASE StarTravel;
 
 USE StarTravel;
 
-
 CREATE TABLE Usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (45) NOT NULL, 
@@ -78,6 +77,12 @@ SELECT nomePais, ROUND(totalAvaliacao/qntVotos, 1) as Media FROM Pais ORDER BY M
 SELECT nomePais, qntVotos, totalAvaliacao FROM Pais;
 
 SELECT * FROM Usuario;
+
+
+DESC Post;
+
+SELECT Post.mensagem, Post.imagem, Usuario.username FROM Post, Usuario WHERE fkUsuario = idUsuario;
+
 
 
 

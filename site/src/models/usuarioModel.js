@@ -3,7 +3,7 @@ var database = require("../database/config")
 function listar() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        SELECT * FROM Usuario;
+    SELECT Post.mensagem, Post.imagem, Usuario.username FROM Post, Usuario WHERE fkUsuario = idUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -85,49 +85,20 @@ function updatePassword(username, senha){
     return database.executar(instrucao);
 }
 
-function publicar(idUsuario, titulo, imagem){
-
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():", idUsuario, titulo, imagem);
-    
-    var instrucao = `
-   
-   INSERT INTO Post VALUES (${idUsuario}, null, '${titulo}', '${imagem}');
-
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
-
-
-function atualizar() {
-    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-        SELECT 
-            mensagem,
-            imagem,
-            fkUsuario,
-            idUsuario AS idUsuario,
-            username
-        FROM post p
-            INNER JOIN usuario u
-                ON p.fkUsuario = u.idUsuario order by idPost desc;
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
-
-function votar(nomePais, qntVotos, valorVoto){
+function votar(nomePais, qntVotos, totalAvaliacao){
 
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function sel():","" );
     
     var instrucao = `
    
-    UPDATE Pais SET qntVotos = ${qntVotos}, totalAvaliacao = ${valorVoto} WHERE nomePais = '${nomePais}';
+    UPDATE Pais SET qntVotos = '${qntVotos}', totalAvaliacao = '${totalAvaliacao}' where nomePais = '${nomePais}';
 
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+
 
 
 module.exports = {
@@ -138,8 +109,5 @@ module.exports = {
     sel,
     pais,
     updatePassword,
-    publicar,
-    atualizar,
     votar
-
 };

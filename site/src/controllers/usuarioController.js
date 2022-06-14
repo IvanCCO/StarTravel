@@ -7,8 +7,8 @@ function testar(req, res) {
   res.json("ESTAMOS FUNCIONANDO!");
 }
 
-function atualizar(req, res) {
-  usuarioModel.atualizar()
+function listar(req, res) {
+  usuarioModel.listar()
     .then(function (resultado) {
       if (resultado.length > 0) {
         res.status(200).json(resultado);
@@ -247,7 +247,7 @@ function votar(req, res) {
   } else if (valorVoto == undefined) {
     res.status(400).send("Seu valorVoto está undefined!");
   } else if (qntVotos == undefined) {
-    res.status(400).send("Seu valorVoto está undefined!");
+    res.status(400).send("Seu qntVotos está undefined!");
   }else {
     
     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
@@ -271,7 +271,7 @@ function votar(req, res) {
 module.exports = {
   entrar,
   cadastrar,
-  atualizar,
+  listar,
   testar,
   updateconfig,
   sel,

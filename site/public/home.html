@@ -428,10 +428,10 @@ function pais(){
     })
 }
 
-atualizarFeed();
+listar();
 
-function atualizarFeed(){
-        fetch("/usuarios/atualizar").then(function (resposta) {
+function listar(){
+        fetch("/usuarios/listar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                    
@@ -453,31 +453,7 @@ function atualizarFeed(){
                         var spanNome = document.createElement("p");
                         var divFoto = document.createElement("div");
 
-                  /*      
-                        if (sessionStorage.ID_USUARIO == 1) {
-                            var divButtons = document.createElement("div");
-                            var btnEditar = document.createElement("button");
-                            var btnDeletar = document.createElement("button");
-                            btnEditar.innerHTML = "Editar";
-                            btnDeletar.innerHTML = "Deletar";
-
-                            divButtons.className = "div-buttons"
-
-                            btnEditar.className = "publicacao-btn-editar"
-                            btnEditar.id = "btnEditar" + publicacao.idPost;
-                            btnEditar.setAttribute("onclick", `editar(${publicacao.idPost})`);
-
-                            btnDeletar.className = "publicacao-btn-editar"
-                            btnDeletar.id = "btnDeletar" + publicacao.idPost;
-                            btnDeletar.setAttribute("onclick", `deletar(${publicacao.idPost})`);
-                            divPublicacao.appendChild(divButtons);
-                            divButtons.appendChild(btnEditar);
-                            divButtons.appendChild(btnDeletar);
-                        }
-
-
-
-                       */
+                
     
                         // Colacando as classses da mimnhas variaveis para encaixar no meu html
                         divPublicacao.className = "post";

@@ -37,8 +37,8 @@ router.post("/publicar/:idUsuario", function (req, res) {
     usuarioController.publicar(req, res);
 });
 
-router.get("/atualizar", function (req, res) {
-    usuarioController.atualizar(req, res);
+router.get("/listar", function (req, res) {
+    usuarioController.listar(req, res);
 });
 
 router.post("/votar", function (req, res) {
