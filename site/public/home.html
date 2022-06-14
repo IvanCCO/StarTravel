@@ -54,30 +54,7 @@
                 <button onclick="publicar()" >Send</button>
             </div>
 
-            <div class="usuarios">
-
-               
-                <div class="post">
-
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="Lui"></div>
-                        <!-- Nome -->
-                        <p class="name-user">Luijean</p>
-                        <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/france.png">
-                        <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">7 hours ago</p>
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">Working!</p>
-                        <div class="post-img"></div>
-                    </div>
-
-                </div>
+            <div class="usuarios" id="divSuperPai">
             
 
                 <div class="post">
@@ -88,10 +65,8 @@
                         <!-- Nome -->
                         <p class="name-user">PedroFern4ndes</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/spain.png">
-                        <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">7 hours ago</p>
+                       
+                        
                     </div>
 
                     <!-- Conteudo postado -->
@@ -126,10 +101,9 @@
                         <!-- Nome -->
                         <p class="name-user">WilsonRodger</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/united-states.png">
+                    
                         <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">32 minutes ago</p>
+                       
                     </div>
 
                     <!-- Conteudo postado -->
@@ -150,10 +124,9 @@
                         <!-- Nome -->
                         <p class="name-user">VicenzoRossi</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/italy.png">
+                     
                         <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">7 hours ago</p>
+                       
                     </div>
 
                     <!-- Conteudo postado -->
@@ -174,10 +147,9 @@
                         <!-- Nome -->
                         <p class="name-user">HillaryWood</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/germany.png">
+                      
                         <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">1 day ago</p>
+                        
                     </div>
 
                     <!-- Conteudo postado -->
@@ -185,9 +157,6 @@
                         <p class="post-msg">Hmmmmmm!!!!!</p>
                         <div class="post-img" id="hillary-post"></div>
                     </div>
-
-
-
 
                 </div>
 
@@ -199,10 +168,9 @@
                         <!-- Nome -->
                         <p class="name-user">MohammedJohn</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/canada.png">
+                      
                         <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">7 hours ago</p>
+                        
                     </div>
 
                     <!-- Conteudo postado -->
@@ -224,10 +192,9 @@
                         <!-- Nome -->
                         <p class="name-user">Gabrielly</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/united-kingdom.png">
+                      
                         <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">7 hours ago</p>
+                        
                     </div>
 
                     <!-- Conteudo postado -->
@@ -246,10 +213,9 @@
                         <!-- Nome -->
                         <p class="name-user">RudsonLouds</p>
                         <!--Bandeira de Onde Ele está -->
-                        <img src="./Imagens/Countries-logo/canada.png">
+                       
                         <!--Tempo que postou-->
-                        <img class="add-user" src="./Imagens/Icons/add-user.png" alt="">
-                        <p class="post-time">7 hours ago</p>
+                        
                     </div>
 
                     <!-- Conteudo postado -->
@@ -363,12 +329,14 @@
         // Criar 2 vetores para guardar o nome do pais e o numero de votos 
 
         
-        var aleatorio = (Math.random() * (numeroVotos.length)).toFixed(0);
+        var aleatorio = (Math.random() * (numeroVotos.length - 1)).toFixed(0);
+        
+        if(nomePaises[aleatorio] == undefined){
 
-        console.log(aleatorio);
-
-        nomePais.innerHTML = `${nomePaises[aleatorio -1]}`;
-        votoPais.innerHTML = `${numeroVotos[aleatorio -1]}`;
+            alert('Deu ruim')
+        }
+        nomePais.innerHTML = `${nomePaises[aleatorio]}`;
+        votoPais.innerHTML = `${numeroVotos[aleatorio]}`;
 
     },5000)
 
@@ -445,32 +413,53 @@ function listar(){
                     for (i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
 
-                        console.log(publicacao)
+                        console.log('Essa são as publicaçoes' + publicacao.mensagem)
                         // criando e manipulando elementos do HTML pelo JavaScript
-                        var divPublicacao = document.createElement("div");
-                   
-                        var tituloVar = document.createElement("p");
-                        var spanNome = document.createElement("p");
-                        var divFoto = document.createElement("div");
 
-                
+                        var divPost = document.createElement("div");
+                        var divInfoBar = document.createElement('div');
+                        var divUserFoto = document.createElement('div');
+                        var pNameUser = document.createElement('p');
+                        
+                        var divContent = document.createElement('div');
+                        var pPostMsg = document.createElement('p');
+                        var divPostImg = document.createElement('div');
     
-                        // Colacando as classses da mimnhas variaveis para encaixar no meu html
-                        divPublicacao.className = "post";
+                        
+                        divSuperPai.appendChild(divPost);
+                        
+                        divPost.appendChild(divInfoBar);
+                        divPost.appendChild(divUserFoto);
+                        divPost.appendChild(pNameUser);
+                        divPost.appendChild(divContent);
+         
+                        divContent.appendChild(pPostMsg);
+                        divContent.appendChild(divPostImg);
+
+                        divInfoBar.appendChild(divUserFoto);
+                        divInfoBar.appendChild(pNameUser);
+
+                     
+                        
+                        // Colacando as classses da minhas variaveis para encaixar no meu html
+                        divPost.className = 'post';
+                        divInfoBar.className  = 'info-bar';
+                        divUserFoto.className = 'user-foto';
+                        pNameUser.className = 'name-user';
+                        divContent.className = 'content';
+                        pPostMsg.className = 'post-msg';
+                        divPostImg.className = 'post-img';
+
+    
+
+                        
                         /* tituloVar.id = publicacao.idPost; */
-                        spanNome.className = "name-user";
-                        tituloVar.className = "post-msg";
-                        divFoto.className = "post-img";
 
 
-
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(tituloVar);
-                        divPublicacao.appendChild(divFoto);
-
-                        tituloVar.innerHTML = `${publicacao.mensagem}`;
-                        spanNome.innerHTML = `${publicacao.username}`;
-                        divFoto.style.background = `url(${publicacao.imagem})`;
+                        pNameUser.innerHTML = `${publicacao.username}`;
+                        pPostMsg.innerHTML = `${publicacao.mensagem}`;
+                        divPostImg.style.background = `url(${publicacao.imagem})`;
+                        divPostImg.style.backgroundSize = 'cover';
                      
                     }
 

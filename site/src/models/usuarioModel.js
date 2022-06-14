@@ -3,7 +3,7 @@ var database = require("../database/config")
 function listar() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    SELECT Post.mensagem, Post.imagem, Usuario.username FROM Post, Usuario WHERE fkUsuario = idUsuario;
+    SELECT Post.mensagem, Post.imagem, Usuario.username, idPost, idUsuario FROM Post, Usuario WHERE fkUsuario = idUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -98,6 +98,19 @@ function votar(nomePais, qntVotos, totalAvaliacao){
     return database.executar(instrucao);
 }
 
+function publicar(idUsuario, titulo, imagem){
+
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar():","" );
+    
+    var instrucao = `
+   
+    INSERT INTO Post VALUES (${idUsuario}, null, '${titulo}', '${imagem}');
+
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 
 
@@ -109,5 +122,6 @@ module.exports = {
     sel,
     pais,
     updatePassword,
-    votar
+    votar,
+    publicar
 };

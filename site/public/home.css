@@ -351,9 +351,10 @@ a{
 
 
 
-
-
-.info-bar .user-foto{
+.user-foto{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   margin-top: 3px;
   height: 70%;
   width: 10%;
@@ -361,114 +362,83 @@ a{
   margin-left: 2vw;
   border: 2px solid var(--secundaryColor);
 
+
+}
+
+.info-bar .user-foto #Lui{
+ 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-1.png);
-  background-repeat: no-repeat;
+  
+  
   background-position: center;
   background-size: cover;
+  
 }
 
 .info-bar #Pedro{
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-2.jpg);
-  background-repeat: no-repeat;
+
+  
   background-position: center;
   background-size: cover;
+
 }
 
 .info-bar #Wilson {
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
+  
 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-3.jpg);
-  background-repeat: no-repeat;
+
+  
   background-position: center;
   background-size: cover;
 }
 
 .info-bar #Vicenzo {
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
+
 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-4.jpg);
-  background-repeat: no-repeat;
+ 
+  
   background-position: center;
   background-size: cover;
 }
 
 .info-bar #Hillary {
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
+ 
 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-5.jpg);
-  background-repeat: no-repeat;
+ 
+  
   background-position: center;
   background-size: cover;
 }
 
 .info-bar #Indian {
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
-
+  
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-7.jpg);
-  background-repeat: no-repeat;
+
+  
   background-position: center;
   background-size: cover;
 }
 
 .info-bar #Gabrielly {
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
+
 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-6.jpg);
-  background-repeat: no-repeat;
+
+  
   background-position: center;
   background-size: cover;
 }
 
 .info-bar #fat {
-  margin-top: 3px;
-  height: 70%;
-  width: 10%;
-  border-radius: 5px;
-  margin-left: 3vw;
-  border: 2px solid var(--secundaryColor);
+
 
   /* Imagem  do user */ 
-  background: url(./Imagens/Users/user-8.jpg);
-  background-repeat: no-repeat;
+
   background-position: center;
   background-size: cover;
 }
@@ -573,69 +543,55 @@ a{
 
 .usuarios  #WilsonFt 
 {
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/posts-imagens/Willa-posrt.jpeg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 .usuarios #PedroFt {
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/posts-imagens/estadio.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 .usuarios #GabriellyFt {
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/posts-imagens/hostel.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 
 }
 
 .usuarios #vicenzo-post{
 
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/codingPerson.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 .usuarios #hillary-post{
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/posts-imagens/pretzel.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 .usuarios #moha-post{
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/posts-imagens/rickshaw.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 
 .usuarios #rudson-post{
-  height: 80%;
-  margin-top: 2%;
+  
+  
   background: url(./Imagens/posts-imagens/4673.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 
