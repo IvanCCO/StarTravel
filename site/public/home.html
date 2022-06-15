@@ -285,7 +285,7 @@
 
                 </div>
 
-                <p id="qntdVotos">Quantidade de Votos</p>
+                <p id="qntdVotos">Vote Amount</p>
                 <div class="paisVotado">
                     <div id="nomePais"></div>
                     <div id="votoPais"></div>
@@ -331,14 +331,11 @@
         
         var aleatorio = (Math.random() * (numeroVotos.length - 1)).toFixed(0);
         
-        if(nomePaises[aleatorio] == undefined){
-
-            alert('Deu ruim')
-        }
+        
         nomePais.innerHTML = `${nomePaises[aleatorio]}`;
         votoPais.innerHTML = `${numeroVotos[aleatorio]}`;
 
-    },5000)
+    },3000)
 
  
 function pais(){
@@ -482,6 +479,11 @@ function publicar() {
             imagem: url_image.value,
         }
 
+        if(imagem.length < '20'){
+
+            alert('Você precisa adicionar uma imagem válida')
+        }else{
+
         fetch(`/usuarios/publicar/${idUsuario}`, {
             method: "post",
             headers: {
@@ -509,6 +511,7 @@ function publicar() {
         return false;
 
     }
+}
         
 
 </script>

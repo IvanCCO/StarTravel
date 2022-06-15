@@ -75,7 +75,6 @@ var timer = setInterval(function() {
     
         document.getElementById("timer-secs").innerHTML = `${("0"+secs).slice(-2)}`;
 
-        console.log(days + hours + mins + secs)
     
     }else {
 

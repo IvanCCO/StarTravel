@@ -33,11 +33,9 @@ CREATE TABLE Post (
 	fkUsuario INT,
 	idPost INT primary key AUTO_INCREMENT,
 	mensagem VARCHAR (80),
-	imagem VARCHAR(90),
+	imagem VARCHAR(1900),
 	FOREIGN KEY (fkusuario) REFERENCES Usuario (idUsuario)
 )AUTO_INCREMENT = 9900;
-
-
 
 -- Inserindo os dados dos paises
 
