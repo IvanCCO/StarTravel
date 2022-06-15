@@ -8,11 +8,12 @@ CREATE TABLE Usuario (
 	email VARCHAR (45) NOT NULL UNIQUE,
 	senha VARCHAR (25) NOT NULL,
 	username VARCHAR(14) NOT NULL UNIQUE,
-    paisOne VARCHAR(20),
-    paisTwo VARCHAR(20),
-    paisThree VARCHAR(20)
+    paisOne VARCHAR(30),
+    paisTwo VARCHAR(30),
+    paisThree VARCHAR(30)
 
 )AUTO_INCREMENT = 022200;
+
 
 
 CREATE TABLE Pais (
@@ -76,12 +77,24 @@ SELECT nomePais, qntVotos, totalAvaliacao FROM Pais;
 
 SELECT * FROM Usuario;
 
+INSERT INTO Usuario VALUES (22200, 'Ivan Freire', 'ivanmedeiros09@gmail.com', '123456789', 'Lullyfito', 'Holand', 'Cuba', 'South Africa'),
+							(22201, 'Danilo Dias', 'danilo@gmail.com', '123456789', 'Danilao', 'Holand', 'Cuba', 'South Africa'),
+                            (22202, 'Pedro Fernandes', 'Pedro@gmail.com', '123456789', 'Pedrao', 'Holand', 'Cuba', 'South Africa'),
+                            (22203, 'Ivan Freire', 'ios09@gmail.com', '123456789', 'Junior', 'Holand', 'Cuba', 'South Africa'),
+                            (22204, 'Ivan Freire', 'ivanme9@gmail.com', '123456789', 'Alexandre', 'Holand', 'Cuba', 'South Africa'),
+                            (22205, 'Ivan Freire', 'ivdeiros09@gmail.com', '123456789', 'Alezinho', 'Holand', 'Cuba', 'South Africa'),
+                            (22206, 'Ivan Freire', 'anmedeiros09@gmail.com', '123456789', 'Ruan', 'Holand', 'Cuba', 'South Africa');
 
 DESC Post;
+
 
 SELECT Post.mensagem, Post.imagem, Usuario.username FROM Post, Usuario WHERE fkUsuario = idUsuario;
 
 
+SELECT * FROM Post;
 
+TRUNCATE Post;
 
-
+INSERT INTO Post VALUES 
+(22200, 9902, 'This Guy is Amazing', 'https://i.ytimg.com/an_webp/9BMGWY7mEhY/mqdefault_6s.webp?du=3000&sqp=CMjmp5UG&rs=AOn4CLAK6tPF_QyhLBNrVp-ZCqXHH36Kfg'),
+(22202, 9903, 'Jamaicanos vencem corrida contra guepardo',  'https://pingback-prod-uploads.s3.amazonaws.com/uploads/user/images/editor/do256f.gif');
