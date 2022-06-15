@@ -75,159 +75,12 @@
                         <div class="post-img" id="PedroFt"></div>
                     </div>
 
-                    <!--
-                        <div class="feedback">
-
-                            <div class="like">
-                            <button><img src="./Imagens/Icons/like.png" alt="curtir"></button>
-                            
-                            </div>
-                            <div class="comment">
-                            <button><img src="./Imagens/Icons/text.png" alt="comentar"></button>
-                                                        </div>
-                            <div class="share">
-                            <button><img src="./Imagens/Icons/share.png" alt="compartilhar"></button>
-                                                       </div>
-                        </div>
-                        -->
 
                 </div>
 
-                <div class="post">
+               
 
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="Wilson"></div>
-                        <!-- Nome -->
-                        <p class="name-user">WilsonRodger</p>
-                        <!--Bandeira de Onde Ele está -->
-                    
-                        <!--Tempo que postou-->
-                       
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">CSS is hard sometimes</p>
-                        <div class="post-img" id="WilsonFt"></div>
-                    </div>
-
-
-
-                </div>
-
-                <div class="post">
-
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="Vicenzo"></div>
-                        <!-- Nome -->
-                        <p class="name-user">VicenzoRossi</p>
-                        <!--Bandeira de Onde Ele está -->
-                     
-                        <!--Tempo que postou-->
-                       
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">Always with her</p>
-                        <div class="post-img" id="vicenzo-post"></div>
-                    </div>
-
-
-
-                </div>
-
-                <div class="post">
-
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="Hillary"></div>
-                        <!-- Nome -->
-                        <p class="name-user">HillaryWood</p>
-                        <!--Bandeira de Onde Ele está -->
-                      
-                        <!--Tempo que postou-->
-                        
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">Hmmmmmm!!!!!</p>
-                        <div class="post-img" id="hillary-post"></div>
-                    </div>
-
-                </div>
-
-                <div class="post">
-
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="Indian"></div>
-                        <!-- Nome -->
-                        <p class="name-user">MohammedJohn</p>
-                        <!--Bandeira de Onde Ele está -->
-                      
-                        <!--Tempo que postou-->
-                        
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">One more accident</p>
-                        <div class="post-img" id="moha-post"></div>
-                    </div>
-
-
-
-
-                </div>
-
-                <div class="post">
-
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="Gabrielly"></div>
-                        <!-- Nome -->
-                        <p class="name-user">Gabrielly</p>
-                        <!--Bandeira de Onde Ele está -->
-                      
-                        <!--Tempo que postou-->
-                        
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">Best hostel on London, i am in deep love</p>
-                        <div class="post-img" id="GabriellyFt"></div>
-                    </div>
-
-                </div>
-
-                <div class="post">
-
-                    <div class="info-bar">
-                        <!--Foto do User -->
-                        <div class="user-foto" id="fat"></div>
-                        <!-- Nome -->
-                        <p class="name-user">RudsonLouds</p>
-                        <!--Bandeira de Onde Ele está -->
-                       
-                        <!--Tempo que postou-->
-                        
-                    </div>
-
-                    <!-- Conteudo postado -->
-                    <div class="content">
-                        <p class="post-msg">What a wonder day</p>
-                        <div class="post-img" id="rudson-post"></div>
-                    </div>
-
-
-
-
-                </div>
+     
             </div>
         </div>
 
@@ -407,7 +260,7 @@ function listar(){
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
                    
-                    for (i = 0; i < resposta.length; i++) {
+                    for (i = resposta.length - 1; i >= 0; i--) {
                         var publicacao = resposta[i];
 
                         console.log('Essa são as publicaçoes' + publicacao.mensagem)
@@ -479,11 +332,6 @@ function publicar() {
             imagem: url_image.value,
         }
 
-        if(imagem.length < '20'){
-
-            alert('Você precisa adicionar uma imagem válida')
-        }else{
-
         fetch(`/usuarios/publicar/${idUsuario}`, {
             method: "post",
             headers: {
@@ -511,7 +359,7 @@ function publicar() {
         return false;
 
     }
-}
+
         
 
 </script>

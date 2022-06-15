@@ -21,21 +21,21 @@ var sqlServerConfig = {
 
 
 
-//     PC faculdade
-//  var mySqlConfig = {
-//     host: "localhost",
-//     database: "StarTravel",
-//     user: "aluno",
-//     password: "sptech",
-// };
- 
-
+   
  var mySqlConfig = {
     host: "localhost",
     database: "StarTravel",
-    user: "ivanfm",
-    password: "Mimoso009@",
+    user: "aluno",
+    password: "sptech",
 };
+ 
+
+//  var mySqlConfig = {
+//     host: "localhost",
+//     database: "StarTravel",
+//     user: "ivanfm",
+//     password: "Mimoso009@",
+// };
  
 function executar(instrucao) {
     // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js
