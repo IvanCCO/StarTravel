@@ -22,8 +22,6 @@ function validarSessao() {
 }
 
 function limparSessao() {
-    // aguardar();
-
     // Limpar o cache do Cadastro do Usuário 
     sessionStorage.clear();
     // finalizarAguardar();
@@ -37,7 +35,7 @@ function limparSessao() {
 // Aqui estou fazendo o timer funcionar, Utilizei uma função copiada na internet para fazer o que eu quero
 
 // Pegando o data final e transformando em um tipo data
-var endDate = new Date("Jun 15, 2022 15:30:00").getTime();
+var endDate = new Date("March 09, 2023 11:13:00").getTime();
 
 // Colocando pra essa função rodar a cada 1s ou seja 1000 ms, isso faára com que o timer se atualize a cada segundo
 var timer = setInterval(function() {
@@ -48,7 +46,7 @@ var timer = setInterval(function() {
     // Criando uma variável para pegar a diferença entre a data final e a atual para saber quanto tempo falta
     let t = endDate - now;
 
-
+    console.log(endDate)
     // Se o tempo ainda não for o atual ...
     if (t >= 0) {
         

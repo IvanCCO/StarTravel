@@ -21,20 +21,12 @@ var sqlServerConfig = {
 
 
 
-//     PC faculdade
-//  var mySqlConfig = {
-//     host: "localhost",
-//     database: "StarTravel",
-//     user: "aluno",
-//     password: "sptech",
-// };
- 
-
+    // PC faculdade
  var mySqlConfig = {
     host: "localhost",
-    database: "StarTravel",
-    user: "ivanfm",
-    password: "Mimoso009@",
+    database: "STAR_TRAVEL",
+    user: "aluno",
+    password: "sptech",
 };
  
 function executar(instrucao) {

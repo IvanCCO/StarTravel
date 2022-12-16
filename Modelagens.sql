@@ -3,8 +3,6 @@ CREATE DATABASE StarTravel;
 USE StarTravel;
 
 
-
-
 CREATE TABLE Usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (45) NOT NULL, 

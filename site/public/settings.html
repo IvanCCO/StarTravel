@@ -149,6 +149,8 @@
       ) {
         div_msg.innerHTML = `No changes were made`;
       } else if (changeUserVar != "") {
+
+        // TODO: Post por GET
         fetch("/usuarios/alterar", {
           method: "POST",
           headers: {

@@ -123,24 +123,10 @@ a{
 }
 
 .navBar #logo-img{
-  height: 12vh;
-  width: 12vh;  
-  margin-left: 23%;
-  margin-bottom: 1vh;
+  height: 160px;
+  width: 160px;  
   /* iMAGENS */
-  background: url(./Imagens/Logos/LOGO_LULLY_INTERPSRISES_SEM_LETRA.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.navBar #logo_name {
-  height: 7vh;
-  width: 10vw;
-  margin-bottom: 8vh;
-
-  /* Imagens */
-  background: url(./Imagens/Logos/SO_LETRA.png);
+  background: url("./Imagens/Logos/My project-1.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

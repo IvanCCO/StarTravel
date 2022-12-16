@@ -52,6 +52,7 @@
             erro.innerHTML = `Passwords does not match`
         }else {
 
+            //TODO: Trocar post por get
             fetch("/usuarios/updatePassword", {
                 method: "POST",
                 headers: {

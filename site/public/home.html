@@ -24,7 +24,6 @@
         <div class="navBar">
             <ul>
                 <div id="logo-img"></div>
-                <div id="logo_name"></div>
                 <li>Home</li>
                <a href="dashboard.html"><li>Places</li></a>
                 <a href="settings.html">
@@ -327,14 +326,7 @@
     setInterval(() =>{
         
         // Criar 2 vetores para guardar o nome do pais e o numero de votos 
-
-        
         var aleatorio = (Math.random() * (numeroVotos.length - 1)).toFixed(0);
-        
-        if(nomePaises[aleatorio] == undefined){
-
-            alert('Deu ruim')
-        }
         nomePais.innerHTML = `${nomePaises[aleatorio]}`;
         votoPais.innerHTML = `${numeroVotos[aleatorio]}`;
 
@@ -451,11 +443,6 @@ function listar(){
                         divPostImg.className = 'post-img';
 
     
-
-                        
-                        /* tituloVar.id = publicacao.idPost; */
-
-
                         pNameUser.innerHTML = `${publicacao.username}`;
                         pPostMsg.innerHTML = `${publicacao.mensagem}`;
                         divPostImg.style.background = `url(${publicacao.imagem})`;

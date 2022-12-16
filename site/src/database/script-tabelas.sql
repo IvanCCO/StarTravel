@@ -8,9 +8,7 @@ CREATE TABLE Usuario (
 	email VARCHAR (45) NOT NULL UNIQUE,
 	senha VARCHAR (25) NOT NULL,
 	username VARCHAR(14) NOT NULL UNIQUE,
-    paisOne VARCHAR(20),
-    paisTwo VARCHAR(20),
-    paisThree VARCHAR(20)
+
 
 )AUTO_INCREMENT = 022200;
 
