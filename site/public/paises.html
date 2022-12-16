@@ -1,140 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="../public/Imagens/Logos/favicon.ico" type="image/x-icon">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      href="../public/Imagens/Logos/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <div id="titulo">Where do wanna go?</div>
 
     <div class="main-paises">
-        
-        <div class="fileira1"> <!--O parametro this pega todos os elementos da div-->
-            <div class="paises" id="holanda" onclick="ale(this)">Holand</div>
-            <div class="paises" id="franca" onclick="ale(this)">France</div>
-            <div class="paises" id="cuba" onclick="ale(this)">Cuba</div>
-            <div class="paises" id="brazil" onclick="ale(this)">Brazil</div>
-            <div class="paises" id="nigeria" onclick="ale(this)">Nigeria</div>
+      <div class="fileira1">
+        <!--O parametro this pega todos os elementos da div-->
+        <div class="paises" id="holanda" onclick="ale(this)">Holand</div>
+        <div class="paises" id="franca" onclick="ale(this)">France</div>
+        <div class="paises" id="cuba" onclick="ale(this)">Cuba</div>
+        <div class="paises" id="brazil" onclick="ale(this)">Brazil</div>
+        <div class="paises" id="nigeria" onclick="ale(this)">Nigeria</div>
+      </div>
+      <div class="fileira2">
+        <div class="paises" id="italia" onclick="ale(this)">Italy</div>
+        <div class="paises" id="london" onclick="ale(this)">London</div>
+        <div class="paises" id="novaYork" onclick="ale(this)">New York</div>
+        <div class="paises" id="spain" onclick="ale(this)">Spain</div>
+        <div class="paises" id="africa-sul" onclick="ale(this)">
+          South Africa
         </div>
-        <div class="fileira2">
-            <div class="paises" id="italia" onclick="ale(this)">Italy</div>
-            <div class="paises" id="london" onclick="ale(this)">London</div>
-            <div class="paises" id="novaYork" onclick="ale(this)">New York</div>
-            <div class="paises" id="spain" onclick="ale(this)">Spain</div>
-            <div class="paises" id="africa-sul" onclick="ale(this)">South Africa</div>
-        </div>
+      </div>
     </div>
 
     <div id="btn">
-        <b style="color: red;" id="msg_erro"></b>
-        <a id="link"><button onclick="sel()">Go</button></a>
-        <br>
+      <b style="color: red" id="msg_erro"></b>
+      <a id="link"><button onclick="sel()">Go</button></a>
+      <br />
     </div>
-</body>
+  </body>
 </html>
 
 <script>
+  // Criei um vetor para guardar os países que foram selecionados pelo Usuário.
+  var vetorPaises = [];
 
-    // Criei um vetor para guardar os países que foram selecionados pelo Usuário.
-    var vetorPaises = [];
+  function ale(elemento) {
+    // Criei uma classe chamada 'paisesSelecionados'
+    // Se o usuário selecionar um pais ele terá atribuido essa classe.
+    // Se o pais selecionado já tiver esse classe ele entrará no if
 
+    if (elemento.className.indexOf("paisesSelecionados") > 0) {
+      elemento.className = "paises";
+      // Limpa o vetor pra ir pegando os valores que tem dentro e estão selecionados
 
-    function ale(elemento){
+      for (i = 0; i < vetorPaises.length; i++) {
+        // Vendo se o conteudo da funcao que foi clicada bate com valor do vetor
+        if (vetorPaises[i] == elemento.textContent) {
+          // Remove apenas o valor que bateu.
+          vetorPaises.splice(i, 1);
 
-        // Criei uma classe chamada 'paisesSelecionados'
-        // Se o usuário selecionar um pais ele terá atribuido essa classe.
-        // Se o pais selecionado já tiver esse classe ele entrará no if 
-
-
-        if(elemento.className.indexOf('paisesSelecionados') > 0){
-
-            elemento.className = 'paises';
-            // Limpa o vetor pra ir pegando os valores que tem dentro e estão selecionados
-
-            for(i = 0; i < vetorPaises.length; i++){
-                
-                // Vendo se o conteudo da funcao que foi clicada bate com valor do vetor
-                if(vetorPaises[i] == elemento.textContent){
-
-                    // Remove apenas o valor que bateu. 
-                    vetorPaises.splice(i, 1);   
-
-                    console.log('Removendo:' + elemento.textContent)
-                }
-            }
-        }else{
-
-            // Atribuindo a classe ao pais
-            elemento.className += " paisesSelecionados"; // Usei o mais igual aqui para ele não substituir a classe que já tinha e sim adicionar mais uma
-            // Adicionando ao vetor o nome dos Paises
-            vetorPaises.push(elemento.textContent);
-            console.log("Adicionando: " + elemento.textContent);
+          console.log("Removendo:" + elemento.textContent);
         }
+      }
+    } else {
+      // Atribuindo a classe ao pais
+      elemento.className += " paisesSelecionados"; // Usei o mais igual aqui para ele não substituir a classe que já tinha e sim adicionar mais uma
+      // Adicionando ao vetor o nome dos Paises
+      vetorPaises.push(elemento.textContent);
+      console.log("Adicionando: " + elemento.textContent);
     }
+  }
 
-    function sel(){
+  function sel() {
+    if (vetorPaises.length < 3) {
+      msg_erro.innerHTML = "<br>Choose 3 countries to go";
+    } else if (vetorPaises.length > 3) {
+      msg_erro.innerHTML = "Maximum of 3 countries";
+    } else {
+      // Enviando o valor da nova input
+      fetch("/usuarios/colocarPais", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
 
-        if(vetorPaises.length < 3){
+          // Recuperando os valores do meu vetor.
+          paisOneServer: vetorPaises[0],
+          paisTwoServer: vetorPaises[1],
+          paisThreeServer: vetorPaises[2],
+          idUsuario: sessionStorage.ID_USUARIO,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
 
-            msg_erro.innerHTML = '<br>Choose 3 countries to go';
+          console.log("Entrou no then da function");
 
-        }else if(vetorPaises.length > 3){
+          if (resposta.ok) {
+            console.log("Entrou no if do then");
 
-            msg_erro.innerHTML = 'Maximum of 3 countries';
+            msg_erro.style.color = "white";
+            msg_erro.innerHTML = `You are Good to go!`;
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "3000");
+          } else {
+            throw "Houve um erro ao tentar colocar no vetor!";
 
-        }else {
-
-            // TODO: Fazer método pelo post
-            // Enviando o valor da nova input
-            fetch("/usuarios/colocarPais", {
-                method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-
-                // Recuperando os valores do meu vetor.
-                paisOneServer: vetorPaises[0],
-                paisTwoServer: vetorPaises[1],
-                paisThreeServer: vetorPaises[2],
-                idUsuario: sessionStorage.ID_USUARIO,
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            console.log('Entrou no then da function')
-            
-            if (resposta.ok) {
-
-                console.log('Entrou no if do then')
-
-                msg_erro.style.color = 'white';
-                msg_erro.innerHTML = `You are Good to go!`
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "3000")
-
-            } else {
-                throw ("Houve um erro ao tentar colocar no vetor!");
-
-                // Função caso de Algum erro que não foi previsto
-                erro.innerHTML = `Error. Try again later`;
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
+            // Função caso de Algum erro que não foi previsto
+            erro.innerHTML = `Error. Try again later`;
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
         });
-        return false;
+      return false;
     }
-        }
-
-    
-    
+  }
 </script>

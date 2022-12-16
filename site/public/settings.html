@@ -60,7 +60,7 @@
           <p>Select your country</p>
           <select class="inp_change" id="sel_changeLocation">
             <option value="Sel">-- Select --</option>
-            <option value="Netherlands">Holand</option>
+            <option value="Netherlands">Netherlands</option>
             <option value="France">France</option>
             <option value="Nigeria">Nigeria</option>
             <option value="Cuba">Cuba</option>
@@ -173,11 +173,16 @@
               resposta.text().then((texto) => {
                 console.error(texto);
 
-                setTimeout(() => {
+                
                   div_msg.innerHTML = "An error was occured. Try again later";
-                }, 4000);
+                
               });
             }
+
+            setTimeout(() =>{
+
+              div_msg.innerHTML = '';    
+            }, 5000)
           })
           .catch(function (erro) {
             console.log(erro);
@@ -229,6 +234,8 @@
 
                 console.log('O nome do Pais é ' + pais.nomePais + ' e a o Pais que o usuario escolheu foi ' + nomePaisVar);
                 console.log('O total de Avaliacoes aqui é ' + pais.totalAvaliacao);
+
+          
               // Pega todos os valores dos paise
 
               if(pais.nomePais == nomePaisVar){
