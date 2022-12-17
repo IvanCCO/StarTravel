@@ -24,7 +24,7 @@
 
         <div id="div_login">
             <div class="login">
-            <h4 class="item-login">Welcome back!</h4>
+            <h4 class="item-login">Welcome</h4>
             <input class='item-login' type="text" placeholder="Username" id="inp_user" onkeypress="key()" autofocus>
             <input class='item-login' type="password" id="inp_senha" placeholder="Password" onkeypress="key()">
             <a id="entrar"><button  class='item-login' onclick="login()">Login</button></a>
@@ -37,13 +37,11 @@
         </div>
 </body>
 </html>
+
+<script src="js/aut.js"></script>
 <script>
 
-// meu codigo
-
-    // Criei uma variável setada como 100 para usar na animação do Loading que será 100% quando o usuario logar
-
-    var barra = 100;
+var barra = 100;
 
     // Animação do Hello Word;\
   setTimeout(() => {
@@ -64,92 +62,4 @@
             return login()
         }
     }
-
-
-     // Validaçao abas de Login. 
-    function login(){
-
-        var usernameVar = inp_user.value;
-        var senhaVar = inp_senha.value;
-
-        if(usernameVar == '' || senhaVar == ''){
-
-            erro.innerHTML = 'All fields are mandatory';
-
-        }else{
-
-
-            // Pegando aqui o select do Username e da senha..
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                usernameServer: usernameVar,
-                senhaServer: senhaVar,
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-            // Se o comando rodar então vai entrar nesse if
-
-
-            if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    
-                    sessionStorage.USERNAME_USUARIO = json.username;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
-                    sessionStorage.EMAIL_USUARIO = json.email;
-
-                    // Coloquei isso pra na hora que der a animação conseguir pegar o nome do usuário que foi guardado no SessionStorage
-                    b_usuario.innerHTML = `${sessionStorage.USERNAME_USUARIO}`                    
-                    
-                    
-                });
-
-                // Animação da barra de loading
-                barra_loading.style.display = 'block';
-                barra_loading.style.width = barra + '%';
-                barra_loading.style.transition = 'width ease-in-out 2.5s';
-
-
-
-                // Animação do Wellcome com o nome do Usuário
-                setTimeout(() => {
-                    wellcome.style.display = 'grid'
-                }, 2600)
-
-                setTimeout(() => {
-                    wellcome.style.opacity = 0;
-                    wellcome.style.transition = 'opacity ease-in-out 3s';
-                }, 2630)
-            
-                setTimeout(() => {
-                    window.location = "home.html";
-                }, "5000")
-                
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    erro.innerHTML = `Invalid email/password`;
-
-                    // Aqui estou apagando a mensagem pra não ficar o tempo todo na tela
-                    setTimeout(() => {
-                        erro.innerHTML = '';
-                    }, 4000)
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-            }
-     }
 </script>

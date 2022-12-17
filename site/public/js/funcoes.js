@@ -1,38 +1,6 @@
-// sessão
-
-// Irá fazer a parte de Login funcionar.
-function validarSessao() {
-    // aguardar();
-
-    var email = sessionStorage.EMAIL_USUARIO;
-    var username = sessionStorage.USERNAME_USUARIO;
-
-    var b_usuario = document.getElementById("b_usuario");
-
-    // Vendo se tem algum valor no email e username
-
-    if (email != null && username != null) {
-        // window.alert(`Seja bem-vindo, ${nome}!`);
-        b_usuario.innerHTML = username;
-
-        // finalizarAguardar();
-    } else {
-        window.location = "../login.html";
-    }
-}
-
-function limparSessao() {
-    // Limpar o cache do Cadastro do Usuário 
-    sessionStorage.clear();
-    // finalizarAguardar();
-    window.location = "../login.html";
-}
 
 
 
-
-
-// Aqui estou fazendo o timer funcionar, Utilizei uma função copiada na internet para fazer o que eu quero
 
 // Pegando o data final e transformando em um tipo data
 var endDate = new Date("March 09, 2023 11:13:00").getTime();
@@ -90,6 +58,7 @@ var timer = setInterval(function() {
     }
     
 }, 1000);
+
 
 
 
