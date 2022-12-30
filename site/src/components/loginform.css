@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Constantia&display=swap');
+
+:root{
+    --primary-color:#0F0F0F;
+    --secundary-color: rgba(106, 20, 128, 1);
+    --font-white-color: white;
+    --font-mask-color: rgba(209, 209, 209, 0.578);    
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: var(--primary-color);
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form .logoGrande{
+    font-family: 'Constantia', serif;
+    font-size: 2rem;
+    color: var(--secundary-color);
+    margin-bottom: 40px;
+}
+
+.forget-pass{
+    font-size: 0.6rem;
+    color: var(--font-mask-color);
+    margin-top: 2%;
+}
+
+.btn_login{
+    border: 2px solid var(--secundary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 45px;
+    color: var(--font-white-color);
+    background: var(--secundary-color);
+    border-radius: 20px;
+    margin-top: 45px;
+    cursor: pointer;
+}
+
+.btn_login:hover{
+    background: transparent;
+    border: 2px solid var(--secundary-color);
+    transition: all ease 0.2s;
+}
+
+.separator-div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+    align-items: baseline;
+    width: 80%;
+}
+
+.separator-div p {
+    color: var(--font-mask-color);
+    font-size: 0.8rem;
+    margin: 0 5px;
+}
+
+.separator{
+    width: 100%;
+    border-top: 2px solid var(--font-mask-color);
+}
+
+.google{
+    margin-top: 8%;
+    background: white;
+    width: 70%;
+}
+
+.signup{
+    color: var(--font-mask-color);
+    font-size: 0.7rem;
+    margin-top: 30px;
+
+}
+
+.signup a{
+    color: var(--secundary-color);
+    text-decoration: none;
+   
+}
+
+/* Inputs */
+
+.group {
+    position: relative;
+    margin-top: 50px;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 235px;
+    border: none;
+    border-bottom: 1px solid var(--secundary-color);
+    background-color: transparent;
+    color: var(--font-white-color);
+}
+
+input:focus {
+    outline: none;
+    caret-color: var(--font-mask-color);
+}
+
+/* LABEL ======================================= */
+label {
+    color: var(--font-mask-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: var(--font-mask-color);
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--secundary-color);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+.g-signin2{
+    margin-top: 5%;
+}
+
+
+/* Deixar responsivo */
+@media only screen and (min-width: 500px){
+
+    input{
+        width: 400px;
+    }
+}
