@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./loginform.css"
 
 
@@ -49,12 +49,19 @@ const SignUpRedirect = () => {
 
 
 const LoginForm = () => {
+
+    function handleSubmit(event) {
+      // Não deixa a página atualizar
+    event.preventDefault();
+    
+    }
+
       return (
-        <form className="form">
+        <form onSubmit={handleSubmit} className="form">
             <p className="logoGrande">{"{S}"}</p>
             <InputBoxEmail/>
             <InputBoxPassword/>
-            <button onClick={Login()} className="btn_login">Log in</button>
+            <button type="submit" className="btn_login">Log in</button>
             < OrSeparator/>
             < GoogleSignIn/>
             < SignUpRedirect/>
@@ -62,9 +69,7 @@ const LoginForm = () => {
       )
     }    
 
-    function Login(){
-  console.log('cc')
-}
+
 
 
 export default LoginForm
